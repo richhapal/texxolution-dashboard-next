@@ -1,0 +1,18 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "next/core-web-vitals",
+    "next/typescript",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended"
+  ],
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "@typescript-eslint/no-inferrable-types": "error", // Enforces explicit typing
+    "@typescript-eslint/explicit-function-return-type": "error", // Enforce explicit return types
+    "@typescript-eslint/no-explicit-any": "error", // Disallow the 'any' type
+    "react/prop-types": "error", // Disable prop-types rule (handled by TypeScript)
+    "react/react-in-jsx-scope": "off"
+  }
+}
