@@ -1,14 +1,16 @@
-"use client";
-import { useParams } from "next/navigation";
+import ListLanding from "@/_components/listPage/Landing";
+
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "All Job List",
+  description: "All Job List Details Category Wise",
+};
 
 const JobList: React.FC = () => {
-  const { category, slug } = useParams();
-
   return (
     <>
-      <h2>
-        Edit Job : {category} , {slug}
-      </h2>
+      <ListLanding />
     </>
   );
 };

@@ -1,4 +1,5 @@
 "use client";
+import JobForm from "@/_components/genericComponents/jobForm";
 import { useParams } from "next/navigation";
 
 const EditJob: React.FC = () => {
@@ -7,9 +8,13 @@ const EditJob: React.FC = () => {
   return (
     <>
       {" "}
-      <h2>
-        Edit Job : {category} , {slug}
-      </h2>
+      <div>
+        <JobForm
+          jobCategoryName={category as string}
+          postNameSlug={slug as string}
+          jobFormTitle="Edit Job"
+        />
+      </div>
     </>
   );
 };
