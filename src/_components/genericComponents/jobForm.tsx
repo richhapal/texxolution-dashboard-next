@@ -178,7 +178,11 @@ export default function JobForm({
           >
             <option value="">Select Job Category</option>
             {jobCategory.map((data: any) => {
-              return <option value={data.key}>{data.label}</option>;
+              return (
+                <option key={data.key} value={data.key}>
+                  {data.label}
+                </option>
+              );
             })}
           </select>
           {errors.jobCategory && (

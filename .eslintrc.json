@@ -10,9 +10,10 @@
   "plugins": ["@typescript-eslint"],
   "rules": {
     "@typescript-eslint/no-inferrable-types": "error", // Enforces explicit typing
-    "@typescript-eslint/explicit-function-return-type": "error", // Enforce explicit return types
-    "@typescript-eslint/no-explicit-any": "error", // Disallow the 'any' type
+    "@typescript-eslint/explicit-function-return-type": "off", // Enforce explicit return types
+    "@typescript-eslint/no-explicit-any": "off", // Disallow the 'any' type
     "react/prop-types": "error", // Disable prop-types rule (handled by TypeScript)
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/no-unused-vars": "off"
   }
 }

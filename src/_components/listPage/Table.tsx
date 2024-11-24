@@ -28,7 +28,7 @@ export default function JobTable({
   page: number;
   jobCategorySelected: string;
 }) {
-  const rowsPerPage = 10;
+  // const rowsPerPage = 10;
   const totalPage = data.pagination.totalPages;
 
   const handleRenderCell = (item: any, columnKey: string) => {
