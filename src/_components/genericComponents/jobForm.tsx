@@ -14,27 +14,30 @@ import {
 } from "@/_lib/rtkQuery/listRtkQuery";
 import { Bounce, toast } from "react-toastify";
 import { Button } from "@nextui-org/react";
+import JobDataType from "@/dataType/getJobData";
 
 const formSchema = z.object({
   jobCategory: z.string().min(1, "Job category is required"),
   postName: z.string().min(1, "Post name is required"),
   title: z.string().min(1, "Title is required"),
   qualifications: z.string().min(1, "Qualifications are required"),
-  importantLinks: z.array(
-    z.object({
-      displayText: z.string().min(1, "Display text is required"),
-      type: z.string().min(1, "Type is required"),
-      value: z.string().url("Must be a valid URL"),
-      text: z.string().min(1, "Text is required"),
-    })
-  ),
+  importantLinks: z
+    .array(
+      z.object({
+        displayText: z.string().min(1, "Display text is required"),
+        type: z.enum(["Link", "Text"]), // No `.min()` here; `z.enum` ensures valid values
+        value: z.string().url("Must be a valid URL"),
+        text: z.string().min(1, "Text is required"),
+      })
+    )
+    .nonempty("At least one important link is required"),
   applicationFeeDetails: z
     .string()
     .min(1, "Application fee details are required"),
   vacancyDetails: z.string().min(1, "Vacancy details are required"),
-  metaTags: z.array(z.string()),
-  jobPublish: z.string().min(1, "Publication status is required"),
-  isVacancyOver: z.string().min(1, "Vacancy status is required"),
+  metaTags: z.array(z.string().min(1, "Meta tag cannot be empty")), // Ensures metaTags are non-empty strings
+  jobPublish: z.enum(["listed", "unlisted"]), // Removed `.min()`
+  isVacancyOver: z.boolean(), // Boolean validation doesn't need `.min()`
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -60,7 +63,7 @@ export default function JobForm({
   }: UseFormReturn<FormValues> = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      importantLinks: [{ displayText: "", type: "", value: "", text: "" }],
+      importantLinks: [{ displayText: "", type: "Link", value: "", text: "" }],
       metaTags: [],
     },
   });
@@ -86,10 +89,23 @@ export default function JobForm({
 
   useEffect(() => {
     if (jobData) {
-      reset(jobData);
+      console.log({ jobData });
+      // const transformedData=(data:JobData):FormValues=> {
+      //   jobCategory: data?.jobCategory || "",
+      //   postName: data.postName || "",
+      //   title: data.title || "",
+      //   qualifications: data.qualifications || "",
+      //   importantLinks: data.importantLinks || [],
+      //   applicationFeeDetails: data.applicationFeeDetails || "",
+      //   vacancyDetails: data.vacancyDetails || "",
+      //   metaTags: data.metaTags || [],
+      //   jobPublish: data.jobPublish || "",
+      //   isVacancyOver: data.isVacancyOver || "",
+      // };
+      reset(new JobDataType(jobData));
     }
   }, [jobData, reset]);
-
+  console.log({ errors });
   useEffect(() => {
     if (addData || updateData) {
       toast.success(
@@ -269,31 +285,72 @@ export default function JobForm({
               <div className="space-y-4 mt-2">
                 {field.value.map((_, index) => (
                   <div key={index} className="grid grid-cols-4 gap-4">
-                    <input
-                      type="text"
-                      {...register(`importantLinks.${index}.displayText`)}
-                      placeholder="Display Text"
-                      className="col-span-1 border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                    />
-                    <input
-                      type="text"
-                      {...register(`importantLinks.${index}.type`)}
-                      placeholder="Type"
-                      className="col-span-1 border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                    />
-                    <input
-                      type="text"
-                      {...register(`importantLinks.${index}.value`)}
-                      placeholder="Enter Value"
-                      className="col-span-1 border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                    />
-                    <div className="col-span-1 flex items-center space-x-2">
+                    <div>
                       <input
                         type="text"
-                        {...register(`importantLinks.${index}.text`)}
-                        placeholder="Text"
-                        className="flex-grow border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        {...register(`importantLinks.${index}.displayText`)}
+                        placeholder="Display Text"
+                        className="col-span-1 border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                       />
+
+                      <div>
+                        {errors?.importantLinks?.[index]?.displayText
+                          ?.message && (
+                          <p className="mt-2 text-sm text-red-600">
+                            {
+                              errors?.importantLinks?.[index]?.displayText
+                                ?.message
+                            }
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                    <div>
+                      <input
+                        type="text"
+                        {...register(`importantLinks.${index}.type`)}
+                        placeholder="Type"
+                        className="col-span-1 border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                      />
+                      <div>
+                        {errors?.importantLinks?.[index]?.type?.message && (
+                          <p className="mt-2 text-sm text-red-600">
+                            {errors?.importantLinks?.[index]?.type?.message}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                    <div>
+                      <input
+                        type="text"
+                        {...register(`importantLinks.${index}.value`)}
+                        placeholder="Enter Value"
+                        className="col-span-1 border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                      />
+                      <div>
+                        {errors?.importantLinks?.[index]?.value?.message && (
+                          <p className="mt-2 text-sm text-red-600">
+                            {errors?.importantLinks?.[index]?.value?.message}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                    <div className="col-span-1 flex items-center space-x-2">
+                      <div>
+                        <input
+                          type="text"
+                          {...register(`importantLinks.${index}.text`)}
+                          placeholder="Text"
+                          className="flex-grow border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        />
+                        <div>
+                          {errors?.importantLinks?.[index]?.text?.message && (
+                            <p className="mt-2 text-sm text-red-600">
+                              {errors?.importantLinks?.[index]?.text?.message}
+                            </p>
+                          )}
+                        </div>
+                      </div>
                       {index === 0 ? (
                         <button
                           type="button"
