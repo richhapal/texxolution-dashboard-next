@@ -25,7 +25,11 @@ const formSchema = z.object({
     .array(
       z.object({
         displayText: z.string().min(1, "Display text is required"),
-        type: z.enum(["Link", "Text"]), // No `.min()` here; `z.enum` ensures valid values
+        type: z
+          .enum(["Link", "Text"])
+          .refine((val) => val === "Link" || val === "Text", {
+            message: "Type must be either 'Link' or 'Text'",
+          }), // No `.min()` here; `z.enum` ensures valid values
         value: z.string().url("Must be a valid URL"),
         text: z.string().min(1, "Text is required"),
       })
@@ -124,8 +128,7 @@ export default function JobForm({
       );
     }
     if (addError || updateError || jobError) {
-      const error = addError || updateError || jobError;
-      toast.error(error?.data?.message || "An error occurred", {
+      toast.error("An error occurred", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -306,19 +309,16 @@ export default function JobForm({
                       </div>
                     </div>
                     <div>
-                      <input
-                        type="text"
+                      <select
                         {...register(`importantLinks.${index}.type`)}
-                        placeholder="Type"
                         className="col-span-1 border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                      />
-                      <div>
-                        {errors?.importantLinks?.[index]?.type?.message && (
-                          <p className="mt-2 text-sm text-red-600">
-                            {errors?.importantLinks?.[index]?.type?.message}
-                          </p>
-                        )}
-                      </div>
+                      >
+                        <option value="" disabled>
+                          Select type
+                        </option>
+                        <option value="Link">Link</option>
+                        <option value="Text">Text</option>
+                      </select>
                     </div>
                     <div>
                       <input
