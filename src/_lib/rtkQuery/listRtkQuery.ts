@@ -1,11 +1,16 @@
 // Need to use the React-specific entry point to import createApi
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { url } from "inspector";
-import { ListData } from "../utils/utils";
+import { CategoryListData, ListData } from "../utils/utils";
 // import type { Pokemon } from "./types";
 
 type QueryArgType = {
   jobCategory: string;
+  pageNo: number;
+  pageSize?: number;
+};
+
+type CategoryListArgs = {
   pageNo: number;
   pageSize?: number;
 };
@@ -27,6 +32,7 @@ export const listApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: process.env.NEXT_PUBLIC_BACKEND_DASHBOARD_URL,
   }),
+  tagTypes: ["category-list"],
   endpoints: (builder) => ({
     addNewPost: builder.mutation<any, addEditPostQueryArgType>({
       query: (arg: addEditPostQueryArgType) => {
@@ -72,6 +78,26 @@ export const listApi = createApi({
         };
       },
     }),
+    getAllCategoryList: builder.query<CategoryListData, CategoryListArgs>({
+      query: (arg: CategoryListArgs) => {
+        return {
+          url: `/get-category-list`,
+          params: { pageNo: arg.pageNo, pageSize: arg.pageSize || 10 },
+        };
+      },
+      providesTags: [`category-list`],
+    }),
+    AddNewCategory: builder.mutation<any, any>({
+      query: (arg: any) => {
+        console.log("arg", arg);
+        return {
+          url: `/add-category-list`,
+          method: "POST", // Specify HTTP method
+          body: arg?.body ?? {},
+        };
+      },
+      invalidatesTags: [`category-list`],
+    }),
   }),
 });
 
@@ -82,4 +108,6 @@ export const {
   useAddNewPostMutation,
   useUpdateJobPostMutation,
   useGetJobDetailsQuery,
+  useGetAllCategoryListQuery,
+  useAddNewCategoryMutation,
 } = listApi;

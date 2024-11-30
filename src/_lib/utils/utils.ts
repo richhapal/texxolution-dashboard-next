@@ -23,6 +23,11 @@ export type ListData = {
   pagination: Pagination;
 };
 
+export type CategoryListData = {
+  categories: any[];
+  totalPages: number;
+};
+
 type JobCategory = { key: string; label: string };
 
 const jobCategory: JobCategory[] = [
