@@ -2,6 +2,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { url } from "inspector";
 import { CategoryListData, ListData } from "../utils/utils";
+import build from "next/dist/build";
 // import type { Pokemon } from "./types";
 
 type QueryArgType = {
@@ -98,6 +99,14 @@ export const listApi = createApi({
       },
       invalidatesTags: [`category-list`],
     }),
+    getAllJobCategoryTypeList: builder.query<any, any>({
+      query: () => {
+        return {
+          url: "/get-category-list",
+          params: { pageNo: 1, pageSize: 100 },
+        };
+      },
+    }),
   }),
 });
 
@@ -110,4 +119,5 @@ export const {
   useGetJobDetailsQuery,
   useGetAllCategoryListQuery,
   useAddNewCategoryMutation,
+  useGetAllJobCategoryTypeListQuery,
 } = listApi;

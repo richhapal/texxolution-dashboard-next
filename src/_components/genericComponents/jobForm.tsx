@@ -6,9 +6,10 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { PlusIcon, MinusIcon, InfoIcon, XIcon } from "lucide-react";
 import TinyMceTextEditor from "./tinyMceEditor";
-import jobCategory from "@/_lib/utils/utils";
+
 import {
   useAddNewPostMutation,
+  useGetAllJobCategoryTypeListQuery,
   useGetJobDetailsQuery,
   useUpdateJobPostMutation,
 } from "@/_lib/rtkQuery/listRtkQuery";
@@ -71,14 +72,20 @@ export default function JobForm({
       metaTags: [],
     },
   });
+
+  const { data: categoryListDetails, isLoading: categoryListFetching } =
+    useGetAllJobCategoryTypeListQuery({});
+
   const [
     addNewPost,
     { isLoading: isAddLoading, error: addError, data: addData },
   ] = useAddNewPostMutation();
+
   const [
     updateJob,
     { isLoading: isUpdateLoading, error: updateError, data: updateData },
   ] = useUpdateJobPostMutation();
+
   const {
     data: jobData,
     isLoading: isJobLoading,
@@ -93,23 +100,10 @@ export default function JobForm({
 
   useEffect(() => {
     if (jobData) {
-      console.log({ jobData });
-      // const transformedData=(data:JobData):FormValues=> {
-      //   jobCategory: data?.jobCategory || "",
-      //   postName: data.postName || "",
-      //   title: data.title || "",
-      //   qualifications: data.qualifications || "",
-      //   importantLinks: data.importantLinks || [],
-      //   applicationFeeDetails: data.applicationFeeDetails || "",
-      //   vacancyDetails: data.vacancyDetails || "",
-      //   metaTags: data.metaTags || [],
-      //   jobPublish: data.jobPublish || "",
-      //   isVacancyOver: data.isVacancyOver || "",
-      // };
       reset(new JobDataType(jobData));
     }
   }, [jobData, reset]);
-  console.log({ errors });
+
   useEffect(() => {
     if (addData || updateData) {
       toast.success(
@@ -176,7 +170,8 @@ export default function JobForm({
     );
   };
 
-  const isLoading = isAddLoading || isUpdateLoading || isJobLoading;
+  const isLoading =
+    isAddLoading || isUpdateLoading || isJobLoading || categoryListFetching;
 
   return (
     <div className="max-w-4xl mx-auto p-6">
@@ -190,13 +185,14 @@ export default function JobForm({
             Job Category <span className="text-red-500">*</span>
           </label>
           <select
+            value={jobCategoryName}
             disabled={isLoading}
             id="jobCategory"
             {...register("jobCategory")}
             className="mt-1 block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
           >
             <option value="">Select Job Category</option>
-            {jobCategory.map((data: any) => {
+            {categoryListDetails?.categories.map((data: any) => {
               return (
                 <option key={data.key} value={data.key}>
                   {data.label}
