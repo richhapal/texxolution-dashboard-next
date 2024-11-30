@@ -1,5 +1,8 @@
 "use client";
-import { useGetAllListByCategoryQuery } from "@/_lib/rtkQuery/listRtkQuery";
+import {
+  useGetAllJobCategoryTypeListQuery,
+  useGetAllListByCategoryQuery,
+} from "@/_lib/rtkQuery/listRtkQuery";
 import Header from "../genericComponents/header";
 import { Key, useState } from "react";
 import {
@@ -10,7 +13,6 @@ import {
   DropdownMenu,
   DropdownTrigger,
 } from "@nextui-org/react";
-import jobCategory from "@/_lib/utils/utils";
 import JobTable from "./Table";
 
 type ListDataType = {
@@ -38,9 +40,12 @@ const ListLanding = () => {
     { skip: !jobCategorySelected }
   );
 
+  const { data: categoryListDetails, isLoading } =
+    useGetAllJobCategoryTypeListQuery({});
+
   const handleAction = (key: Key) => {
-    const selectedItem = jobCategory.find(
-      (item) => item.key === (key as string)
+    const selectedItem = categoryListDetails?.categories.find(
+      (item: any) => item.key === (key as string)
     );
     if (selectedItem) {
       setJobCategorySelected(selectedItem.key);
@@ -50,7 +55,7 @@ const ListLanding = () => {
 
   return (
     <div className="p-5">
-      <Dropdown>
+      <Dropdown isDisabled={isLoading}>
         <DropdownTrigger>
           <Button className="w-full" variant="bordered">
             {jobCategorySelectedLabel || "Select Job Category"}
@@ -59,17 +64,19 @@ const ListLanding = () => {
         <DropdownMenu
           className="h-[300px] overflow-auto scrollbar-hide py-5 w-full"
           aria-label="Dynamic Actions"
-          items={jobCategory}
+          items={categoryListDetails?.categories}
           onAction={handleAction}
         >
-          {(item) => (
+          {(item: any) => (
             <DropdownItem
               className={`w-full ${
-                jobCategorySelected === item.key ? "bg-blue-500 text-white" : ""
+                jobCategorySelected === item?.key
+                  ? "bg-blue-500 text-white"
+                  : ""
               }`}
-              key={item.key}
+              key={item?.key}
             >
-              {item.label}
+              {item?.label}
             </DropdownItem>
           )}
         </DropdownMenu>
