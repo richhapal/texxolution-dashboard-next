@@ -6,7 +6,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { PlusIcon, MinusIcon, InfoIcon, XIcon } from "lucide-react";
 import TinyMceTextEditor from "./tinyMceEditor";
-
 import {
   useAddNewPostMutation,
   useGetAllJobCategoryTypeListQuery,
@@ -107,7 +106,7 @@ export default function JobForm({
   useEffect(() => {
     if (addData || updateData) {
       toast.success(
-        jobCategory && postNameSlug ? "Job Updated" : "Job Created",
+        jobCategoryName && postNameSlug ? "Job Updated" : "Job Created",
         {
           position: "top-right",
           autoClose: 5000,
