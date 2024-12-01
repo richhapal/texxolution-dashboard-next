@@ -26,6 +26,7 @@ import { ChevronDownIcon, PlusIcon } from "lucide-react";
 import {
   useGetAllCategoryListQuery,
   useAddNewCategoryMutation,
+  useGetClearCategoryListCacheQuery,
 } from "@/_lib/rtkQuery/listRtkQuery";
 
 type ListType = {
@@ -42,6 +43,16 @@ export default function CategoryList() {
   const [newLabel, setNewLabel] = useState("");
   const [newKey, setNewKey] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [clearCategoryCache, setClearCategoryCache] = useState(false);
+
+  const {
+    data: categoryListCache,
+    error: categoryListCacheError,
+    isLoading: categoryListCacheLoading,
+  } = useGetClearCategoryListCacheQuery(
+    {},
+    { skip: !clearCategoryCache, refetchOnFocus: true }
+  );
 
   const { data: categoryList, isLoading: isCategoryListLoading } =
     useGetAllCategoryListQuery({
@@ -50,6 +61,14 @@ export default function CategoryList() {
     });
 
   const [addNewCategory, { isLoading }] = useAddNewCategoryMutation();
+
+  const handleClearCategoryCache = () => {
+    setClearCategoryCache(true);
+  };
+
+  useEffect(() => {
+    setClearCategoryCache(false);
+  }, [categoryListCache, categoryListCacheError]);
 
   useEffect(() => {
     if (categoryList) {
@@ -86,7 +105,21 @@ export default function CategoryList() {
         <h1 className="text-2xl font-bold">Category List</h1>
         <div className="flex items-center space-x-2">
           <Button
-            // auto
+            disabled
+            color="success"
+            // onClick={handleClearCategoryCache}
+            // isLoading={categoryListCacheLoading}
+          >
+            Update Cache
+          </Button>
+          <Button
+            color="secondary"
+            onClick={handleClearCategoryCache}
+            isLoading={categoryListCacheLoading}
+          >
+            Clear Cache
+          </Button>
+          <Button
             color="primary"
             startContent={<PlusIcon className="h-5 w-5" />}
             onClick={onOpen}
