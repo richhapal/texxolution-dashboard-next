@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { RootWrapper } from "./rootWrapper";
 import Header from "@/_components/header/header";
+import Footer from "@/_components/footer/footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -30,6 +31,7 @@ const RootLayout = ({ children }: RootLayoutProps): JSX.Element => {
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Header />
         <RootWrapper>{children}</RootWrapper>
+        <Footer />
       </body>
     </html>
   );

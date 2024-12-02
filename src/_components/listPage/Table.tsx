@@ -8,6 +8,7 @@ import {
   TableCell,
   Pagination,
   getKeyValue,
+  Button,
 } from "@nextui-org/react";
 import { PencilSquareIcon, EyeIcon } from "@heroicons/react/24/outline"; // Import icons for Edit and Preview
 
@@ -16,6 +17,7 @@ import {
   ListDataType,
   isProdEnviroment,
 } from "../../_lib/utils/utils";
+import { useLazyGetClearJobDetailsCacheQuery } from "@/_lib/rtkQuery/listRtkQuery";
 
 export default function JobTable({
   data,
@@ -30,6 +32,20 @@ export default function JobTable({
 }) {
   // const rowsPerPage = 10;
   const totalPage = data.pagination.totalPages;
+
+  const [clearJobDetailsCache, { isLoading }] =
+    useLazyGetClearJobDetailsCacheQuery({});
+
+  const handleClearJobDetailsCache = async (
+    jobCategory: string,
+    postName: string
+  ) => {
+    try {
+      await clearJobDetailsCache({ jobCategory, postName });
+    } catch (err) {
+      console.error("Error clearing cache of job details:", err);
+    }
+  };
 
   const handleRenderCell = (item: any, columnKey: string) => {
     const value = getKeyValue(item, columnKey);
@@ -56,6 +72,18 @@ export default function JobTable({
             >
               <EyeIcon className="w-5 h-5 hover:text-blue-600" />
             </a>
+            <Button
+              disabled={isLoading}
+              isLoading={isLoading}
+              size="sm"
+              variant="ghost"
+              onClick={() => {
+                handleClearJobDetailsCache(item?.jobCategory, item?.url);
+              }}
+            >
+              {" "}
+              Clear Cache
+            </Button>
           </div>
         </div>
       );
@@ -81,7 +109,7 @@ export default function JobTable({
         </div>
       }
       classNames={{
-        wrapper: "min-h-[222px]",
+        wrapper: "min-h-[222px] mt-10",
       }}
     >
       <TableHeader>
