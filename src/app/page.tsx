@@ -7,7 +7,7 @@ import { FolderIcon } from "lucide-react";
 
 const pages = [
   { name: "Category List", path: "/category-list" },
-  { name: "List", path: "/list" },
+  { name: "Job List by Category", path: "/list" },
   { name: "Add New Job", path: "/add" },
   // Add more pages here as needed
 ];
