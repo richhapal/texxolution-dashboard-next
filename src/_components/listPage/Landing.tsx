@@ -2,6 +2,7 @@
 import {
   useGetAllJobCategoryTypeListCachedQuery,
   useGetAllListByCategoryQuery,
+  useLazyGetClearCategoryDetailsCacheClearPublishJobQuery,
 } from "@/_lib/rtkQuery/listRtkQuery";
 import Header from "../genericComponents/header";
 import { Key, useState } from "react";
@@ -56,8 +57,33 @@ const ListLanding = () => {
     }
   };
 
+  const [clearJobDetailsCache, { isFetching: isClearingCache }] =
+    useLazyGetClearCategoryDetailsCacheClearPublishJobQuery({});
+
+  const handleClearJobDetailsCache = async () => {
+    if (!jobCategorySelected) return;
+    try {
+      await clearJobDetailsCache({ jobCategory: jobCategorySelected });
+    } catch (err) {
+      console.error("Error clearing cache of job details:", err);
+    }
+  };
+
   return (
     <div className="p-5">
+      <div className="my-2">
+        {jobCategorySelected && (
+          <Button
+            color="warning"
+            variant="solid"
+            isLoading={isClearingCache}
+            disabled={isClearingCache}
+            onClick={handleClearJobDetailsCache}
+          >
+            Clear Job Details Cache
+          </Button>
+        )}
+      </div>
       <Dropdown isDisabled={isLoading}>
         <DropdownTrigger>
           <Button className="w-full" variant="bordered">

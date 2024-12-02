@@ -129,6 +129,14 @@ export const listApi = createApi({
         };
       },
     }),
+    getClearCategoryDetailsCacheClearPublishJob: builder.query<any, any>({
+      query: (arg: any) => {
+        return {
+          url: "/v1/clear-cache/clear-cateogry-details-cache",
+          params: { jobCategory: arg?.jobCategory, postName: arg.postName },
+        };
+      },
+    }),
   }),
 });
 
@@ -145,4 +153,5 @@ export const {
   useGetClearCategoryListCacheQuery,
   useGetAllJobCategoryTypeListCachedQuery,
   useLazyGetClearJobDetailsCacheQuery,
+  useLazyGetClearCategoryDetailsCacheClearPublishJobQuery,
 } = listApi;
