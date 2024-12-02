@@ -23,8 +23,8 @@ export default function NotFound() {
         Page Not Found
       </h1>
       <p className="text-xl text-gray-600 text-center mb-8 max-w-md">
-        Oops! The page you're looking for seems to have floated away. Let's
-        bring you back to solid ground.
+        {`Oops! The page you're looking for seems to have floated away. Let's
+        bring you back to solid ground.`}
       </p>
       <div className="flex flex-col sm:flex-row gap-4">
         <Link
