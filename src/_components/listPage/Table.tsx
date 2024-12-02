@@ -33,7 +33,7 @@ export default function JobTable({
   // const rowsPerPage = 10;
   const totalPage = data.pagination.totalPages;
 
-  const [clearJobDetailsCache, { isLoading }] =
+  const [clearJobDetailsCache, { isFetching }] =
     useLazyGetClearJobDetailsCacheQuery({});
 
   const handleClearJobDetailsCache = async (
@@ -73,8 +73,8 @@ export default function JobTable({
               <EyeIcon className="w-5 h-5 hover:text-blue-600" />
             </a>
             <Button
-              disabled={isLoading}
-              isLoading={isLoading}
+              disabled={isFetching}
+              isLoading={isFetching}
               size="sm"
               variant="ghost"
               onClick={() => {
