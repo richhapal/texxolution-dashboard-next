@@ -107,10 +107,25 @@ export const listApi = createApi({
         };
       },
     }),
+    getAllJobCategoryTypeListCached: builder.query<any, any>({
+      query: () => {
+        return {
+          url: "/v1/prod/get-cached-category-list",
+        };
+      },
+    }),
     getClearCategoryListCache: builder.query<any, any>({
       query: () => {
         return {
           url: "/v1/clear-cache/clear-category-list-cache",
+        };
+      },
+    }),
+    getClearJobDetailsCache: builder.query<any, any>({
+      query: (arg: any) => {
+        return {
+          url: "/v1/clear-cache/clear-job-details-cache",
+          params: { jobCategory: arg?.jobCategory, postName: arg.postName },
         };
       },
     }),
@@ -128,4 +143,6 @@ export const {
   useAddNewCategoryMutation,
   useGetAllJobCategoryTypeListQuery,
   useGetClearCategoryListCacheQuery,
+  useGetAllJobCategoryTypeListCachedQuery,
+  useLazyGetClearJobDetailsCacheQuery,
 } = listApi;

@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 
 const JobList: React.FC = () => {
   return (
-    <>
+    <div className="min-h-[calc(100vh-10px)]">
       <ListLanding />
-    </>
+    </div>
   );
 };
 

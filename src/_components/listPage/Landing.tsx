@@ -1,6 +1,6 @@
 "use client";
 import {
-  useGetAllJobCategoryTypeListQuery,
+  useGetAllJobCategoryTypeListCachedQuery,
   useGetAllListByCategoryQuery,
 } from "@/_lib/rtkQuery/listRtkQuery";
 import Header from "../genericComponents/header";
@@ -14,6 +14,7 @@ import {
   DropdownTrigger,
 } from "@nextui-org/react";
 import JobTable from "./Table";
+import NoContentFound from "../genericComponents/noContentFound";
 
 type ListDataType = {
   createdAt: string;
@@ -41,12 +42,14 @@ const ListLanding = () => {
   );
 
   const { data: categoryListDetails, isLoading } =
-    useGetAllJobCategoryTypeListQuery({});
+    useGetAllJobCategoryTypeListCachedQuery({});
+  console.log({ categoryListDetails });
 
   const handleAction = (key: Key) => {
-    const selectedItem = categoryListDetails?.categories.find(
-      (item: any) => item.key === (key as string)
-    );
+    const selectedItem = [
+      ...(categoryListDetails?.categories ?? []),
+      ...(categoryListDetails?.data ?? []),
+    ].find((item: any) => item.key === (key as string));
     if (selectedItem) {
       setJobCategorySelected(selectedItem.key);
       setJobCategorySelectedLabel(selectedItem.label);
@@ -64,7 +67,9 @@ const ListLanding = () => {
         <DropdownMenu
           className="h-[300px] overflow-auto scrollbar-hide py-5 w-full"
           aria-label="Dynamic Actions"
-          items={categoryListDetails?.categories}
+          items={
+            categoryListDetails?.categories ?? categoryListDetails?.data ?? []
+          }
           onAction={handleAction}
         >
           {(item: any) => (
@@ -81,7 +86,7 @@ const ListLanding = () => {
           )}
         </DropdownMenu>
       </Dropdown>
-      <Divider className="my-8" />
+      {/* <Divider className="my-8" /> */}
       {data && data.data.length > 0 ? (
         <JobTable
           data={data}
@@ -90,7 +95,9 @@ const ListLanding = () => {
           jobCategorySelected={jobCategorySelected}
         />
       ) : (
-        <div>Nothing</div>
+        <div>
+          <NoContentFound />
+        </div>
       )}
     </div>
   );
