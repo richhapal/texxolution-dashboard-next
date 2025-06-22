@@ -1,15 +1,55 @@
 "use client";
 
 import React from "react";
-import { Card, CardBody, CardFooter, Button } from "@nextui-org/react";
+import { Card, CardBody, CardFooter, Button, CardHeader } from "@heroui/react";
 import { useRouter } from "next/navigation";
-import { FolderIcon } from "lucide-react";
+import {
+  FolderIcon,
+  List,
+  Menu,
+  ScrollText,
+  Settings2,
+  UsersRound,
+  KeyRound as UserLock,
+} from "lucide-react";
+import MenuIcon from "@/_lib/svgIcons/menuIcon";
+import OrderListIcon from "@/_lib/svgIcons/orderList";
+import UserIcon from "@/_lib/svgIcons/user";
+import SettingIcon from "@/_lib/svgIcons/setting";
+import KeyIcon from "@/_lib/svgIcons/keyIcon";
+import Link from "next/link";
 
 const pages = [
-  { name: "Category List", path: "/category-list" },
-  { name: "Job List by Category", path: "/job-list" },
-  { name: "Add New Job", path: "/add" },
-  // Add more pages here as needed
+  {
+    name: "Product List",
+    path: "/category-list",
+    description: "Manage your product catalog",
+    icon: <MenuIcon />,
+  },
+  {
+    name: "Order List",
+    path: "/job-list",
+    description: "Track and manage customer orders",
+    icon: <OrderListIcon />,
+  },
+  {
+    name: "Customer List",
+    path: "/add",
+    description: "View and manage customer information",
+    icon: <UserIcon />,
+  },
+  {
+    name: "Setting",
+    path: "/setting",
+    description: "Configure your store settings",
+    icon: <SettingIcon />,
+  },
+  {
+    name: "Permissions",
+    path: "/permissions",
+    description: "Manage user permissions",
+    icon: <KeyIcon />,
+  },
 ];
 
 export default function PageDirectory() {
@@ -17,27 +57,31 @@ export default function PageDirectory() {
 
   return (
     <div className="container mx-auto p-6">
-      <h1 className="text-2xl font-bold mb-6">Page Directory</h1>
+      <h1 className="text-2xl font-bold mb-6">Dashboard</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {pages.map((page) => (
-          <Card
-            key={page.path}
-            className="hover:shadow-lg transition-shadow duration-200"
-          >
-            <CardBody className="flex items-center justify-center">
-              <FolderIcon className="w-12 h-12 text-primary" />
-            </CardBody>
-            <CardFooter className="flex flex-col items-center">
-              <h2 className="text-lg font-semibold mb-2">{page.name}</h2>
-              <Button
-                color="primary"
-                variant="flat"
-                onPress={() => router.push(page.path)}
-              >
-                Open
-              </Button>
-            </CardFooter>
-          </Card>
+          <Link key={page.path} href={page.path} className="no-underline">
+            <Card
+              key={page.path}
+              className="hover:shadow-lg transition-shadow duration-200 cursor-pointer"
+            >
+              <CardHeader className="">
+                {page.icon ? (
+                  React.cloneElement(page.icon, {
+                    className: "",
+                  })
+                ) : (
+                  <FolderIcon className="" />
+                )}
+              </CardHeader>
+              <CardFooter className="flex flex-col items-start">
+                <h2 className="text-base font-semibold mb-2">{page.name}</h2>
+                <div className="text-[#6B7582] text-sm font-normal">
+                  {page.description}
+                </div>
+              </CardFooter>
+            </Card>
+          </Link>
         ))}
       </div>
     </div>

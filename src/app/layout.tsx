@@ -30,7 +30,9 @@ const RootLayout = ({ children }: RootLayoutProps): JSX.Element => {
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Header />
-        <RootWrapper>{children}</RootWrapper>
+        <div className="min-h-[calc(100vh-115px)]">
+          <RootWrapper>{children}</RootWrapper>
+        </div>
         <Footer />
       </body>
     </html>

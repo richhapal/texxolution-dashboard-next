@@ -13,7 +13,7 @@ import {
   useUpdateJobPostMutation,
 } from "@/_lib/rtkQuery/listRtkQuery";
 import { Bounce, toast } from "react-toastify";
-import { Button } from "@nextui-org/react";
+import { Button } from "@heroui/react";
 import JobDataType from "@/dataType/getJobData";
 
 const formSchema = z.object({

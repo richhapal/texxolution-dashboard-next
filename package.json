@@ -1,5 +1,5 @@
 {
-  "name": "freejobalert-next-dashboard",
+  "name": "texxolution-dashboard-next",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
+    "@heroui/react": "^2.7.11",
     "@hookform/resolvers": "^3.9.1",
-    "@nextui-org/react": "^2.4.8",
     "@reduxjs/toolkit": "^2.2.7",
     "@tinymce/tinymce-react": "^5.1.1",
     "framer-motion": "^11.9.0",

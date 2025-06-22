@@ -21,7 +21,7 @@ import {
   ModalFooter,
   Input,
   useDisclosure,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import { ChevronDownIcon, PlusIcon } from "lucide-react";
 import {
   useGetAllCategoryListQuery,

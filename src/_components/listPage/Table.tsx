@@ -9,7 +9,7 @@ import {
   Pagination,
   getKeyValue,
   Button,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import { PencilSquareIcon, EyeIcon } from "@heroicons/react/24/outline"; // Import icons for Edit and Preview
 
 import {

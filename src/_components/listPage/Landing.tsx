@@ -13,7 +13,7 @@ import {
   DropdownItem,
   DropdownMenu,
   DropdownTrigger,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import JobTable from "./Table";
 import NoContentFound from "../genericComponents/noContentFound";
 
