@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import "react-toastify/dist/ReactToastify.css";
 import { RootWrapper } from "./rootWrapper";
 import Header from "@/_components/header/header";
 import Footer from "@/_components/footer/footer";
 import AuthWrapper from "./authWrapper";
+import { ToastContainer } from "react-toastify";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -37,6 +39,18 @@ const RootLayout = ({ children }: RootLayoutProps): JSX.Element => {
             <Footer />
           </AuthWrapper>
         </RootWrapper>
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
       </body>
     </html>
   );

@@ -119,6 +119,11 @@ export default function ImageUploadPage() {
           }
         } catch (error: any) {
           console.error("Upload failed:", error);
+          if (error?.status === 401) {
+            alert(
+              "You don't have permission to upload images. Please contact your super admin."
+            );
+          }
           setSelectedImages((prev) =>
             prev.map((img) =>
               img.id === image.id
@@ -201,6 +206,11 @@ export default function ImageUploadPage() {
         );
       }
     } catch (error: any) {
+      if (error?.status === 401) {
+        alert(
+          "You don't have permission to upload images. Please contact your super admin."
+        );
+      }
       setSelectedImages((prev) =>
         prev.map((img) =>
           img.id === image.id

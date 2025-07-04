@@ -6,15 +6,27 @@ import { listApi } from "../rtkQuery/listRtkQuery";
 import { authApi } from "../rtkQuery/authRTKQuery";
 import { uploadApi } from "../rtkQuery/uploadRTKQuery";
 import { productDashboardApi } from "../rtkQuery/productDashboardRTKQuery";
+import { purchaseApi } from "../rtkQuery/purchaseRTKQuery";
 
 export const store = configureStore({
   reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware()
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [
+          // Ignore these action types
+          "persist/PERSIST",
+          "persist/REHYDRATE",
+          "persist/REGISTER",
+        ],
+        ignoredPaths: ["purchaseApi.mutations.exportPurchases"],
+      },
+    })
       .concat(listApi.middleware)
       .concat(authApi.middleware)
       .concat(uploadApi.middleware)
-      .concat(productDashboardApi.middleware),
+      .concat(productDashboardApi.middleware)
+      .concat(purchaseApi.middleware),
 });
 
 // Types for dispatch and state

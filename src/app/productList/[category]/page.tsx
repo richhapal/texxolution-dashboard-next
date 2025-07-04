@@ -22,6 +22,7 @@ import {
 import { useRouter, useParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
+import { toast } from "react-toastify";
 import {
   ArrowLeft,
   Search,
@@ -41,7 +42,9 @@ import {
 } from "@/_lib/rtkQuery/productDashboardRTKQuery";
 import ProductViewModal from "@/_components/genericComponents/ProductViewModal";
 import SafeImage from "@/_components/genericComponents/SafeImage";
+import PermissionDenied from "@/_components/genericComponents/PermissionDenied";
 import { productCategoryMapping } from "@/_lib/utils/utils";
+import { is401Error, handleAPIError } from "@/_lib/utils/errorUtils";
 
 export default function CategoryDetailPage() {
   const router = useRouter();
@@ -114,10 +117,10 @@ export default function CategoryDetailPage() {
       setShowDeleteConfirm(false);
       setProductToDelete(null);
 
-      // Optionally show success message
-    } catch (error) {
-      console.error("Failed to delete product:", error);
-      // Optionally show error message
+      // Show success message
+      toast.success("Product deleted successfully!");
+    } catch (error: any) {
+      handleAPIError(error, toast);
     }
   };
 
@@ -162,14 +165,13 @@ export default function CategoryDetailPage() {
       // Force refetch when parameters change
       refetchOnMountOrArgChange: true,
     }
-  );
-
-  // Only log on client side to prevent hydration issues
+  ); // Only log on client side to prevent hydration issues and handle errors
   useEffect(() => {
-    if (error) {
+    if (error && isClient) {
       console.log("error", error);
+      handleAPIError(error, toast);
     }
-  }, [error]);
+  }, [error, isClient]);
 
   // Debug pagination
   useEffect(() => {
@@ -183,6 +185,18 @@ export default function CategoryDetailPage() {
     if (!productsData?.data || !Array.isArray(productsData.data)) return [];
     return productsData.data; // Show exactly what API returns
   }, [productsData?.data]);
+
+  // Handle 401 error
+  if (is401Error(error)) {
+    return (
+      <div className="container mx-auto p-6">
+        <PermissionDenied
+          message="You don't have permission to view products in this category. Please contact your super admin."
+          onRetry={() => refetch()}
+        />
+      </div>
+    );
+  }
 
   // Loading skeleton component
   const ProductCardSkeleton = () => (

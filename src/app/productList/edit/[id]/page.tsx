@@ -4,9 +4,12 @@ import React from "react";
 import { Card, CardBody, CardHeader, Button, Spinner } from "@heroui/react";
 import { useRouter, useParams, useSearchParams } from "next/navigation";
 import Link from "next/link";
+import { toast } from "react-toastify";
 import { ArrowLeft, AlertCircle } from "lucide-react";
 import { useGetProductByIdQuery } from "@/_lib/rtkQuery/productDashboardRTKQuery";
 import ProductForm from "@/_components/genericComponents/ProductForm";
+import PermissionDenied from "@/_components/genericComponents/PermissionDenied";
+import { is401Error, handleAPIError } from "@/_lib/utils/errorUtils";
 
 export default function EditProductPage() {
   const router = useRouter();
@@ -20,10 +23,38 @@ export default function EditProductPage() {
     isLoading,
     error,
     isSuccess,
+    refetch,
   } = useGetProductByIdQuery(
     { id: id as string, category: category || "" },
     { skip: !id || !category }
   );
+
+  // Handle API errors with toast notifications
+  React.useEffect(() => {
+    if (error) {
+      handleAPIError(error, toast);
+    }
+  }, [error]);
+
+  // Handle 401 error
+  if (is401Error(error)) {
+    return (
+      <div className="container mx-auto p-6">
+        <div className="flex items-center gap-4 mb-6">
+          <Link href={category ? `/productList/${category}` : "/productList"}>
+            <Button variant="light" isIconOnly>
+              <ArrowLeft className="w-4 h-4" />
+            </Button>
+          </Link>
+          <h1 className="text-2xl font-bold">Edit Product</h1>
+        </div>
+        <PermissionDenied
+          message="You don't have permission to edit products. Please contact your super admin."
+          onRetry={() => refetch()}
+        />
+      </div>
+    );
+  }
 
   const handleSuccess = () => {
     // Navigate back to the product list

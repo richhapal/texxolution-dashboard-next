@@ -16,6 +16,7 @@ import {
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import SafeImage from "@/_components/genericComponents/SafeImage";
+import PermissionDenied from "@/_components/genericComponents/PermissionDenied";
 import { ArrowLeft, Plus, X, Save, AlertCircle } from "lucide-react";
 import {
   useAddProductMutation,
@@ -306,8 +307,14 @@ export default function ProductForm({
       } else {
         router.push("/productList");
       }
-    } catch (err) {
-      console.error(`Failed to ${mode} product:`, err);
+    } catch (err: any) {
+      if (err?.status === 401) {
+        alert(
+          "You don't have permission to save product data. Please contact your super admin."
+        );
+      } else {
+        console.error(`Failed to ${mode} product:`, err);
+      }
     }
   };
 

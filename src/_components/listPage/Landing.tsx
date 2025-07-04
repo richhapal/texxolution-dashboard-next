@@ -5,6 +5,7 @@ import {
   useLazyGetClearCategoryDetailsCacheClearPublishJobQuery,
 } from "@/_lib/rtkQuery/listRtkQuery";
 import Header from "../genericComponents/header";
+import PermissionDenied from "../genericComponents/PermissionDenied";
 import { Key, useState } from "react";
 import {
   Button,
@@ -34,7 +35,11 @@ const ListLanding = () => {
   const [jobCategorySelectedLabel, setJobCategorySelectedLabel] =
     useState<string>("");
   const [page, setPage] = useState(1);
-  const { data } = useGetAllListByCategoryQuery(
+  const {
+    data,
+    error: jobListError,
+    refetch: refetchJobList,
+  } = useGetAllListByCategoryQuery(
     {
       jobCategory: jobCategorySelected,
       pageNo: page,
@@ -42,8 +47,38 @@ const ListLanding = () => {
     { skip: !jobCategorySelected }
   );
 
-  const { data: categoryListDetails, isLoading } =
-    useGetAllJobCategoryTypeListCachedQuery({});
+  const {
+    data: categoryListDetails,
+    isLoading,
+    error: categoryError,
+    refetch: refetchCategories,
+  } = useGetAllJobCategoryTypeListCachedQuery({});
+
+  const [clearJobDetailsCache, { isFetching: isClearingCache }] =
+    useLazyGetClearCategoryDetailsCacheClearPublishJobQuery({});
+
+  // Handle 401 errors
+  if (
+    categoryError &&
+    "status" in categoryError &&
+    categoryError.status === 401
+  ) {
+    return (
+      <PermissionDenied
+        message="You don't have permission to view job categories. Please contact your super admin."
+        onRetry={() => refetchCategories()}
+      />
+    );
+  }
+
+  if (jobListError && "status" in jobListError && jobListError.status === 401) {
+    return (
+      <PermissionDenied
+        message="You don't have permission to view job listings. Please contact your super admin."
+        onRetry={() => refetchJobList()}
+      />
+    );
+  }
   console.log({ categoryListDetails });
 
   const handleAction = (key: Key) => {
@@ -57,15 +92,18 @@ const ListLanding = () => {
     }
   };
 
-  const [clearJobDetailsCache, { isFetching: isClearingCache }] =
-    useLazyGetClearCategoryDetailsCacheClearPublishJobQuery({});
-
   const handleClearJobDetailsCache = async () => {
     if (!jobCategorySelected) return;
     try {
       await clearJobDetailsCache({ jobCategory: jobCategorySelected });
-    } catch (err) {
-      console.error("Error clearing cache of job details:", err);
+    } catch (err: any) {
+      if (err?.status === 401) {
+        alert(
+          "You don't have permission to clear cache. Please contact your super admin."
+        );
+      } else {
+        console.error("Error clearing cache of job details:", err);
+      }
     }
   };
 

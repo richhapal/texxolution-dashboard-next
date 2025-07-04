@@ -4,6 +4,7 @@ import React from "react";
 import { Card, CardBody, CardHeader, Badge, Button } from "@heroui/react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { toast } from "react-toastify";
 import {
   Shirt,
   Scissors,
@@ -20,10 +21,12 @@ import {
   Plus,
 } from "lucide-react";
 import { useGetProductSummaryQuery } from "@/_lib/rtkQuery/productDashboardRTKQuery";
+import PermissionDenied from "@/_components/genericComponents/PermissionDenied";
 import {
   StatCardSkeleton,
   CategoryCardSkeleton,
 } from "@/_components/genericComponents/SkeletonCard";
+import { is401Error, handleAPIError } from "@/_lib/utils/errorUtils";
 
 // Category configuration for display
 const categoryConfig: Record<
@@ -137,6 +140,7 @@ export default function ProductListPage() {
     isLoading,
     isError,
     error,
+    refetch,
   } = useGetProductSummaryQuery();
 
   // Transform API data to match our category structure
@@ -167,6 +171,28 @@ export default function ProductListPage() {
       .sort((a, b) => b.itemCount - a.itemCount); // Sort by item count descending
   }, [productSummaryData]);
 
+  // Handle API errors with toast notifications
+  React.useEffect(() => {
+    if (isError && error) {
+      handleAPIError(error, toast);
+    }
+  }, [isError, error]);
+
+  // Handle 401 error
+  if (is401Error(error)) {
+    return (
+      <div className="container mx-auto p-6">
+        <div className="flex justify-between items-center mb-6">
+          <h1 className="text-2xl font-bold">Product Categories</h1>
+        </div>
+        <PermissionDenied
+          message="You don't have permission to view product data. Please contact your super admin."
+          onRetry={() => refetch()}
+        />
+      </div>
+    );
+  }
+
   return (
     <div className="container mx-auto p-6">
       {/* Header */}
@@ -187,25 +213,6 @@ export default function ProductListPage() {
           </Link>
         </div>
       </div>
-
-      {/* Error State */}
-      {isError && (
-        <div className="mb-8 p-4 bg-red-50 border border-red-200 rounded-lg">
-          <div className="flex items-center">
-            <div className="text-red-600 mr-3">⚠️</div>
-            <div>
-              <h3 className="text-red-800 font-medium">
-                Failed to load dashboard data
-              </h3>
-              <p className="text-red-600 text-sm mt-1">
-                {error && "data" in error
-                  ? `Error: ${error.data || "Unknown error"}`
-                  : "Please try refreshing the page"}
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
