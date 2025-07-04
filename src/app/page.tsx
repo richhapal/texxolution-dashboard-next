@@ -22,21 +22,27 @@ import Link from "next/link";
 const pages = [
   {
     name: "Product List",
-    path: "/category-list",
+    path: "/productList",
     description: "Manage your product catalog",
     icon: <MenuIcon />,
   },
   {
     name: "Order List",
-    path: "/job-list",
+    path: "/orderList",
     description: "Track and manage customer orders",
     icon: <OrderListIcon />,
   },
   {
     name: "Customer List",
-    path: "/add",
+    path: "/customerList",
     description: "View and manage customer information",
     icon: <UserIcon />,
+  },
+  {
+    name: "Image Upload",
+    path: "/image-upload",
+    description: "Upload images to AWS S3",
+    icon: <FolderIcon />,
   },
   {
     name: "Setting",
@@ -63,7 +69,7 @@ export default function PageDirectory() {
           <Link key={page.path} href={page.path} className="no-underline">
             <Card
               key={page.path}
-              className="hover:shadow-lg transition-shadow duration-200 cursor-pointer"
+              className="hover:shadow-lg transition-shadow duration-200 cursor-pointer h-full"
             >
               <CardHeader className="">
                 {page.icon ? (

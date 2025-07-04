@@ -100,3 +100,18 @@ export default jobCategory;
 
 export const isProdEnviroment = () =>
   process.env.NEXT_PUBLIC_NODE === "production";
+
+export const productCategoryMapping: Record<string, string> = {
+  yarn: "Yarn",
+  garments: "Garments",
+  "home-decoration": "Home Decoration",
+  "textile-farming": "Textile Farming",
+  fibre: "Fibre",
+  "greige-fabric": "Greige Fabric",
+  denim: "Denim",
+  "finished-fabrics": "Finished Fabrics",
+  "trims-accessories": "Trims & Accessories",
+  packing: "Packing",
+  "dyes-chemicals": "Dyes & Chemicals",
+  machineries: "Machineries & Equipment",
+};

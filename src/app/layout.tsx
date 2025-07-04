@@ -4,6 +4,7 @@ import "./globals.css";
 import { RootWrapper } from "./rootWrapper";
 import Header from "@/_components/header/header";
 import Footer from "@/_components/footer/footer";
+import AuthWrapper from "./authWrapper";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,11 +30,13 @@ const RootLayout = ({ children }: RootLayoutProps): JSX.Element => {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Header />
-        <div className="min-h-[calc(100vh-115px)]">
-          <RootWrapper>{children}</RootWrapper>
-        </div>
-        <Footer />
+        <RootWrapper>
+          <AuthWrapper>
+            <Header />
+            <div className="min-h-[calc(100vh-117px)]">{children}</div>
+            <Footer />
+          </AuthWrapper>
+        </RootWrapper>
       </body>
     </html>
   );

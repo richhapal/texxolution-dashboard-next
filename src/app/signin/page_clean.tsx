@@ -6,7 +6,6 @@ import { useLoginMutation } from "@/_lib/rtkQuery/authRTKQuery";
 import { useDispatch } from "react-redux";
 import { loginStart, loginSuccess, loginFailure } from "@/_lib/store/userSlice";
 import { useRouter } from "next/navigation";
-import { encryptPassword, decryptPassword } from "@/_lib/utils/encryption";
 
 const SignInPage = () => {
   const [auth, setAuth] = useState({
@@ -23,13 +22,12 @@ const SignInPage = () => {
   // Load saved credentials on component mount
   useEffect(() => {
     const savedEmail = localStorage.getItem("savedEmail");
-    const savedEncryptedPassword = localStorage.getItem("savedPassword");
+    const savedPassword = localStorage.getItem("savedPassword");
 
-    if (savedEmail && savedEncryptedPassword) {
-      const decryptedPassword = decryptPassword(savedEncryptedPassword);
+    if (savedEmail && savedPassword) {
       setAuth({
         email: savedEmail,
-        password: decryptedPassword,
+        password: savedPassword,
       });
       setSaveCredentials(true);
     }
@@ -93,7 +91,7 @@ const SignInPage = () => {
       // Save credentials to localStorage if checkbox is checked
       if (saveCredentials) {
         localStorage.setItem("savedEmail", auth.email);
-        localStorage.setItem("savedPassword", encryptPassword(auth.password));
+        localStorage.setItem("savedPassword", auth.password);
       }
 
       // If user data is in response, use it; otherwise use basic user info
@@ -154,12 +152,7 @@ const SignInPage = () => {
           onValueChange={handleSaveCredentialsChange}
           className="mb-2"
         >
-          <div className="flex flex-col">
-            <span>Save credentials</span>
-            <span className="text-xs text-gray-500">
-              Are you sure you trust this device?
-            </span>
-          </div>
+          Save credentials
         </Checkbox>
 
         <Button
