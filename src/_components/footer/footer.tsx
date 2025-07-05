@@ -23,7 +23,7 @@ export default function Footer() {
     <footer className="w-full border-t bg-white py-4">
       <div className="w-full px-4">
         <div className="flex flex-wrap items-center justify-start gap-x-6 gap-y-2 text-sm text-muted-foreground">
-          <span className="font-medium">© {currentYear} frejobalert.com</span>
+          <span className="font-medium">© {currentYear} texxolution</span>
 
           {footerLinks.map((link) => (
             <Link
