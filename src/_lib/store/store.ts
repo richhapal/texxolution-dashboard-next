@@ -1,4 +1,3 @@
-// store.ts
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import rootReducer from "./rootReducer";
@@ -8,6 +7,7 @@ import { uploadApi } from "../rtkQuery/uploadRTKQuery";
 import { productDashboardApi } from "../rtkQuery/productDashboardRTKQuery";
 import { purchaseApi } from "../rtkQuery/purchaseRTKQuery";
 import { customerApi } from "../rtkQuery/customerRTKQuery";
+import { permissionsApi } from "../rtkQuery/permissionsRTKQuery";
 
 export const store = configureStore({
   reducer: rootReducer,
@@ -28,7 +28,8 @@ export const store = configureStore({
       .concat(uploadApi.middleware)
       .concat(productDashboardApi.middleware)
       .concat(purchaseApi.middleware)
-      .concat(customerApi.middleware),
+      .concat(customerApi.middleware)
+      .concat(permissionsApi.middleware),
 });
 
 // Types for dispatch and state

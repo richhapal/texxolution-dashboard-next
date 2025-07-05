@@ -1,11 +1,15 @@
 // Example usage of error utilities
 
+import { useEffect } from "react";
 import { toast } from "react-toastify";
 import {
   is401Error,
   handleAPIError,
   getErrorMessage,
 } from "@/_lib/utils/errorUtils";
+
+// Mock hook for example purposes
+const useSomeQuery = () => ({ data: null, error: null, isError: false });
 
 // Example 1: Simple error handling in useEffect
 const ExampleComponent = () => {
@@ -18,19 +22,22 @@ const ExampleComponent = () => {
   }, [isError, error]);
 
   // Handle 401 separately for UI
-  if (is401Error(error)) {
-    return <PermissionDenied onRetry={() => refetch()} />;
+  if (error && is401Error(error)) {
+    // Return JSX for PermissionDenied component
+    // return <PermissionDenied onRetry={() => refetch()} />;
+    return "Permission denied component would be returned here";
   }
 
-  return <div>...</div>;
+  return "Component content would be here";
 };
 
 // Example 2: Handling errors in mutation functions
-const handleSubmit = async () => {
+const handleSubmit = async (data: any) => {
   try {
-    await someMutation(data).unwrap();
+    // await someMutation(data).unwrap();
+    console.log("Operation would be performed with:", data);
     toast.success("Operation successful!");
-  } catch (error) {
+  } catch (error: any) {
     handleAPIError(error, toast); // Will show appropriate error message
   }
 };

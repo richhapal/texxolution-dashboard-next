@@ -32,11 +32,13 @@ import {
   ClipboardDocumentIcon,
 } from "@heroicons/react/24/outline";
 import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 import {
   useGetAdminUsersQuery,
   AdminUser,
 } from "@/_lib/rtkQuery/customerRTKQuery";
 import { formatDate } from "@/_lib/utils/utils";
+import { useAppSelector } from "@/_lib/store/store";
 
 // User type color mapping
 const userTypeColorMap: Record<
@@ -89,8 +91,12 @@ export default function AdminUsersTable({
   limit,
   onLimitChange,
 }: AdminUsersTableProps) {
+  const router = useRouter();
   const [selectedUser, setSelectedUser] = useState<AdminUser | null>(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  // Get current user to check permissions
+  const currentUser = useAppSelector((state) => state.userSlice.user);
 
   // RTK Query hooks for admin users
   const {
@@ -134,6 +140,15 @@ export default function AdminUsersTable({
       document.body.removeChild(textArea);
       toast.success(`${userName}'s ID copied to clipboard!`);
     }
+  };
+
+  // Handle manage permissions
+  const handleManagePermissions = (userItem: AdminUser) => {
+    if (currentUser?.userType !== "superadmin") {
+      toast.error("Only Super Admins can manage permissions");
+      return;
+    }
+    router.push(`/permissions?userId=${userItem._id}`);
   };
 
   // Handle search
@@ -270,14 +285,27 @@ export default function AdminUsersTable({
                     </div>
                   </TableCell>
                   <TableCell>
-                    <Button
-                      size="sm"
-                      variant="light"
-                      isIconOnly
-                      onPress={() => handleViewProfile(userItem)}
-                    >
-                      <EyeIcon className="w-4 h-4" />
-                    </Button>
+                    <div className="flex items-center gap-2">
+                      <Button
+                        size="sm"
+                        variant="light"
+                        isIconOnly
+                        onPress={() => handleViewProfile(userItem)}
+                      >
+                        <EyeIcon className="w-4 h-4" />
+                      </Button>
+                      {currentUser?.userType === "superadmin" && (
+                        <Button
+                          size="sm"
+                          variant="light"
+                          isIconOnly
+                          onPress={() => handleManagePermissions(userItem)}
+                          color="primary"
+                        >
+                          <KeyIcon className="w-4 h-4" />
+                        </Button>
+                      )}
+                    </div>
                   </TableCell>
                 </TableRow>
               ))}

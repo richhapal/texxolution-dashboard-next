@@ -205,21 +205,27 @@ export default function ProductListPage() {
       />
 
       {/* Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
         {/* Total Categories */}
         {isLoading ? (
           <StatCardSkeleton className="bg-gradient-to-r from-blue-500 to-blue-600" />
         ) : (
-          <Card className="bg-gradient-to-r from-blue-500 to-blue-600 text-white">
-            <CardBody className="p-4">
+          <Card className="relative overflow-hidden bg-gradient-to-br from-blue-500 via-blue-600 to-purple-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+            <div className="absolute -top-4 -right-4 w-24 h-24 bg-white/5 rounded-full blur-2xl"></div>
+            <CardBody className="p-6 relative z-10">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-blue-100 text-sm">Total Categories</p>
-                  <p className="text-2xl font-bold">
+                  <p className="text-blue-100 text-sm font-medium">
+                    Total Categories
+                  </p>
+                  <p className="text-3xl font-bold mt-1">
                     {productSummaryData?.data?.totalCategories || 0}
                   </p>
                 </div>
-                <Box className="w-8 h-8 opacity-80" />
+                <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
+                  <Box className="w-6 h-6 text-white/80" />
+                </div>
               </div>
             </CardBody>
           </Card>
@@ -229,35 +235,47 @@ export default function ProductListPage() {
         {isLoading ? (
           <StatCardSkeleton className="bg-gradient-to-r from-green-500 to-green-600" />
         ) : (
-          <Card className="bg-gradient-to-r from-green-500 to-green-600 text-white">
-            <CardBody className="p-4">
+          <Card className="relative overflow-hidden bg-gradient-to-br from-emerald-500 via-green-600 to-teal-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+            <div className="absolute -top-4 -right-4 w-24 h-24 bg-white/5 rounded-full blur-2xl"></div>
+            <CardBody className="p-6 relative z-10">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-green-100 text-sm">Total Products</p>
-                  <p className="text-2xl font-bold">
+                  <p className="text-green-100 text-sm font-medium">
+                    Total Products
+                  </p>
+                  <p className="text-3xl font-bold mt-1">
                     {productSummaryData?.data?.totalProducts || 0}
                   </p>
                 </div>
-                <Package className="w-8 h-8 opacity-80" />
+                <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
+                  <Package className="w-6 h-6 text-white/80" />
+                </div>
               </div>
             </CardBody>
           </Card>
         )}
 
-        {/* Active Categories (same as total for now) */}
+        {/* Active Categories */}
         {isLoading ? (
           <StatCardSkeleton className="bg-gradient-to-r from-purple-500 to-purple-600" />
         ) : (
-          <Card className="bg-gradient-to-r from-purple-500 to-purple-600 text-white">
-            <CardBody className="p-4">
+          <Card className="relative overflow-hidden bg-gradient-to-br from-purple-500 via-violet-600 to-pink-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+            <div className="absolute -top-4 -right-4 w-24 h-24 bg-white/5 rounded-full blur-2xl"></div>
+            <CardBody className="p-6 relative z-10">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-purple-100 text-sm">Active Categories</p>
-                  <p className="text-2xl font-bold">
+                  <p className="text-purple-100 text-sm font-medium">
+                    Active Categories
+                  </p>
+                  <p className="text-3xl font-bold mt-1">
                     {productSummaryData?.data?.totalCategories || 0}
                   </p>
                 </div>
-                <Layers className="w-8 h-8 opacity-80" />
+                <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
+                  <Layers className="w-6 h-6 text-white/80" />
+                </div>
               </div>
             </CardBody>
           </Card>
@@ -267,17 +285,23 @@ export default function ProductListPage() {
         {isLoading ? (
           <StatCardSkeleton className="bg-gradient-to-r from-orange-500 to-orange-600" />
         ) : (
-          <Card className="bg-gradient-to-r from-orange-500 to-orange-600 text-white">
-            <CardBody className="p-4">
+          <Card className="relative overflow-hidden bg-gradient-to-br from-orange-500 via-red-500 to-pink-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+            <div className="absolute -top-4 -right-4 w-24 h-24 bg-white/5 rounded-full blur-2xl"></div>
+            <CardBody className="p-6 relative z-10">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-orange-100 text-sm">Avg per Category</p>
-                  <p className="text-2xl font-bold">
+                  <p className="text-orange-100 text-sm font-medium">
+                    Avg per Category
+                  </p>
+                  <p className="text-3xl font-bold mt-1">
                     {productSummaryData?.data?.summary
                       ?.averageProductsPerCategory || "0"}
                   </p>
                 </div>
-                <Factory className="w-8 h-8 opacity-80" />
+                <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
+                  <Factory className="w-6 h-6 text-white/80" />
+                </div>
               </div>
             </CardBody>
           </Card>
@@ -311,7 +335,7 @@ export default function ProductListPage() {
       )}
 
       {/* Category Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         {isLoading ? (
           // Show skeleton loading state
           Array.from({ length: 8 }).map((_, index) => (
@@ -319,45 +343,152 @@ export default function ProductListPage() {
           ))
         ) : categoryData.length > 0 ? (
           // Show actual category data
-          categoryData.map((category) => (
+          categoryData.map((category, index) => (
             <Link
               key={category.id}
               href={category.path}
-              className="no-underline"
+              className="no-underline group"
             >
-              <Card className="hover:shadow-lg transition-all duration-300 cursor-pointer h-full hover:scale-105 border-0 shadow-md">
-                <CardHeader className="pb-2">
+              <Card
+                className={`
+                relative h-full transition-all duration-500 ease-out cursor-pointer
+                hover:shadow-2xl hover:-translate-y-2 border-0 
+                bg-gradient-to-br from-white via-gray-50/30 to-white
+                backdrop-blur-sm overflow-hidden
+                hover:shadow-${category.color}-500/20
+                ring-1 ring-gray-200/50 hover:ring-${category.color}-300/50
+                before:absolute before:inset-0 before:bg-gradient-to-br 
+                before:from-${category.color}-50/30 before:via-transparent before:to-${category.color}-50/10
+                before:opacity-0 before:transition-opacity before:duration-500 
+                hover:before:opacity-100
+              `}
+              >
+                {/* Decorative elements */}
+                <div className="absolute -top-8 -right-8 w-16 h-16 bg-gradient-to-br from-white/20 to-transparent rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute -bottom-8 -left-8 w-12 h-12 bg-gradient-to-br from-white/10 to-transparent rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+
+                {/* Top pattern */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-20"></div>
+
+                <CardHeader className="pb-4 relative z-10">
                   <div className="flex items-center justify-between w-full">
-                    <div className={`p-3 rounded-lg bg-${category.color}-100`}>
+                    {/* Icon with enhanced styling */}
+                    <div
+                      className={`
+                      relative p-4 rounded-2xl 
+                      bg-gradient-to-br from-${category.color}-100 to-${category.color}-200/70
+                      group-hover:scale-110 group-hover:rotate-3 
+                      transition-all duration-500 ease-out
+                      shadow-lg shadow-${category.color}-500/20
+                      ring-1 ring-${category.color}-200/50
+                      before:absolute before:inset-0 before:bg-gradient-to-br 
+                      before:from-white/20 before:to-transparent before:rounded-2xl
+                      before:opacity-0 before:transition-opacity before:duration-300
+                      group-hover:before:opacity-100
+                    `}
+                    >
+                      {/* Icon glow effect */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
                       {React.cloneElement(category.icon, {
-                        className: `w-8 h-8 text-${category.color}-600`,
+                        className: `w-8 h-8 text-${category.color}-700 relative z-10 drop-shadow-sm transition-all duration-300 group-hover:scale-105`,
                       })}
                     </div>
-                    <div className="text-right">
-                      <Badge color={category.color} variant="flat" size="sm">
+
+                    {/* Badge and stats */}
+                    <div className="text-right space-y-1">
+                      <Badge
+                        color={category.color}
+                        variant="flat"
+                        size="sm"
+                        className="group-hover:scale-105 transition-transform duration-300"
+                      >
                         {category.itemCount} items
                       </Badge>
-                      <p className="text-xs text-gray-500 mt-1">
-                        {category.percentage}
-                      </p>
+                      <div className="flex items-center gap-1 justify-end">
+                        <div
+                          className={`w-2 h-2 rounded-full bg-${category.color}-500 animate-pulse`}
+                        ></div>
+                        <p className="text-xs text-gray-500 font-medium">
+                          {category.percentage}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </CardHeader>
 
-                <CardBody className="pt-0">
-                  <div className="space-y-2">
-                    <h3 className="text-lg font-semibold text-gray-900 line-clamp-1">
+                <CardBody className="pt-0 relative z-10">
+                  <div className="space-y-3">
+                    <h3
+                      className={`
+                      text-lg font-bold text-gray-900 line-clamp-1 
+                      group-hover:text-${category.color}-700 
+                      transition-colors duration-300
+                    `}
+                    >
                       {category.name}
                     </h3>
-                    <p className="text-sm text-gray-600 line-clamp-2">
+                    <p className="text-sm text-gray-600 line-clamp-2 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
                       {category.description}
                     </p>
                   </div>
 
-                  <div className="mt-4 pt-4 border-t border-gray-100">
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-gray-500">View Products</span>
-                      <div className="w-5 h-5 text-gray-400">→</div>
+                  {/* Progress bar */}
+                  <div className="mt-4 mb-6">
+                    <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                      <div
+                        className={`h-2 bg-gradient-to-r from-${category.color}-500 to-${category.color}-600 rounded-full transition-all duration-1000 ease-out`}
+                        style={{
+                          width: `${Math.min(
+                            (category.itemCount /
+                              (categoryData[0]?.itemCount || 1)) *
+                              100,
+                            100
+                          )}%`,
+                          transform: "translateX(-100%)",
+                          animation: "slideIn 1s ease-out forwards",
+                        }}
+                      ></div>
+                    </div>
+                  </div>
+
+                  {/* Action section */}
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-100 group-hover:border-gray-200 transition-colors duration-300">
+                    <div className="flex items-center gap-2">
+                      <div className="flex space-x-1">
+                        <div
+                          className={`w-1 h-1 bg-${category.color}-400 rounded-full group-hover:w-2 transition-all duration-300`}
+                        ></div>
+                        <div
+                          className={`w-1 h-1 bg-${category.color}-300 rounded-full group-hover:w-2 transition-all duration-300 delay-75`}
+                        ></div>
+                        <div
+                          className={`w-1 h-1 bg-${category.color}-200 rounded-full group-hover:w-2 transition-all duration-300 delay-150`}
+                        ></div>
+                      </div>
+                      <span className="text-xs text-gray-500 font-medium">
+                        Explore
+                      </span>
+                    </div>
+
+                    <div
+                      className={`
+                      w-8 h-8 rounded-full 
+                      bg-gradient-to-br from-${category.color}-50 to-${category.color}-100
+                      flex items-center justify-center 
+                      group-hover:scale-110 group-hover:rotate-12 
+                      transition-all duration-300 
+                      shadow-sm group-hover:shadow-md
+                    `}
+                    >
+                      <div
+                        className={`
+                        w-4 h-4 text-${category.color}-600 font-bold
+                        group-hover:translate-x-0.5 transition-transform duration-300
+                      `}
+                      >
+                        →
+                      </div>
                     </div>
                   </div>
                 </CardBody>
@@ -366,14 +497,26 @@ export default function ProductListPage() {
           ))
         ) : (
           // Show empty state when no categories
-          <div className="col-span-full text-center py-12">
-            <Package className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-            <h3 className="text-lg font-medium text-gray-900 mb-2">
+          <div className="col-span-full text-center py-16">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full w-24 h-24 mx-auto blur-2xl opacity-50"></div>
+              <Package className="w-16 h-16 text-gray-300 mx-auto mb-4 relative z-10" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">
               No Categories Found
             </h3>
-            <p className="text-gray-500">
-              There are no product categories available at the moment.
+            <p className="text-gray-500 mb-6 max-w-md mx-auto">
+              There are no product categories available at the moment. Check
+              back later or contact support.
             </p>
+            <Button
+              color="primary"
+              variant="flat"
+              onClick={() => refetch()}
+              startContent={<Plus className="w-4 h-4" />}
+            >
+              Refresh Categories
+            </Button>
           </div>
         )}
       </div>

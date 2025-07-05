@@ -1,13 +1,16 @@
 import { useState, useEffect } from "react";
 
 // Custom hook to manage pagination limit with localStorage
-export function usePaginationLimit(defaultLimit: number = 10) {
+export function usePaginationLimit(
+  defaultLimit: number = 10,
+  storageKey: string = "customer-list-limit"
+) {
   const [limit, setLimit] = useState<number | null>(null);
 
   // Load limit from localStorage on component mount
   useEffect(() => {
     try {
-      const savedLimit = localStorage.getItem("customer-list-limit");
+      const savedLimit = localStorage.getItem(storageKey);
       if (savedLimit) {
         const parsedLimit = parseInt(savedLimit, 10);
         if (!isNaN(parsedLimit) && parsedLimit > 0) {
@@ -22,12 +25,12 @@ export function usePaginationLimit(defaultLimit: number = 10) {
       console.error("Error loading pagination limit from localStorage:", error);
       setLimit(defaultLimit);
     }
-  }, [defaultLimit]);
+  }, [defaultLimit, storageKey]);
 
   // Save limit to localStorage whenever it changes
   const updateLimit = (newLimit: number) => {
     try {
-      localStorage.setItem("customer-list-limit", newLimit.toString());
+      localStorage.setItem(storageKey, newLimit.toString());
       setLimit(newLimit);
     } catch (error) {
       console.error("Error saving pagination limit to localStorage:", error);
