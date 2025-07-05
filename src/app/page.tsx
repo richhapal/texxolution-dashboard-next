@@ -34,7 +34,7 @@ const pages = [
   },
   {
     name: "Customer List",
-    path: "/customerList",
+    path: "/customer-list",
     description: "View and manage customer information",
     icon: <UserIcon />,
   },

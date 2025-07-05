@@ -7,6 +7,7 @@ import { authApi } from "../rtkQuery/authRTKQuery";
 import { uploadApi } from "../rtkQuery/uploadRTKQuery";
 import { productDashboardApi } from "../rtkQuery/productDashboardRTKQuery";
 import { purchaseApi } from "../rtkQuery/purchaseRTKQuery";
+import { customerApi } from "../rtkQuery/customerRTKQuery";
 
 export const store = configureStore({
   reducer: rootReducer,
@@ -26,7 +27,8 @@ export const store = configureStore({
       .concat(authApi.middleware)
       .concat(uploadApi.middleware)
       .concat(productDashboardApi.middleware)
-      .concat(purchaseApi.middleware),
+      .concat(purchaseApi.middleware)
+      .concat(customerApi.middleware),
 });
 
 // Types for dispatch and state

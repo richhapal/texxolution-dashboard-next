@@ -3,6 +3,7 @@ import { listApi } from "../rtkQuery/listRtkQuery";
 import { uploadApi } from "../rtkQuery/uploadRTKQuery";
 import { productDashboardApi } from "../rtkQuery/productDashboardRTKQuery";
 import { purchaseApi } from "../rtkQuery/purchaseRTKQuery";
+import { customerApi } from "../rtkQuery/customerRTKQuery";
 import { listSlice } from "./listSlice";
 import { userSlice } from "./userSlice";
 
@@ -14,6 +15,7 @@ const rootReducer = {
   [uploadApi.reducerPath]: uploadApi.reducer,
   [productDashboardApi.reducerPath]: productDashboardApi.reducer,
   [purchaseApi.reducerPath]: purchaseApi.reducer,
+  [customerApi.reducerPath]: customerApi.reducer,
 };
 
 export default rootReducer;

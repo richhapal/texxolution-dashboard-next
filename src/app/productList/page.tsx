@@ -27,6 +27,8 @@ import {
   CategoryCardSkeleton,
 } from "@/_components/genericComponents/SkeletonCard";
 import { is401Error, handleAPIError } from "@/_lib/utils/errorUtils";
+import QuickActions from "@/_components/productList/QuickActions";
+import CategoryHeader from "@/_components/productList/CategoryHeader";
 
 // Category configuration for display
 const categoryConfig: Record<
@@ -196,23 +198,11 @@ export default function ProductListPage() {
   return (
     <div className="container mx-auto p-6">
       {/* Header */}
-      <div className="mb-8">
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">
-              Product Categories
-            </h1>
-            <p className="text-gray-600">
-              Manage your textile product inventory by category
-            </p>
-          </div>
-          <Link href="/productList/add">
-            <Button color="primary" startContent={<Plus className="w-4 h-4" />}>
-              Add Product
-            </Button>
-          </Link>
-        </div>
-      </div>
+      <CategoryHeader
+        totalCategories={productSummaryData?.data?.totalCategories}
+        totalProducts={productSummaryData?.data?.totalProducts}
+        isLoading={isLoading}
+      />
 
       {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
@@ -389,58 +379,7 @@ export default function ProductListPage() {
       </div>
 
       {/* Quick Actions */}
-      <div className="mt-12 p-6 bg-gray-50 rounded-lg">
-        <h2 className="text-xl font-semibold mb-4">Quick Actions</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <Card className="hover:shadow-md transition-shadow cursor-pointer">
-            <CardBody className="p-4">
-              <div className="flex items-center space-x-3">
-                <div className="p-2 bg-blue-100 rounded-lg">
-                  <Package className="w-5 h-5 text-blue-600" />
-                </div>
-                <div>
-                  <p className="font-medium">Add New Product</p>
-                  <p className="text-sm text-gray-600">
-                    Create a new product listing
-                  </p>
-                </div>
-              </div>
-            </CardBody>
-          </Card>
-
-          <Card className="hover:shadow-md transition-shadow cursor-pointer">
-            <CardBody className="p-4">
-              <div className="flex items-center space-x-3">
-                <div className="p-2 bg-green-100 rounded-lg">
-                  <Layers className="w-5 h-5 text-green-600" />
-                </div>
-                <div>
-                  <p className="font-medium">Manage Categories</p>
-                  <p className="text-sm text-gray-600">
-                    Edit category settings
-                  </p>
-                </div>
-              </div>
-            </CardBody>
-          </Card>
-
-          <Card className="hover:shadow-md transition-shadow cursor-pointer">
-            <CardBody className="p-4">
-              <div className="flex items-center space-x-3">
-                <div className="p-2 bg-purple-100 rounded-lg">
-                  <Settings className="w-5 h-5 text-purple-600" />
-                </div>
-                <div>
-                  <p className="font-medium">Bulk Operations</p>
-                  <p className="text-sm text-gray-600">
-                    Import/export products
-                  </p>
-                </div>
-              </div>
-            </CardBody>
-          </Card>
-        </div>
-      </div>
+      <QuickActions />
     </div>
   );
 }
