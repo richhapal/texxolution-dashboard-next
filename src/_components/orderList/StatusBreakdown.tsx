@@ -63,24 +63,33 @@ export default function StatusBreakdown() {
   }
 
   return (
-    <Card className="mb-6 shadow-sm">
-      <CardHeader>
-        <h3 className="text-lg font-semibold">Status Breakdown</h3>
+    <Card className="mb-6 shadow-sm hover:shadow-md transition-shadow duration-200">
+      <CardHeader className="pb-3">
+        <h3 className="text-base sm:text-lg font-semibold">Status Breakdown</h3>
       </CardHeader>
-      <CardBody>
-        <div className="flex flex-wrap gap-4">
+      <CardBody className="pt-0">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           {analyticsData.data.statusBreakdown.map((status) => (
-            <div key={status._id} className="flex items-center gap-2">
+            <div
+              key={status._id}
+              className="flex items-center gap-2 p-2 sm:p-3 bg-gray-50 rounded-lg"
+            >
               <Chip
                 color={statusColorMap[status._id] || "default"}
                 variant="flat"
                 size="sm"
+                className="flex-shrink-0"
               >
                 {status._id}
               </Chip>
-              <span className="text-sm text-gray-600">
-                {status.count} orders ({formatCurrency(status.revenue)})
-              </span>
+              <div className="flex-1 min-w-0">
+                <span className="text-xs sm:text-sm text-gray-600 block">
+                  {status.count} orders
+                </span>
+                <span className="text-xs sm:text-sm font-medium text-gray-900 block truncate">
+                  {formatCurrency(status.revenue)}
+                </span>
+              </div>
             </div>
           ))}
         </div>

@@ -101,17 +101,28 @@ export default function AnalyticsCards() {
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6">
       {analyticsCards.map((card, index) => (
-        <Card key={index} className="shadow-sm">
-          <CardBody className="p-4">
+        <Card
+          key={index}
+          className="shadow-sm hover:shadow-md transition-shadow duration-200"
+        >
+          <CardBody className="p-3 sm:p-4">
             <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm text-gray-600">{card.title}</p>
-                <p className="text-2xl font-semibold mt-1">{card.value}</p>
+              <div className="flex-1 min-w-0">
+                <p className="text-xs sm:text-sm text-gray-600 truncate">
+                  {card.title}
+                </p>
+                <p className="text-lg sm:text-xl lg:text-2xl font-semibold mt-1 text-gray-900 truncate">
+                  {card.value}
+                </p>
               </div>
-              <div className={`p-3 rounded-full bg-${card.color}-100`}>
-                {card.icon}
+              <div
+                className={`p-2 sm:p-3 rounded-full bg-${card.color}-100 flex-shrink-0 ml-2`}
+              >
+                <div className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700">
+                  {card.icon}
+                </div>
               </div>
             </div>
           </CardBody>

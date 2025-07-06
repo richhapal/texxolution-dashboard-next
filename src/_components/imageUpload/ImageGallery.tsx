@@ -94,15 +94,22 @@ const ImagePreviewModal: React.FC<ImagePreviewModalProps> = ({
   if (!image) return null;
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} size="3xl">
+    <Modal
+      isOpen={isOpen}
+      onClose={onClose}
+      size="3xl"
+      className="mx-3 sm:mx-auto"
+    >
       <ModalContent>
         <ModalHeader>
-          <div className="flex items-center justify-between w-full">
-            <div className="flex items-center space-x-2">
-              <ImageIcon className="w-5 h-5" />
-              <span>{image.fileName}</span>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between w-full gap-2 sm:gap-0">
+            <div className="flex items-center space-x-2 flex-1 min-w-0">
+              <ImageIcon className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+              <span className="truncate text-sm sm:text-base">
+                {image.fileName}
+              </span>
             </div>
-            <div className="flex items-center space-x-2">
+            <div className="flex flex-wrap items-center gap-2">
               <Chip size="sm" variant="flat" color="primary">
                 {formatFileSize(image.size)}
               </Chip>
@@ -114,19 +121,19 @@ const ImagePreviewModal: React.FC<ImagePreviewModalProps> = ({
         </ModalHeader>
         <ModalBody>
           <div className="flex justify-center mb-4">
-            <div className="relative max-w-full max-h-96">
+            <div className="relative max-w-full max-h-72 sm:max-h-96">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={processImageUrl(image.url)}
                 alt={image.fileName}
-                className="max-w-full max-h-96 object-contain rounded-lg"
+                className="max-w-full max-h-72 sm:max-h-96 object-contain rounded-lg"
               />
             </div>
           </div>
           <div className="space-y-4">
             <div>
-              <p className="text-sm font-medium mb-2">Image URL:</p>
-              <div className="flex items-center space-x-2">
+              <p className="text-xs sm:text-sm font-medium mb-2">Image URL:</p>
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
                 <Input
                   value={processImageUrl(image.url)}
                   readOnly
@@ -141,6 +148,7 @@ const ImagePreviewModal: React.FC<ImagePreviewModalProps> = ({
                     variant="flat"
                     isIconOnly
                     onClick={() => handleCopyUrl(processImageUrl(image.url))}
+                    className="w-full sm:w-auto min-h-[40px] touch-manipulation"
                   >
                     {copiedUrl === image.url ? (
                       <Check className="w-4 h-4 text-green-500" />
@@ -152,36 +160,44 @@ const ImagePreviewModal: React.FC<ImagePreviewModalProps> = ({
               </div>
             </div>
             <div>
-              <p className="text-sm font-medium mb-2">Full Path:</p>
+              <p className="text-xs sm:text-sm font-medium mb-2">Full Path:</p>
               <Input value={image.fullPath} readOnly size="sm" />
             </div>
           </div>
         </ModalBody>
-        <ModalFooter>
-          <Button variant="light" onPress={onClose}>
-            Close
-          </Button>
-          <Button
-            as="a"
-            href={processImageUrl(image.url)}
-            download={image.fileName}
-            color="primary"
-            variant="flat"
-            startContent={<Download className="w-4 h-4" />}
-          >
-            Download
-          </Button>
-          {userCanDelete && (
+        <ModalFooter className="flex-col sm:flex-row gap-2 sm:gap-0">
+          <div className="flex flex-col sm:flex-row w-full sm:w-auto gap-2 sm:gap-0 sm:space-x-2">
             <Button
-              color="danger"
-              variant="flat"
-              isLoading={isDeleting}
-              onClick={() => handleDelete(image.url)}
-              startContent={!isDeleting && <Trash2 className="w-4 h-4" />}
+              variant="light"
+              onPress={onClose}
+              className="w-full sm:w-auto min-h-[44px] touch-manipulation"
             >
-              Delete
+              Close
             </Button>
-          )}
+            <Button
+              as="a"
+              href={processImageUrl(image.url)}
+              download={image.fileName}
+              color="primary"
+              variant="flat"
+              startContent={<Download className="w-4 h-4" />}
+              className="w-full sm:w-auto min-h-[44px] touch-manipulation"
+            >
+              Download
+            </Button>
+            {userCanDelete && (
+              <Button
+                color="danger"
+                variant="flat"
+                isLoading={isDeleting}
+                onClick={() => handleDelete(image.url)}
+                startContent={!isDeleting && <Trash2 className="w-4 h-4" />}
+                className="w-full sm:w-auto min-h-[44px] touch-manipulation"
+              >
+                Delete
+              </Button>
+            )}
+          </div>
         </ModalFooter>
       </ModalContent>
     </Modal>
@@ -319,30 +335,39 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ onRefresh }) => {
   const environment = imagesData?.environment;
 
   return (
-    <div className="space-y-6">
-      {/* Header */}
+    <div className="space-y-4 sm:space-y-6">
+      {/* Header - Mobile Optimized */}
       <Card>
         <CardHeader>
-          <div className="flex items-center justify-between w-full">
-            <div>
-              <h2 className="text-2xl font-bold">Image Gallery</h2>
-              <div className="flex items-center space-x-4 mt-2">
-                <Badge color="primary" variant="flat">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between w-full gap-4 sm:gap-0">
+            <div className="flex-1 min-w-0">
+              <h2 className="text-xl sm:text-2xl font-bold">Image Gallery</h2>
+              <div className="flex flex-wrap items-center gap-2 mt-2">
+                <Badge
+                  color="primary"
+                  variant="flat"
+                  className="text-xs sm:text-sm"
+                >
                   Environment: {environment}
                 </Badge>
-                <Badge color="secondary" variant="flat">
+                <Badge
+                  color="secondary"
+                  variant="flat"
+                  className="text-xs sm:text-sm"
+                >
                   Total: {summary?.total || 0} images
                 </Badge>
               </div>
             </div>
-            <div className="flex items-center space-x-2">
+            <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
               {userCanDelete && selectedImages.size > 0 && (
                 <Button
                   color="danger"
                   variant="flat"
                   size="sm"
                   onClick={handleDeleteSelected}
-                  startContent={<Trash2 className="w-4 h-4" />}
+                  startContent={<Trash2 className="w-3 h-3 sm:w-4 sm:h-4" />}
+                  className="min-h-[36px] touch-manipulation text-xs sm:text-sm"
                 >
                   Delete Selected ({selectedImages.size})
                 </Button>
@@ -351,7 +376,8 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ onRefresh }) => {
                 variant="flat"
                 size="sm"
                 onClick={handleRefresh}
-                startContent={<RefreshCw className="w-4 h-4" />}
+                startContent={<RefreshCw className="w-3 h-3 sm:w-4 sm:h-4" />}
+                className="min-h-[36px] touch-manipulation text-xs sm:text-sm"
               >
                 Refresh
               </Button>
@@ -360,16 +386,18 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ onRefresh }) => {
         </CardHeader>
       </Card>
 
-      {/* Filters and Search */}
+      {/* Filters and Search - Mobile Optimized */}
       <Card>
-        <CardBody className="p-4">
-          <div className="flex flex-col md:flex-row gap-4">
+        <CardBody className="p-3 sm:p-4">
+          <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
             <div className="flex-1">
               <Input
                 placeholder="Search images..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 startContent={<Search className="w-4 h-4" />}
+                size="sm"
+                className="w-full"
               />
             </div>
             <Select
@@ -378,7 +406,8 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ onRefresh }) => {
               onSelectionChange={(keys) =>
                 setSortBy(Array.from(keys)[0] as any)
               }
-              className="w-full md:w-48"
+              className="w-full sm:w-48"
+              size="sm"
             >
               <SelectItem
                 key="date"
@@ -403,7 +432,7 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ onRefresh }) => {
         </CardBody>
       </Card>
 
-      {/* Tabs for different upload paths */}
+      {/* Tabs for different upload paths - Mobile Optimized */}
       <Card>
         <CardBody className="p-0">
           <Tabs
@@ -411,21 +440,27 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ onRefresh }) => {
             onSelectionChange={(key) => setSelectedTab(key as UploadPath)}
             variant="underlined"
             fullWidth
+            size="sm"
+            classNames={{
+              tabList: "gap-1 sm:gap-2 p-2 sm:p-3 overflow-x-auto",
+              tab: "px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm",
+              tabContent: "text-xs sm:text-sm font-medium",
+            }}
           >
             <Tab
               key="products"
               title={
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center space-x-1 sm:space-x-2">
                   <span>Products</span>
-                  <Chip size="sm" variant="flat">
+                  <Chip size="sm" variant="flat" className="text-xs">
                     {summary?.products || 0}
                   </Chip>
                 </div>
               }
             >
-              <div className="p-6">
+              <div className="p-3 sm:p-6">
                 {currentImages.length > 0 ? (
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4">
                     {currentImages.map((image) => (
                       <Card key={image.fileName} className="overflow-hidden">
                         <CardBody className="p-0">
@@ -452,22 +487,27 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ onRefresh }) => {
                                     e.stopPropagation();
                                     toggleImageSelection(image.fileName);
                                   }}
+                                  className="min-h-[32px] min-w-[32px] touch-manipulation"
                                 >
-                                  <Check className="w-4 h-4" />
+                                  <Check className="w-3 h-3 sm:w-4 sm:h-4" />
                                 </Button>
                               </div>
                             )}
                           </div>
-                          <div className="p-4">
+                          <div className="p-3 sm:p-4">
                             <div className="flex items-center justify-between mb-2">
-                              <h4 className="font-medium text-sm truncate">
+                              <h4 className="font-medium text-xs sm:text-sm truncate">
                                 {image.fileName}
                               </h4>
-                              <Chip size="sm" variant="flat">
+                              <Chip
+                                size="sm"
+                                variant="flat"
+                                className="text-xs"
+                              >
                                 {formatFileSize(image.size)}
                               </Chip>
                             </div>
-                            <p className="text-xs text-gray-500 mb-3">
+                            <p className="text-xs text-gray-500 mb-2 sm:mb-3">
                               {new Date(
                                 image.lastModified
                               ).toLocaleDateString()}
@@ -479,8 +519,9 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ onRefresh }) => {
                                   variant="flat"
                                   isIconOnly
                                   onClick={() => handleImageClick(image)}
+                                  className="min-h-[32px] min-w-[32px] touch-manipulation"
                                 >
-                                  <Eye className="w-4 h-4" />
+                                  <Eye className="w-3 h-3 sm:w-4 sm:h-4" />
                                 </Button>
                                 <Tooltip
                                   content={
@@ -494,11 +535,12 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ onRefresh }) => {
                                     variant="flat"
                                     isIconOnly
                                     onClick={() => handleCopyUrl(image.url)}
+                                    className="min-h-[32px] min-w-[32px] touch-manipulation"
                                   >
                                     {copiedUrl === image.url ? (
-                                      <Check className="w-4 h-4 text-green-500" />
+                                      <Check className="w-3 h-3 sm:w-4 sm:h-4 text-green-500" />
                                     ) : (
-                                      <Copy className="w-4 h-4" />
+                                      <Copy className="w-3 h-3 sm:w-4 sm:h-4" />
                                     )}
                                   </Button>
                                 </Tooltip>
@@ -510,8 +552,9 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ onRefresh }) => {
                                 size="sm"
                                 variant="flat"
                                 isIconOnly
+                                className="min-h-[32px] min-w-[32px] touch-manipulation"
                               >
-                                <Download className="w-4 h-4" />
+                                <Download className="w-3 h-3 sm:w-4 sm:h-4" />
                               </Button>
                             </div>
                           </div>
@@ -520,12 +563,12 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ onRefresh }) => {
                     ))}
                   </div>
                 ) : (
-                  <div className="text-center py-12">
-                    <ImageIcon className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  <div className="text-center py-8 sm:py-12">
+                    <ImageIcon className="w-12 h-12 sm:w-16 sm:h-16 text-gray-300 mx-auto mb-3 sm:mb-4" />
+                    <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
                       No images found
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-sm sm:text-base text-gray-600">
                       {searchQuery
                         ? "No images match your search criteria."
                         : "No images uploaded yet."}
@@ -538,18 +581,18 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ onRefresh }) => {
             <Tab
               key="homepage"
               title={
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center space-x-1 sm:space-x-2">
                   <span>Homepage</span>
-                  <Chip size="sm" variant="flat">
+                  <Chip size="sm" variant="flat" className="text-xs">
                     {summary?.homepage || 0}
                   </Chip>
                 </div>
               }
             >
-              <div className="p-6">
+              <div className="p-3 sm:p-6">
                 {/* Same layout as products tab but for homepage images */}
                 {currentImages.length > 0 ? (
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4">
                     {currentImages.map((image) => (
                       <Card key={image.fileName} className="overflow-hidden">
                         <CardBody className="p-0">
@@ -576,22 +619,27 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ onRefresh }) => {
                                     e.stopPropagation();
                                     toggleImageSelection(image.fileName);
                                   }}
+                                  className="min-h-[32px] min-w-[32px] touch-manipulation"
                                 >
-                                  <Check className="w-4 h-4" />
+                                  <Check className="w-3 h-3 sm:w-4 sm:h-4" />
                                 </Button>
                               </div>
                             )}
                           </div>
-                          <div className="p-4">
+                          <div className="p-3 sm:p-4">
                             <div className="flex items-center justify-between mb-2">
-                              <h4 className="font-medium text-sm truncate">
+                              <h4 className="font-medium text-xs sm:text-sm truncate">
                                 {image.fileName}
                               </h4>
-                              <Chip size="sm" variant="flat">
+                              <Chip
+                                size="sm"
+                                variant="flat"
+                                className="text-xs"
+                              >
                                 {formatFileSize(image.size)}
                               </Chip>
                             </div>
-                            <p className="text-xs text-gray-500 mb-3">
+                            <p className="text-xs text-gray-500 mb-2 sm:mb-3">
                               {new Date(
                                 image.lastModified
                               ).toLocaleDateString()}
@@ -603,8 +651,9 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ onRefresh }) => {
                                   variant="flat"
                                   isIconOnly
                                   onClick={() => handleImageClick(image)}
+                                  className="min-h-[32px] min-w-[32px] touch-manipulation"
                                 >
-                                  <Eye className="w-4 h-4" />
+                                  <Eye className="w-3 h-3 sm:w-4 sm:h-4" />
                                 </Button>
                                 <Tooltip
                                   content={
@@ -618,11 +667,12 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ onRefresh }) => {
                                     variant="flat"
                                     isIconOnly
                                     onClick={() => handleCopyUrl(image.url)}
+                                    className="min-h-[32px] min-w-[32px] touch-manipulation"
                                   >
                                     {copiedUrl === image.url ? (
-                                      <Check className="w-4 h-4 text-green-500" />
+                                      <Check className="w-3 h-3 sm:w-4 sm:h-4 text-green-500" />
                                     ) : (
-                                      <Copy className="w-4 h-4" />
+                                      <Copy className="w-3 h-3 sm:w-4 sm:h-4" />
                                     )}
                                   </Button>
                                 </Tooltip>
@@ -634,8 +684,9 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ onRefresh }) => {
                                 size="sm"
                                 variant="flat"
                                 isIconOnly
+                                className="min-h-[32px] min-w-[32px] touch-manipulation"
                               >
-                                <Download className="w-4 h-4" />
+                                <Download className="w-3 h-3 sm:w-4 sm:h-4" />
                               </Button>
                             </div>
                           </div>
@@ -644,9 +695,9 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ onRefresh }) => {
                     ))}
                   </div>
                 ) : (
-                  <div className="text-center py-12">
-                    <ImageIcon className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  <div className="text-center py-8 sm:py-12">
+                    <ImageIcon className="w-12 h-12 sm:w-16 sm:h-16 text-gray-300 mx-auto mb-3 sm:mb-4" />
+                    <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
                       No homepage images found
                     </h3>
                     <p className="text-gray-600">
@@ -662,18 +713,18 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ onRefresh }) => {
             <Tab
               key="utils"
               title={
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center space-x-1 sm:space-x-2">
                   <span>Utils</span>
-                  <Chip size="sm" variant="flat">
+                  <Chip size="sm" variant="flat" className="text-xs">
                     {summary?.utils || 0}
                   </Chip>
                 </div>
               }
             >
-              <div className="p-6">
+              <div className="p-3 sm:p-6">
                 {/* Same layout as other tabs but for utils images */}
                 {currentImages.length > 0 ? (
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4">
                     {currentImages.map((image) => (
                       <Card key={image.fileName} className="overflow-hidden">
                         <CardBody className="p-0">
@@ -700,22 +751,27 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ onRefresh }) => {
                                     e.stopPropagation();
                                     toggleImageSelection(image.fileName);
                                   }}
+                                  className="min-h-[32px] min-w-[32px] touch-manipulation"
                                 >
-                                  <Check className="w-4 h-4" />
+                                  <Check className="w-3 h-3 sm:w-4 sm:h-4" />
                                 </Button>
                               </div>
                             )}
                           </div>
-                          <div className="p-4">
+                          <div className="p-3 sm:p-4">
                             <div className="flex items-center justify-between mb-2">
-                              <h4 className="font-medium text-sm truncate">
+                              <h4 className="font-medium text-xs sm:text-sm truncate">
                                 {image.fileName}
                               </h4>
-                              <Chip size="sm" variant="flat">
+                              <Chip
+                                size="sm"
+                                variant="flat"
+                                className="text-xs"
+                              >
                                 {formatFileSize(image.size)}
                               </Chip>
                             </div>
-                            <p className="text-xs text-gray-500 mb-3">
+                            <p className="text-xs text-gray-500 mb-2 sm:mb-3">
                               {new Date(
                                 image.lastModified
                               ).toLocaleDateString()}
@@ -727,8 +783,9 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ onRefresh }) => {
                                   variant="flat"
                                   isIconOnly
                                   onClick={() => handleImageClick(image)}
+                                  className="min-h-[32px] min-w-[32px] touch-manipulation"
                                 >
-                                  <Eye className="w-4 h-4" />
+                                  <Eye className="w-3 h-3 sm:w-4 sm:h-4" />
                                 </Button>
                                 <Tooltip
                                   content={
@@ -742,11 +799,12 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ onRefresh }) => {
                                     variant="flat"
                                     isIconOnly
                                     onClick={() => handleCopyUrl(image.url)}
+                                    className="min-h-[32px] min-w-[32px] touch-manipulation"
                                   >
                                     {copiedUrl === image.url ? (
-                                      <Check className="w-4 h-4 text-green-500" />
+                                      <Check className="w-3 h-3 sm:w-4 sm:h-4 text-green-500" />
                                     ) : (
-                                      <Copy className="w-4 h-4" />
+                                      <Copy className="w-3 h-3 sm:w-4 sm:h-4" />
                                     )}
                                   </Button>
                                 </Tooltip>
@@ -758,8 +816,9 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ onRefresh }) => {
                                 size="sm"
                                 variant="flat"
                                 isIconOnly
+                                className="min-h-[32px] min-w-[32px] touch-manipulation"
                               >
-                                <Download className="w-4 h-4" />
+                                <Download className="w-3 h-3 sm:w-4 sm:h-4" />
                               </Button>
                             </div>
                           </div>
@@ -768,12 +827,12 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ onRefresh }) => {
                     ))}
                   </div>
                 ) : (
-                  <div className="text-center py-12">
-                    <ImageIcon className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  <div className="text-center py-8 sm:py-12">
+                    <ImageIcon className="w-12 h-12 sm:w-16 sm:h-16 text-gray-300 mx-auto mb-3 sm:mb-4" />
+                    <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
                       No utility images found
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-sm sm:text-base text-gray-600">
                       {searchQuery
                         ? "No images match your search criteria."
                         : "No utility images uploaded yet."}

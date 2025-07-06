@@ -29,10 +29,10 @@ export const DropzoneArea: React.FC<DropzoneAreaProps> = ({
   );
 
   return (
-    <Card className="mb-6">
-      <CardBody className="p-6">
+    <Card className="mb-4 sm:mb-6">
+      <CardBody className="p-4 sm:p-6">
         <div
-          className={`relative border-2 border-dashed rounded-xl p-8 text-center transition-all duration-300 ${
+          className={`relative border-2 border-dashed rounded-xl p-6 sm:p-8 text-center transition-all duration-300 ${
             disabled
               ? "border-gray-200 bg-gray-50 cursor-not-allowed"
               : dragActive
@@ -44,8 +44,8 @@ export const DropzoneArea: React.FC<DropzoneAreaProps> = ({
           onDragOver={disabled ? undefined : onDrag}
           onDrop={disabled ? undefined : onDrop}
         >
-          {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-5">
+          {/* Background Pattern - Hidden on mobile */}
+          <div className="absolute inset-0 opacity-5 hidden sm:block">
             <div className="grid grid-cols-8 gap-2 h-full">
               {Array.from({ length: 64 }).map((_, i) => (
                 <div key={i} className="bg-gray-400 rounded-full w-1 h-1"></div>
@@ -56,35 +56,35 @@ export const DropzoneArea: React.FC<DropzoneAreaProps> = ({
           {/* Content */}
           <div className="relative z-10">
             {/* Icon */}
-            <div className="mb-4">
+            <div className="mb-3 sm:mb-4">
               {dragActive ? (
-                <Cloud className="w-16 h-16 text-blue-500 mx-auto animate-bounce" />
+                <Cloud className="w-12 h-12 sm:w-16 sm:h-16 text-blue-500 mx-auto animate-bounce" />
               ) : (
-                <Upload className="w-16 h-16 text-gray-400 mx-auto" />
+                <Upload className="w-12 h-12 sm:w-16 sm:h-16 text-gray-400 mx-auto" />
               )}
             </div>
 
             {/* Main Text */}
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+            <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
               {dragActive ? "Drop your images here!" : "Upload your images"}
             </h3>
 
             {/* Description */}
-            <div className="space-y-2 mb-6">
-              <p className="text-gray-600">
+            <div className="space-y-2 mb-4 sm:mb-6">
+              <p className="text-sm sm:text-base text-gray-600">
                 Drag and drop your images here, or click the button below to
                 browse
               </p>
-              <div className="flex items-center justify-center space-x-4 text-sm text-gray-500">
+              <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-xs sm:text-sm text-gray-500">
                 <div className="flex items-center space-x-1">
-                  <FileImage className="w-4 h-4" />
+                  <FileImage className="w-3 h-3 sm:w-4 sm:h-4" />
                   <span>JPG, PNG, WebP</span>
                 </div>
-                <span>•</span>
+                <span className="hidden sm:inline">•</span>
                 <span>Max 10MB each</span>
                 {uploadMode === "multiple" && (
                   <>
-                    <span>•</span>
+                    <span className="hidden sm:inline">•</span>
                     <span>Multiple files supported</span>
                   </>
                 )}
@@ -108,15 +108,15 @@ export const DropzoneArea: React.FC<DropzoneAreaProps> = ({
                 as="span"
                 size="lg"
                 disabled={disabled}
-                startContent={<Upload className="w-5 h-5" />}
-                className="cursor-pointer"
+                startContent={<Upload className="w-4 h-4 sm:w-5 sm:h-5" />}
+                className="cursor-pointer touch-manipulation min-h-[44px] w-full sm:w-auto"
               >
                 {dragActive ? "Drop Files" : "Choose Files"}
               </Button>
             </label>
 
             {/* Additional Info */}
-            <div className="mt-4 text-xs text-gray-500">
+            <div className="mt-3 sm:mt-4 text-xs text-gray-500 px-2 sm:px-0">
               {uploadMode === "single"
                 ? "Previous image will be replaced when uploading a new one"
                 : "You can select multiple images at once or upload them one by one"}
