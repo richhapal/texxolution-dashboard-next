@@ -17,14 +17,24 @@ export default function AuthWrapper({ children }: AuthWrapperProps) {
   const { user, isAuthenticated } = useAppSelector((state) => state.userSlice);
 
   // Check current path to allow access to auth pages
-  const isAuthPage = pathname === "/signin" || pathname === "/signup";
+  const isAuthPage =
+    pathname === "/signin" ||
+    pathname === "/signup" ||
+    pathname === "/forgot-password";
+
+  // Check if it's a reset password page (uses token-based auth, not session-based)
+  const isResetPasswordPage =
+    pathname.startsWith("/dashboard/reset-password") ||
+    pathname.startsWith("/reset-password");
 
   // Check if current path requires authentication (dashboard pages)
   const isDashboardPage =
-    pathname.startsWith("/dashboard/") || pathname === "/dashboard";
+    (pathname.startsWith("/dashboard/") || pathname === "/dashboard") &&
+    !isResetPasswordPage;
 
-  // Check if it's a protected page (not auth pages and not root)
-  const isProtectedPage = !isAuthPage && pathname !== "/";
+  // Check if it's a protected page (not auth pages, not root, not reset password)
+  const isProtectedPage =
+    !isAuthPage && !isResetPasswordPage && pathname !== "/";
 
   // Check if token exists in cookies
   const getTokenFromCookie = () => {
@@ -38,7 +48,9 @@ export default function AuthWrapper({ children }: AuthWrapperProps) {
   const cookieToken = getTokenFromCookie();
 
   // Fetch profile only if we have a token but no user data
-  const shouldFetchProfile = cookieToken && !isAuthenticated;
+  // Skip profile fetch for reset password pages as they use their own token validation
+  const shouldFetchProfile =
+    cookieToken && !isAuthenticated && !isResetPasswordPage;
 
   const {
     data: profileData,
@@ -50,6 +62,11 @@ export default function AuthWrapper({ children }: AuthWrapperProps) {
 
   // Handle profile fetch results
   useEffect(() => {
+    // Early return for reset password pages - they handle their own auth
+    if (isResetPasswordPage) {
+      return;
+    }
+
     if (profileData && cookieToken) {
       dispatch(
         loginSuccess({
@@ -70,17 +87,26 @@ export default function AuthWrapper({ children }: AuthWrapperProps) {
         // Clear the invalid token from cookies
         document.cookie =
           "token=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;";
-        router.push("/signin");
+        // Don't redirect to signin if we're on a reset password page
+        if (!isResetPasswordPage) {
+          router.push("/signin");
+        }
       }
     }
 
     // Authentication logic based on page type
     if (isAuthPage) {
-      // If user is already authenticated and tries to access signin/signup, redirect to dashboard
+      // If user is already authenticated and tries to access signin/signup/forgot-password, redirect to dashboard
       if (isAuthenticated && cookieToken) {
         router.push("/");
       }
       // Allow access to auth pages for non-authenticated users
+      return;
+    }
+
+    if (isResetPasswordPage) {
+      // Reset password pages use token-based auth from URL params, not session auth
+      // Allow access regardless of authentication status
       return;
     }
 
@@ -101,9 +127,11 @@ export default function AuthWrapper({ children }: AuthWrapperProps) {
     router,
     isAuthenticated,
     isAuthPage,
+    isResetPasswordPage,
     isProtectedPage,
     isDashboardPage,
     pathname,
+    shouldFetchProfile,
   ]);
 
   return <>{children}</>;

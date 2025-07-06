@@ -252,6 +252,16 @@ const SignInPage = () => {
               >
                 {isLoading ? "Signing In..." : "Sign In"}
               </Button>
+
+              {/* Forgot Password Link */}
+              <div className="text-center">
+                <Link
+                  href="/forgot-password"
+                  className="text-sm text-blue-600 hover:text-purple-600 font-medium hover:underline transition-colors duration-300"
+                >
+                  Forgot your password?
+                </Link>
+              </div>
             </form>
 
             {/* Sign Up Link */}

@@ -72,6 +72,36 @@ export type PermissionsListResponse = {
   summary: any;
 };
 
+// Forgot Password Types
+export type ForgotPasswordRequest = {
+  email: string;
+};
+
+export type ForgotPasswordResponse = {
+  message: string;
+  success?: boolean;
+};
+
+export type VerifyTokenRequest = {
+  token: string;
+  type: string;
+};
+
+export type VerifyTokenResponse = {
+  message: string;
+  valid?: boolean;
+};
+
+export type ResetPasswordRequest = {
+  token: string;
+  newPassword: string;
+};
+
+export type ResetPasswordResponse = {
+  message: string;
+  success?: boolean;
+};
+
 // API
 export const authApi = createApi({
   reducerPath: "authApi",
@@ -118,6 +148,39 @@ export const authApi = createApi({
         method: "GET",
       }),
     }),
+    // Forgot password request
+    forgotPassword: builder.mutation<
+      ForgotPasswordResponse,
+      ForgotPasswordRequest
+    >({
+      query: (data) => ({
+        url: "/v2/forgot-password/request",
+        method: "POST",
+        body: data,
+      }),
+    }),
+    // Verify reset token
+    verifyResetToken: builder.mutation<VerifyTokenResponse, VerifyTokenRequest>(
+      {
+        query: (data) => ({
+          url: `/v2/forgot-password/verify-token?token=${encodeURIComponent(
+            data.token
+          )}&type=${encodeURIComponent(data.type)}`,
+          method: "GET",
+        }),
+      }
+    ),
+    // Reset password
+    resetPassword: builder.mutation<
+      ResetPasswordResponse,
+      ResetPasswordRequest
+    >({
+      query: (data) => ({
+        url: "/v2/forgot-password/reset",
+        method: "POST",
+        body: data,
+      }),
+    }),
   }),
 });
 
@@ -127,4 +190,7 @@ export const {
   useGetProfileQuery,
   useUpdatePermissionsMutation,
   useGetPermissionsListQuery,
+  useForgotPasswordMutation,
+  useVerifyResetTokenMutation,
+  useResetPasswordMutation,
 } = authApi;
