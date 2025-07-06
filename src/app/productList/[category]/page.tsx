@@ -197,8 +197,8 @@ export default function CategoryDetailPage() {
           <div className="absolute top-1/2 left-3/4 w-32 h-32 bg-gradient-to-r from-purple-200/30 to-blue-200/30 rounded-full blur-3xl animate-float-slow"></div>
         </div>
 
-        <div className="container mx-auto p-6 relative z-10">
-          <div className="backdrop-blur-sm bg-white/70 rounded-3xl p-8 shadow-xl border border-white/20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 relative z-10">
+          <div className="backdrop-blur-sm bg-white/70 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl border border-white/20">
             <PermissionDenied
               message="You don't have permission to view products in this category. Please contact your super admin."
               onRetry={() => refetch()}
@@ -211,15 +211,20 @@ export default function CategoryDetailPage() {
 
   // Loading skeleton component
   const ProductCardSkeleton = () => (
-    <div className="backdrop-blur-sm bg-white/60 rounded-2xl p-4 shadow-lg border border-white/30 animate-pulse h-full">
-      <div className="w-full h-48 bg-gray-200/50 rounded-xl mb-4"></div>
-      <div className="space-y-3">
-        <div className="h-6 bg-gray-200/50 rounded w-3/4"></div>
-        <div className="h-4 bg-gray-200/50 rounded w-full"></div>
-        <div className="h-4 bg-gray-200/50 rounded w-2/3"></div>
-        <div className="flex justify-between items-center mt-4">
-          <div className="h-6 bg-gray-200/50 rounded w-20"></div>
-          <div className="h-8 bg-gray-200/50 rounded w-24"></div>
+    <div className="backdrop-blur-sm bg-white/60 rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-lg border border-white/30 animate-pulse h-full">
+      <div className="w-full h-36 sm:h-48 bg-gray-200/50 rounded-lg sm:rounded-xl mb-3 sm:mb-4"></div>
+      <div className="space-y-2 sm:space-y-3">
+        <div className="h-4 sm:h-6 bg-gray-200/50 rounded w-3/4"></div>
+        <div className="h-3 sm:h-4 bg-gray-200/50 rounded w-full"></div>
+        <div className="h-3 sm:h-4 bg-gray-200/50 rounded w-2/3"></div>
+        <div className="flex justify-between items-center mt-3 sm:mt-4">
+          <div className="h-4 sm:h-6 bg-gray-200/50 rounded w-16 sm:w-20"></div>
+          <div className="h-6 sm:h-8 bg-gray-200/50 rounded w-16 sm:w-24"></div>
+        </div>
+        <div className="flex gap-1 sm:gap-2 mt-2">
+          <div className="h-6 sm:h-8 bg-gray-200/50 rounded flex-1"></div>
+          <div className="h-6 sm:h-8 bg-gray-200/50 rounded w-6 sm:w-8"></div>
+          <div className="h-6 sm:h-8 bg-gray-200/50 rounded w-6 sm:w-8"></div>
         </div>
       </div>
     </div>
@@ -236,28 +241,30 @@ export default function CategoryDetailPage() {
           <div className="absolute top-1/2 left-3/4 w-32 h-32 bg-gradient-to-r from-purple-200/30 to-blue-200/30 rounded-full blur-3xl animate-float-slow"></div>
         </div>
 
-        <div className="container mx-auto p-6 relative z-10">
-          <div className="backdrop-blur-sm bg-white/70 rounded-3xl p-8 mb-8 shadow-xl border border-white/20">
-            <div className="flex items-center space-x-2 text-sm text-gray-600 mb-6">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 relative z-10">
+          <div className="backdrop-blur-sm bg-white/70 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 mb-4 sm:mb-6 lg:mb-8 shadow-xl border border-white/20">
+            <div className="flex items-center space-x-1 sm:space-x-2 text-xs sm:text-sm text-gray-600 mb-4 sm:mb-6">
               <span>Product Categories</span>
               <span>/</span>
               <span className="text-gray-900 font-medium">Loading...</span>
             </div>
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-4">
-                <div className="p-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl shadow-lg animate-pulse">
-                  <Package className="w-6 h-6 text-white" />
+              <div className="flex items-center gap-3 sm:gap-4">
+                <div className="p-2 sm:p-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl sm:rounded-2xl shadow-lg animate-pulse">
+                  <Package className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
                 <div>
-                  <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                     Loading...
                   </h1>
-                  <p className="text-gray-600">Loading products...</p>
+                  <p className="text-gray-600 text-sm sm:text-base">
+                    Loading products...
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 mb-4 sm:mb-6 lg:mb-8">
             {Array.from({ length: 8 }).map((_, index) => (
               <ProductCardSkeleton key={index} />
             ))}
@@ -271,39 +278,39 @@ export default function CategoryDetailPage() {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-blue-200/30 to-purple-200/30 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute top-3/4 right-1/4 w-48 h-48 bg-gradient-to-r from-indigo-200/30 to-pink-200/30 rounded-full blur-3xl animate-float-delayed"></div>
-        <div className="absolute top-1/2 left-3/4 w-32 h-32 bg-gradient-to-r from-purple-200/30 to-blue-200/30 rounded-full blur-3xl animate-float-slow"></div>
+        <div className="absolute top-1/4 left-1/4 w-32 h-32 sm:w-64 sm:h-64 bg-gradient-to-r from-blue-200/30 to-purple-200/30 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute top-3/4 right-1/4 w-24 h-24 sm:w-48 sm:h-48 bg-gradient-to-r from-indigo-200/30 to-pink-200/30 rounded-full blur-3xl animate-float-delayed"></div>
+        <div className="absolute top-1/2 left-3/4 w-16 h-16 sm:w-32 sm:h-32 bg-gradient-to-r from-purple-200/30 to-blue-200/30 rounded-full blur-3xl animate-float-slow"></div>
       </div>
 
-      <div className="container mx-auto p-6 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 relative z-10">
         {/* Header with Breadcrumb */}
-        <div className="backdrop-blur-sm bg-white/70 rounded-3xl p-8 mb-8 shadow-xl border border-white/20 animate-fade-in">
-          <div className="flex items-center space-x-2 text-sm text-gray-600 mb-6">
+        <div className="backdrop-blur-sm bg-white/70 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 mb-4 sm:mb-6 lg:mb-8 shadow-xl border border-white/20 animate-fade-in">
+          <div className="flex items-center space-x-1 sm:space-x-2 text-xs sm:text-sm text-gray-600 mb-4 sm:mb-6">
             <Link
               href="/productList"
-              className="hover:text-blue-600 transition-colors duration-200 font-medium"
+              className="hover:text-blue-600 transition-colors duration-200 font-medium truncate"
             >
-              Product Categories
+              Categories
             </Link>
             <span>/</span>
-            <span className="text-gray-900 font-semibold">
+            <span className="text-gray-900 font-semibold truncate">
               {displayCategoryName}
             </span>
           </div>
 
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <div className="p-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl shadow-lg">
-                <Package className="w-8 h-8 text-white" />
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6">
+            <div className="flex items-center gap-3 sm:gap-4 flex-1 min-w-0">
+              <div className="p-2 sm:p-3 lg:p-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl sm:rounded-2xl shadow-lg flex-shrink-0">
+                <Package className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-white" />
               </div>
-              <div>
-                <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
+              <div className="min-w-0 flex-1">
+                <h1 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-1 sm:mb-2 line-clamp-2">
                   {displayCategoryName}
                 </h1>
-                <p className="text-gray-600 text-lg">
+                <p className="text-gray-600 text-sm sm:text-base lg:text-lg">
                   {isLoading ? (
-                    <div className="h-4 w-32 bg-gray-200 rounded animate-pulse"></div>
+                    <div className="h-3 sm:h-4 w-24 sm:w-32 bg-gray-200 rounded animate-pulse"></div>
                   ) : (
                     `${productsData?.pagination?.total || 0} products available`
                   )}
@@ -315,32 +322,34 @@ export default function CategoryDetailPage() {
               onClick={() => router.back()}
               variant="bordered"
               startContent={<ArrowLeft className="w-4 h-4" />}
-              className="border-gray-300 hover:border-blue-500 hover:text-blue-600 transition-all duration-300"
+              className="border-gray-300 hover:border-blue-500 hover:text-blue-600 transition-all duration-300 flex-shrink-0 touch-manipulation"
+              size="sm"
             >
-              Back
+              <span className="hidden sm:inline">Back</span>
+              <span className="sm:hidden">Back</span>
             </Button>
           </div>
         </div>
 
         {/* Error State */}
         {isError && (
-          <div className="backdrop-blur-sm bg-gradient-to-r from-red-50/90 to-rose-50/90 rounded-3xl p-6 mb-8 shadow-xl border border-red-200/50 animate-fade-in">
-            <div className="flex items-center gap-4">
-              <div className="p-3 bg-gradient-to-r from-red-500 to-rose-600 rounded-xl shadow-lg">
-                <AlertCircle className="w-6 h-6 text-white" />
+          <div className="backdrop-blur-sm bg-gradient-to-r from-red-50/90 to-rose-50/90 rounded-2xl sm:rounded-3xl p-4 sm:p-6 mb-4 sm:mb-6 lg:mb-8 shadow-xl border border-red-200/50 animate-fade-in">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
+              <div className="p-2 sm:p-3 bg-gradient-to-r from-red-500 to-rose-600 rounded-xl shadow-lg flex-shrink-0">
+                <AlertCircle className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
               </div>
-              <div>
-                <h3 className="text-xl font-bold bg-gradient-to-r from-red-600 to-rose-600 bg-clip-text text-transparent">
+              <div className="flex-1 min-w-0">
+                <h3 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-red-600 to-rose-600 bg-clip-text text-transparent mb-1 sm:mb-2">
                   Failed to load products
                 </h3>
-                <div className="text-red-600 mt-1">
+                <div className="text-red-600 text-sm sm:text-base mb-1">
                   {error && typeof error === "object" && "data" in error
                     ? `Error: ${
                         (error.data as any)?.message || "Unknown error"
                       }`
                     : "Please try refreshing the page"}
                 </div>
-                <div className="text-red-600 text-sm mt-1">
+                <div className="text-red-600 text-xs sm:text-sm mb-2 sm:mb-3">
                   {error && typeof error === "object" && "data" in error
                     ? `Allowed category: ${
                         (error.data as any)?.allowedCategories ||
@@ -353,7 +362,7 @@ export default function CategoryDetailPage() {
                   color="danger"
                   variant="flat"
                   onClick={() => refetch()}
-                  className="mt-3 bg-gradient-to-r from-red-500 to-rose-600 hover:from-red-600 hover:to-rose-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="bg-gradient-to-r from-red-500 to-rose-600 hover:from-red-600 hover:to-rose-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 touch-manipulation"
                 >
                   Retry
                 </Button>
@@ -363,28 +372,33 @@ export default function CategoryDetailPage() {
         )}
 
         {/* Search and Filter Controls */}
-        <div className="backdrop-blur-sm bg-white/70 rounded-3xl p-6 mb-8 shadow-xl border border-white/20 animate-fade-in">
-          <div className="flex flex-col gap-6">
-            <div className="flex flex-col md:flex-row gap-4">
+        <div className="backdrop-blur-sm bg-white/70 rounded-2xl sm:rounded-3xl p-4 sm:p-6 mb-4 sm:mb-6 lg:mb-8 shadow-xl border border-white/20 animate-fade-in">
+          <div className="flex flex-col gap-4 sm:gap-6">
+            <div className="flex flex-col gap-3 sm:gap-4">
               <div className="flex-1">
                 <Input
-                  placeholder="Search products... (temporarily disabled for pagination testing)"
+                  placeholder="Search products..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   startContent={<Search className="w-4 h-4 text-gray-400" />}
                   className="w-full bg-white/80 backdrop-blur-sm"
                   isDisabled
+                  size="sm"
                 />
+                <p className="text-xs text-gray-500 mt-1">
+                  Search temporarily disabled for pagination testing
+                </p>
               </div>
 
-              <div className="flex gap-3">
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                 <Select
                   placeholder="Items per page"
                   selectedKeys={[itemsPerPage.toString()]}
                   onSelectionChange={(keys) =>
                     setItemsPerPage(Number(Array.from(keys)[0]))
                   }
-                  className="w-32 bg-white/80 backdrop-blur-sm"
+                  className="w-full sm:w-32 bg-white/80 backdrop-blur-sm"
+                  size="sm"
                 >
                   <SelectItem key="10">10</SelectItem>
                   <SelectItem key="20">20</SelectItem>
@@ -397,7 +411,8 @@ export default function CategoryDetailPage() {
                   onSelectionChange={(keys) =>
                     setSortBy(Array.from(keys)[0] as string)
                   }
-                  className="w-40 bg-white/80 backdrop-blur-sm"
+                  className="w-full sm:w-40 bg-white/80 backdrop-blur-sm"
+                  size="sm"
                 >
                   <SelectItem key="name">Name</SelectItem>
                   <SelectItem key="price">Price</SelectItem>
@@ -408,16 +423,18 @@ export default function CategoryDetailPage() {
                   startContent={<Plus className="w-4 h-4" />}
                   as={Link}
                   href="/productList/add"
-                  className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 shadow-lg hover:shadow-xl transition-all duration-300 touch-manipulation"
+                  size="sm"
                 >
-                  Add Product
+                  <span className="hidden sm:inline">Add Product</span>
+                  <span className="sm:hidden">Add</span>
                 </Button>
               </div>
             </div>
 
             {/* Pagination Info */}
             {!isLoading && productsData?.pagination && (
-              <div className="flex justify-between items-center text-sm text-gray-600 p-3 bg-gradient-to-r from-blue-50/80 to-indigo-50/80 rounded-xl border border-blue-100/50">
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 text-xs sm:text-sm text-gray-600 p-3 bg-gradient-to-r from-blue-50/80 to-indigo-50/80 rounded-xl border border-blue-100/50">
                 <span className="font-medium">
                   Showing {(currentPage - 1) * itemsPerPage + 1} to{" "}
                   {Math.min(
@@ -435,7 +452,7 @@ export default function CategoryDetailPage() {
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 mb-4 sm:mb-6 lg:mb-8">
           {isLoading ? (
             // Loading skeletons
             Array.from({ length: itemsPerPage }).map((_, index) => (
@@ -446,10 +463,10 @@ export default function CategoryDetailPage() {
             displayProducts.map((product) => (
               <div
                 key={product._id}
-                className="backdrop-blur-sm bg-white/70 rounded-2xl p-4 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-300 h-full group cursor-pointer transform hover:-translate-y-1 animate-fade-in"
+                className="backdrop-blur-sm bg-white/70 rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-300 h-full group cursor-pointer transform hover:-translate-y-1 animate-fade-in touch-manipulation active:scale-95"
                 onClick={() => handleViewProduct(product)}
               >
-                <div className="w-full h-48 bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl overflow-hidden relative mb-4 group-hover:shadow-lg transition-all duration-300">
+                <div className="w-full h-36 sm:h-48 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg sm:rounded-xl overflow-hidden relative mb-3 sm:mb-4 group-hover:shadow-lg transition-all duration-300">
                   {product.thumbnail ? (
                     <SafeImage
                       src={product.thumbnail}
@@ -457,7 +474,7 @@ export default function CategoryDetailPage() {
                       width={300}
                       height={200}
                       className="w-full h-full object-cover"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                       onError={() => {
                         console.log(
                           "SafeImage: Failed to load image:",
@@ -473,7 +490,7 @@ export default function CategoryDetailPage() {
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center">
-                      <Package className="w-12 h-12 text-gray-400" />
+                      <Package className="w-8 h-8 sm:w-12 sm:h-12 text-gray-400" />
                     </div>
                   )}
 
@@ -487,49 +504,51 @@ export default function CategoryDetailPage() {
                         e.stopPropagation();
                         handleViewProduct(product);
                       }}
-                      className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 shadow-lg transform scale-95 hover:scale-100 transition-all duration-300"
+                      className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 shadow-lg transform scale-95 hover:scale-100 transition-all duration-300 text-xs sm:text-sm"
+                      size="sm"
                     >
-                      Quick View
+                      <span className="hidden sm:inline">Quick View</span>
+                      <span className="sm:hidden">View</span>
                     </Button>
                   </div>
                 </div>
 
-                <div className="space-y-3">
+                <div className="space-y-2 sm:space-y-3">
                   <div className="flex justify-between items-start">
-                    <h3 className="text-lg font-semibold text-gray-900 line-clamp-1 group-hover:text-blue-600 transition-colors duration-200">
+                    <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-gray-900 line-clamp-1 group-hover:text-blue-600 transition-colors duration-200">
                       {product.productName}
                     </h3>
                   </div>
 
                   <div className="flex flex-wrap gap-1">
-                    {product.size.slice(0, 3).map((size, index) => (
+                    {product.size.slice(0, 2).map((size, index) => (
                       <Chip
                         key={index}
                         size="sm"
                         variant="flat"
-                        className="bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 border-blue-200/50"
+                        className="bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 border-blue-200/50 text-xs"
                       >
                         {size}
                       </Chip>
                     ))}
-                    {product.size.length > 3 && (
+                    {product.size.length > 2 && (
                       <Chip
                         size="sm"
                         variant="flat"
-                        className="bg-gradient-to-r from-gray-100 to-gray-200 text-gray-600"
+                        className="bg-gradient-to-r from-gray-100 to-gray-200 text-gray-600 text-xs"
                       >
-                        +{product.size.length - 3}
+                        +{product.size.length - 2}
                       </Chip>
                     )}
                   </div>
 
-                  <div className="flex justify-between items-center">
-                    <div>
-                      <span className="text-xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                    <div className="flex items-baseline gap-1">
+                      <span className="text-base sm:text-lg lg:text-xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
                         ₹{product.price[0]?.price || 0}
                       </span>
                       {product.price[0]?.size && (
-                        <span className="text-sm text-gray-500 ml-1">
+                        <span className="text-xs sm:text-sm text-gray-500">
                           /{product.price[0].size}
                         </span>
                       )}
@@ -537,25 +556,26 @@ export default function CategoryDetailPage() {
                     <Badge
                       color="success"
                       variant="flat"
-                      className="bg-gradient-to-r from-green-100 to-emerald-100 text-green-800 border-green-200/50"
+                      className="bg-gradient-to-r from-green-100 to-emerald-100 text-green-800 border-green-200/50 text-xs"
                     >
                       In Stock
                     </Badge>
                   </div>
 
-                  <div className="flex gap-2 pt-2">
+                  <div className="flex gap-1 sm:gap-2 pt-2">
                     <Button
                       size="sm"
                       variant="flat"
                       color="primary"
-                      startContent={<Eye className="w-4 h-4" />}
-                      className="flex-1 bg-gradient-to-r from-blue-100 to-purple-100 hover:from-blue-200 hover:to-purple-200 text-blue-700 border-blue-200/50 transition-all duration-300"
+                      startContent={<Eye className="w-3 h-3 sm:w-4 sm:h-4" />}
+                      className="flex-1 bg-gradient-to-r from-blue-100 to-purple-100 hover:from-blue-200 hover:to-purple-200 text-blue-700 border-blue-200/50 transition-all duration-300 text-xs sm:text-sm touch-manipulation"
                       onClick={(e) => {
                         e.stopPropagation();
                         handleViewProduct(product);
                       }}
                     >
-                      View
+                      <span className="hidden sm:inline">View</span>
+                      <span className="sm:hidden">View</span>
                     </Button>
                     <Button
                       size="sm"
@@ -566,9 +586,9 @@ export default function CategoryDetailPage() {
                         e.stopPropagation();
                         handleEditProduct(product);
                       }}
-                      className="bg-gradient-to-r from-amber-100 to-orange-100 hover:from-amber-200 hover:to-orange-200 text-amber-700 border-amber-200/50 transition-all duration-300"
+                      className="bg-gradient-to-r from-amber-100 to-orange-100 hover:from-amber-200 hover:to-orange-200 text-amber-700 border-amber-200/50 transition-all duration-300 touch-manipulation min-w-8 min-h-8"
                     >
-                      <Edit className="w-4 h-4" />
+                      <Edit className="w-3 h-3 sm:w-4 sm:h-4" />
                     </Button>
                     <Button
                       size="sm"
@@ -579,9 +599,9 @@ export default function CategoryDetailPage() {
                         e.stopPropagation();
                         handleDeleteProduct(product);
                       }}
-                      className="bg-gradient-to-r from-red-100 to-rose-100 hover:from-red-200 hover:to-rose-200 text-red-700 border-red-200/50 transition-all duration-300"
+                      className="bg-gradient-to-r from-red-100 to-rose-100 hover:from-red-200 hover:to-rose-200 text-red-700 border-red-200/50 transition-all duration-300 touch-manipulation min-w-8 min-h-8"
                     >
-                      <Trash2 className="w-4 h-4" />
+                      <Trash2 className="w-3 h-3 sm:w-4 sm:h-4" />
                     </Button>
                   </div>
                 </div>
@@ -590,14 +610,14 @@ export default function CategoryDetailPage() {
           ) : (
             // Empty state
             <div className="col-span-full">
-              <div className="backdrop-blur-sm bg-white/70 rounded-3xl p-12 shadow-xl border border-white/20 text-center animate-fade-in">
-                <div className="p-4 bg-gradient-to-r from-gray-400 to-gray-500 rounded-2xl shadow-lg inline-block mb-6">
-                  <Package className="w-16 h-16 text-white mx-auto" />
+              <div className="backdrop-blur-sm bg-white/70 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 shadow-xl border border-white/20 text-center animate-fade-in">
+                <div className="p-3 sm:p-4 bg-gradient-to-r from-gray-400 to-gray-500 rounded-xl sm:rounded-2xl shadow-lg inline-block mb-4 sm:mb-6">
+                  <Package className="w-12 h-12 sm:w-16 sm:h-16 text-white mx-auto" />
                 </div>
-                <h3 className="text-2xl font-bold bg-gradient-to-r from-gray-600 to-gray-800 bg-clip-text text-transparent mb-3">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-gray-600 to-gray-800 bg-clip-text text-transparent mb-2 sm:mb-3">
                   No products found
                 </h3>
-                <p className="text-gray-600 mb-6 text-lg">
+                <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base lg:text-lg">
                   {debouncedSearchTerm
                     ? `No products found matching "${debouncedSearchTerm}"`
                     : `No products available in ${displayCategoryName} category`}
@@ -607,9 +627,11 @@ export default function CategoryDetailPage() {
                   startContent={<Plus className="w-4 h-4" />}
                   as={Link}
                   href="/productList/add"
-                  className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 shadow-lg hover:shadow-xl transition-all duration-300 touch-manipulation"
+                  size="sm"
                 >
-                  Add First Product
+                  <span className="hidden sm:inline">Add First Product</span>
+                  <span className="sm:hidden">Add Product</span>
                 </Button>
               </div>
             </div>
@@ -620,8 +642,8 @@ export default function CategoryDetailPage() {
         {!isLoading &&
           productsData?.pagination &&
           productsData.pagination.totalPages > 1 && (
-            <div className="flex justify-center mb-8">
-              <div className="backdrop-blur-sm bg-white/70 rounded-3xl p-4 shadow-xl border border-white/20">
+            <div className="flex justify-center mb-4 sm:mb-6 lg:mb-8">
+              <div className="backdrop-blur-sm bg-white/70 rounded-2xl sm:rounded-3xl p-3 sm:p-4 shadow-xl border border-white/20 w-full sm:w-auto">
                 <Pagination
                   total={productsData.pagination.totalPages}
                   page={currentPage}
@@ -633,7 +655,13 @@ export default function CategoryDetailPage() {
                   showShadow
                   color="primary"
                   key={`pagination-${itemsPerPage}-${categorySlug}`}
-                  className="gap-2"
+                  className="gap-1 sm:gap-2"
+                  size="sm"
+                  classNames={{
+                    item: "min-w-8 h-8 sm:min-w-10 sm:h-10 text-xs sm:text-sm",
+                    cursor:
+                      "min-w-8 h-8 sm:min-w-10 sm:h-10 text-xs sm:text-sm",
+                  }}
                 />
               </div>
             </div>
@@ -653,35 +681,40 @@ export default function CategoryDetailPage() {
             onClose={cancelDelete}
             size="md"
             backdrop="blur"
+            classNames={{
+              base: "mx-4 my-4 sm:mx-0 sm:my-0",
+              wrapper: "items-end sm:items-center justify-center",
+            }}
           >
-            <ModalContent className="bg-white/95 backdrop-blur-sm border border-white/20 shadow-2xl">
-              <ModalHeader className="border-b border-gray-200/50 pb-4">
-                <h3 className="text-xl font-bold bg-gradient-to-r from-red-600 to-rose-600 bg-clip-text text-transparent">
+            <ModalContent className="bg-white/95 backdrop-blur-sm border border-white/20 shadow-2xl mb-0 sm:mb-auto">
+              <ModalHeader className="border-b border-gray-200/50 pb-3 sm:pb-4">
+                <h3 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-red-600 to-rose-600 bg-clip-text text-transparent">
                   Confirm Delete
                 </h3>
               </ModalHeader>
-              <ModalBody className="py-6">
+              <ModalBody className="py-4 sm:py-6">
                 <div className="text-center">
-                  <div className="p-4 bg-gradient-to-r from-red-500 to-rose-600 rounded-2xl shadow-lg inline-block mb-6">
-                    <Trash2 className="w-16 h-16 text-white mx-auto" />
+                  <div className="p-3 sm:p-4 bg-gradient-to-r from-red-500 to-rose-600 rounded-xl sm:rounded-2xl shadow-lg inline-block mb-4 sm:mb-6">
+                    <Trash2 className="w-12 h-12 sm:w-16 sm:h-16 text-white mx-auto" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">
                     Delete Product
                   </h3>
-                  <p className="text-gray-600 mb-4 text-lg">
+                  <p className="text-gray-600 mb-4 text-sm sm:text-base lg:text-lg">
                     Are you sure you want to delete &quot;
                     {productToDelete.productName}&quot;? This action cannot be
                     undone.
                   </p>
                 </div>
               </ModalBody>
-              <ModalFooter className="border-t border-gray-200/50 pt-4">
-                <div className="flex gap-3 w-full">
+              <ModalFooter className="border-t border-gray-200/50 pt-3 sm:pt-4">
+                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full">
                   <Button
                     color="default"
                     variant="bordered"
                     onClick={cancelDelete}
-                    className="flex-1 border-gray-300 hover:border-gray-400 transition-all duration-300"
+                    className="flex-1 border-gray-300 hover:border-gray-400 transition-all duration-300 touch-manipulation"
+                    size="sm"
                   >
                     Cancel
                   </Button>
@@ -689,7 +722,8 @@ export default function CategoryDetailPage() {
                     color="danger"
                     onClick={confirmDelete}
                     isLoading={isDeleting}
-                    className="flex-1 bg-gradient-to-r from-red-500 to-rose-600 hover:from-red-600 hover:to-rose-700 shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="flex-1 bg-gradient-to-r from-red-500 to-rose-600 hover:from-red-600 hover:to-rose-700 shadow-lg hover:shadow-xl transition-all duration-300 touch-manipulation"
+                    size="sm"
                   >
                     {isDeleting ? "Deleting..." : "Delete"}
                   </Button>

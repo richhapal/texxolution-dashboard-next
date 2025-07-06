@@ -201,7 +201,7 @@ export default function CustomerListPage() {
                 <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
                 <span className="text-xs sm:text-sm font-medium text-gray-700">
                   Real-time Updates
-                </span>
+                </span>{" "}
               </div>
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                 <Button
@@ -474,98 +474,111 @@ export default function CustomerListPage() {
               {/* Table Container with Horizontal Scroll on Mobile */}
               <div className="overflow-x-auto -mx-4 sm:mx-0 rounded-lg">
                 <div className="min-w-full px-4 sm:px-0">
-                  {/* Conditional Table Components */}
-                  {activeTab === "users" ? (
-                    <NormalUsersTable
-                      searchTerm={searchTerm}
-                      onSearchChange={setSearchTerm}
-                      userTypeFilter={userTypeFilter}
-                      onUserTypeFilterChange={setUserTypeFilter}
-                      page={page}
-                      onPageChange={setPage}
-                      limit={limit}
-                      onLimitChange={updateLimit}
-                    />
-                  ) : (
-                    <AdminUsersTable
-                      searchTerm={searchTerm}
-                      onSearchChange={setSearchTerm}
-                      userTypeFilter={userTypeFilter}
-                      onUserTypeFilterChange={setUserTypeFilter}
-                      page={page}
-                      onPageChange={setPage}
-                      limit={limit}
-                      onLimitChange={updateLimit}
-                    />
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+                  {/* Enhanced Help Section - Mobile Responsive */}
+                  <div
+                    className="mt-8 sm:mt-12 opacity-0 animate-fade-in-up"
+                    style={{
+                      animationDelay: "600ms",
+                      animationFillMode: "both",
+                    }}
+                  >
+                    <div className="bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50 rounded-2xl sm:rounded-3xl shadow-xl border border-white/50 p-4 sm:p-8 backdrop-blur-sm">
+                      {/* Help Section Header - Mobile Responsive */}
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-0 mb-4 sm:mb-6">
+                        <div className="flex items-center flex-1">
+                          <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-xl sm:rounded-2xl flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
+                            <span className="text-white text-lg sm:text-2xl">
+                              💡
+                            </span>
+                          </div>
+                          <div className="min-w-0 flex-1">
+                            <h3 className="text-lg sm:text-2xl font-bold text-gray-900">
+                              Quick Tips
+                            </h3>
+                            <p className="text-sm sm:text-base text-gray-600 hidden sm:block">
+                              Get the most out of your customer management tools
+                            </p>
+                          </div>
+                        </div>
+                      </div>
 
-        {/* Enhanced Help Section - Mobile Responsive */}
-        <div
-          className="mt-8 sm:mt-12 opacity-0 animate-fade-in-up"
-          style={{ animationDelay: "600ms", animationFillMode: "both" }}
-        >
-          <div className="bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50 rounded-2xl sm:rounded-3xl shadow-xl border border-white/50 p-4 sm:p-8 backdrop-blur-sm">
-            {/* Help Section Header - Mobile Responsive */}
-            <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-0 mb-4 sm:mb-6">
-              <div className="flex items-center flex-1">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-xl sm:rounded-2xl flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
-                  <span className="text-white text-lg sm:text-2xl">💡</span>
-                </div>
-                <div className="min-w-0 flex-1">
-                  <h3 className="text-lg sm:text-2xl font-bold text-gray-900">Quick Tips</h3>
-                  <p className="text-sm sm:text-base text-gray-600 hidden sm:block">
-                    Get the most out of your customer management tools
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Tips Grid - Mobile Responsive */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-              <div className="bg-white/80 rounded-xl sm:rounded-2xl p-3 sm:p-4 hover:shadow-lg transition-all duration-300 hover:bg-white/90">
-                <div className="flex items-center mb-2">
-                  <span className="text-xl sm:text-2xl mr-2">🔍</span>
-                  <span className="font-semibold text-gray-900 text-sm sm:text-base">
-                    Search Users
-                  </span>
-                </div>
-                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                  Use the search bar to quickly find users by name, email, or ID
-                </p>
-              </div>
-              <div className="bg-white/80 rounded-xl sm:rounded-2xl p-3 sm:p-4 hover:shadow-lg transition-all duration-300 hover:bg-white/90">
-                <div className="flex items-center mb-2">
-                  <span className="text-xl sm:text-2xl mr-2">📊</span>
-                  <span className="font-semibold text-gray-900 text-sm sm:text-base">
+                      {/* Tips Grid - Mobile Responsive */}
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+                        <div className="bg-white/80 rounded-xl sm:rounded-2xl p-3 sm:p-4 hover:shadow-lg transition-all duration-300 hover:bg-white/90">
+                          <div className="flex items-center mb-2">
+                            <span className="text-xl sm:text-2xl mr-2">🔍</span>
+                            <span className="font-semibold text-gray-900 text-sm sm:text-base">
+                              Search Users
+                            </span>
+                          </div>
+                          <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                            Use the search bar to quickly find users by name,
+                            email, or ID
+                          </p>
+                        </div>
+                        <div className="bg-white/80 rounded-xl sm:rounded-2xl p-3 sm:p-4 hover:shadow-lg transition-all duration-300 hover:bg-white/90">
+                          <div className="flex items-center mb-2">
+                            <span className="text-xl sm:text-2xl mr-2">📊</span>
+                            <span className="font-semibold text-gray-900 text-sm sm:text-base">
+                              Export Data
+                            </span>
+                          </div>
+                          <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                            Export user lists to CSV or Excel for external
+                            analysis
+                          </p>
+                        </div>
+                        <div className="bg-white/80 rounded-xl sm:rounded-2xl p-3 sm:p-4 hover:shadow-lg transition-all duration-300 hover:bg-white/90">
+                          <div className="flex items-center mb-2">
+                            <span className="text-xl sm:text-2xl mr-2">�</span>
+                            <span className="font-semibold text-gray-900 text-sm sm:text-base">
+                              User Types
+                            </span>
+                          </div>
+                          <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                            Filter by user type to focus on specific customer
+                            segments
+                          </p>
+                        </div>
+                        <div className="bg-white/80 rounded-xl sm:rounded-2xl p-3 sm:p-4 hover:shadow-lg transition-all duration-300 hover:bg-white/90">
+                          <div className="flex items-center mb-2">
+                            <span className="text-xl sm:text-2xl mr-2">�</span>
+                            <span className="font-semibold text-gray-900 text-sm sm:text-base">
+                              Analytics
+                            </span>
+                          </div>
+                          <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                            View registration trends and user activity patterns
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>{" "}
+                  <span className="font-semibold text-gray-900">
                     Export Data
                   </span>
                 </div>
-                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                <p className="text-sm text-gray-600">
                   Export user lists to CSV or Excel for external analysis
                 </p>
               </div>
-              <div className="bg-white/80 rounded-xl sm:rounded-2xl p-3 sm:p-4 hover:shadow-lg transition-all duration-300 hover:bg-white/90">
+              <div className="bg-white/80 rounded-2xl p-4 hover:shadow-lg transition-all duration-300">
                 <div className="flex items-center mb-2">
-                  <span className="text-xl sm:text-2xl mr-2">👥</span>
-                  <span className="font-semibold text-gray-900 text-sm sm:text-base">
+                  <span className="text-2xl mr-2">👥</span>
+                  <span className="font-semibold text-gray-900">
                     User Types
                   </span>
                 </div>
-                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                <p className="text-sm text-gray-600">
                   Filter by user type to focus on specific customer segments
                 </p>
               </div>
-              <div className="bg-white/80 rounded-xl sm:rounded-2xl p-3 sm:p-4 hover:shadow-lg transition-all duration-300 hover:bg-white/90">
+              <div className="bg-white/80 rounded-2xl p-4 hover:shadow-lg transition-all duration-300">
                 <div className="flex items-center mb-2">
-                  <span className="text-xl sm:text-2xl mr-2">📈</span>
-                  <span className="font-semibold text-gray-900 text-sm sm:text-base">Analytics</span>
+                  <span className="text-2xl mr-2">📈</span>
+                  <span className="font-semibold text-gray-900">Analytics</span>
                 </div>
-                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                <p className="text-sm text-gray-600">
                   View registration trends and user activity patterns
                 </p>
               </div>

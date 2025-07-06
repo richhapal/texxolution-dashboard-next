@@ -350,12 +350,12 @@ export default function ProductForm({
       )}
 
       {/* Basic Information */}
-      <div className="p-6 bg-gradient-to-br from-blue-50/80 to-indigo-50/80 rounded-2xl border border-blue-100/50">
-        <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
+      <div className="p-3 sm:p-4 lg:p-6 bg-gradient-to-br from-blue-50/80 to-indigo-50/80 rounded-lg sm:rounded-xl lg:rounded-2xl border border-blue-100/50">
+        <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-gray-800 mb-2 sm:mb-3 lg:mb-4 flex items-center gap-2">
           <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"></div>
           Basic Information
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-3 sm:gap-4 lg:gap-6">
           <div>
             <Input
               label="Product Name"
@@ -366,6 +366,12 @@ export default function ProductForm({
               errorMessage={errors.productName}
               isInvalid={!!errors.productName}
               className="bg-white/80 backdrop-blur-sm"
+              classNames={{
+                input: "text-sm sm:text-base",
+                label: "text-sm sm:text-base",
+                inputWrapper: "min-h-[44px] sm:min-h-[40px]",
+              }}
+              size="sm"
             />
           </div>
 
@@ -381,6 +387,12 @@ export default function ProductForm({
               errorMessage={errors.category}
               isInvalid={!!errors.category}
               className="bg-white/80 backdrop-blur-sm"
+              classNames={{
+                trigger: "min-h-[44px] sm:min-h-[40px]",
+                label: "text-sm sm:text-base",
+                value: "text-sm sm:text-base",
+              }}
+              size="sm"
             >
               {Object.entries(productCategoryMapping).map(([key, label]) => (
                 <SelectItem key={key}>{label}</SelectItem>
@@ -391,16 +403,16 @@ export default function ProductForm({
       </div>
 
       {/* Thumbnail Image */}
-      <div className="p-6 bg-gradient-to-br from-purple-50/80 to-pink-50/80 rounded-2xl border border-purple-100/50">
-        <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
+      <div className="p-3 sm:p-4 lg:p-6 bg-gradient-to-br from-purple-50/80 to-pink-50/80 rounded-lg sm:rounded-xl lg:rounded-2xl border border-purple-100/50">
+        <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-gray-800 mb-2 sm:mb-3 lg:mb-4 flex items-center gap-2">
           <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full"></div>
           Thumbnail Image
         </h3>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-3 sm:gap-4 lg:gap-6">
           <div>
             <Input
               label="Thumbnail URL"
-              placeholder="https://example.com/image.jpg or www.example.com/image.jpg"
+              placeholder="https://example.com/image.jpg"
               value={formData.thumbnail}
               onChange={(e) => handleThumbnailChange(e.target.value)}
               isRequired
@@ -408,22 +420,28 @@ export default function ProductForm({
               isInvalid={!!errors.thumbnail}
               description="Enter a direct link to the product thumbnail image"
               className="bg-white/80 backdrop-blur-sm"
+              classNames={{
+                input: "text-sm sm:text-base",
+                label: "text-sm sm:text-base",
+                inputWrapper: "min-h-[44px] sm:min-h-[40px]",
+              }}
+              size="sm"
             />
           </div>
 
           <div>
             {thumbnailPreview && (
               <div className="relative">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-2">
                   Preview
                 </label>
-                <div className="relative w-full h-48 border-2 border-purple-200 rounded-xl overflow-hidden bg-white/80 backdrop-blur-sm shadow-lg">
+                <div className="relative w-full h-32 sm:h-40 lg:h-48 border-2 border-purple-200 rounded-lg sm:rounded-xl overflow-hidden bg-white/80 backdrop-blur-sm shadow-lg">
                   <SafeImage
                     src={thumbnailPreview}
                     alt="Thumbnail preview"
                     fill
                     className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     onError={() => {
                       setThumbnailPreview("");
                       setErrors((prev) => ({
@@ -440,15 +458,15 @@ export default function ProductForm({
       </div>
 
       {/* Sizes and Pricing */}
-      <div className="p-6 bg-gradient-to-br from-orange-50/80 to-amber-50/80 rounded-2xl border border-orange-100/50">
-        <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
+      <div className="p-3 sm:p-4 lg:p-6 bg-gradient-to-br from-orange-50/80 to-amber-50/80 rounded-lg sm:rounded-xl lg:rounded-2xl border border-orange-100/50">
+        <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-gray-800 mb-2 sm:mb-3 lg:mb-4 flex items-center gap-2">
           <div className="w-2 h-2 bg-gradient-to-r from-orange-500 to-amber-600 rounded-full"></div>
           Sizes & Pricing
         </h3>
 
         {/* Size Selection */}
-        <div className="mb-6">
-          <label className="block text-sm font-medium text-gray-700 mb-3">
+        <div className="mb-3 sm:mb-4 lg:mb-6">
+          <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-2 sm:mb-3">
             Available Sizes *
           </label>
           <CheckboxGroup
@@ -456,24 +474,26 @@ export default function ProductForm({
             onValueChange={handleSizeChange}
             orientation="horizontal"
             classNames={{
-              wrapper: "gap-4",
+              wrapper: "gap-2 sm:gap-4",
             }}
           >
-            <div className="flex flex-wrap gap-3">
+            <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-2 sm:gap-3">
               {AVAILABLE_SIZES.map((size) => (
                 <div
                   key={size}
-                  className="flex items-center gap-2 p-2 bg-white/80 backdrop-blur-sm rounded-lg hover:shadow-md transition-all duration-300"
+                  className="flex items-center gap-1 sm:gap-2 p-2 sm:p-2.5 bg-white/80 backdrop-blur-sm rounded-lg hover:shadow-md transition-all duration-300 touch-manipulation min-h-[44px] sm:min-h-[40px]"
                 >
-                  <Checkbox value={size} />
-                  <span className="font-medium text-gray-700">{size}</span>
+                  <Checkbox value={size} size="sm" />
+                  <span className="font-medium text-gray-700 text-xs sm:text-sm leading-tight">
+                    {size}
+                  </span>
                 </div>
               ))}
             </div>
           </CheckboxGroup>
           {errors.sizes && (
-            <p className="text-red-600 text-sm mt-1 flex items-center gap-1">
-              <AlertCircle className="w-4 h-4" />
+            <p className="text-red-600 text-xs sm:text-sm mt-1 sm:mt-2 flex items-center gap-1">
+              <AlertCircle className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
               {errors.sizes}
             </p>
           )}
@@ -482,14 +502,14 @@ export default function ProductForm({
         {/* Price Input */}
         {selectedSizes.length > 0 && (
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-3">
+            <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-2 sm:mb-3">
               Prices for Selected Sizes *
             </label>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 lg:gap-4">
               {prices.map((priceItem) => (
                 <div
                   key={priceItem.size}
-                  className="bg-white/80 backdrop-blur-sm rounded-lg p-3 hover:shadow-md transition-all duration-300"
+                  className="bg-white/80 backdrop-blur-sm rounded-lg p-2 sm:p-3 hover:shadow-md transition-all duration-300"
                 >
                   <Input
                     label={`${priceItem.size} Price`}
@@ -507,13 +527,19 @@ export default function ProductForm({
                     step="0.01"
                     min="0"
                     className="bg-transparent"
+                    classNames={{
+                      input: "text-sm sm:text-base",
+                      label: "text-xs sm:text-sm",
+                      inputWrapper: "min-h-[44px] sm:min-h-[40px]",
+                    }}
+                    size="sm"
                   />
                 </div>
               ))}
             </div>
             {errors.prices && (
-              <p className="text-red-600 text-sm mt-2 flex items-center gap-1">
-                <AlertCircle className="w-4 h-4" />
+              <p className="text-red-600 text-xs sm:text-sm mt-2 flex items-center gap-1">
+                <AlertCircle className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
                 {errors.prices}
               </p>
             )}
@@ -522,8 +548,8 @@ export default function ProductForm({
       </div>
 
       {/* Colors */}
-      <div className="p-6 bg-gradient-to-br from-pink-50/80 to-rose-50/80 rounded-2xl border border-pink-100/50">
-        <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
+      <div className="p-3 sm:p-4 lg:p-6 bg-gradient-to-br from-pink-50/80 to-rose-50/80 rounded-lg sm:rounded-xl lg:rounded-2xl border border-pink-100/50">
+        <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-gray-800 mb-2 sm:mb-3 lg:mb-4 flex items-center gap-2">
           <div className="w-2 h-2 bg-gradient-to-r from-pink-500 to-rose-600 rounded-full"></div>
           Available Colors
         </h3>
@@ -532,22 +558,24 @@ export default function ProductForm({
           onValueChange={setSelectedColors}
           orientation="horizontal"
           classNames={{
-            wrapper: "gap-4",
+            wrapper: "gap-2 sm:gap-4",
           }}
         >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 sm:gap-3">
             {AVAILABLE_COLORS.map((color) => (
               <div
                 key={color}
-                className="flex items-center gap-2 p-2 bg-white/80 backdrop-blur-sm rounded-lg hover:shadow-md transition-all duration-300"
+                className="flex items-center gap-1 sm:gap-2 p-2 sm:p-2.5 bg-white/80 backdrop-blur-sm rounded-lg hover:shadow-md transition-all duration-300 touch-manipulation min-h-[44px] sm:min-h-[40px]"
               >
-                <Checkbox value={color}>
-                  <div className="flex items-center space-x-2">
+                <Checkbox value={color} size="sm">
+                  <div className="flex items-center space-x-1 sm:space-x-2">
                     <div
-                      className="w-4 h-4 rounded-full border border-gray-300 shadow-sm"
+                      className="w-3 h-3 sm:w-4 sm:h-4 rounded-full border border-gray-300 shadow-sm flex-shrink-0"
                       style={{ backgroundColor: color.toLowerCase() }}
                     />
-                    <span className="font-medium text-gray-700">{color}</span>
+                    <span className="font-medium text-gray-700 text-xs sm:text-sm leading-tight truncate">
+                      {color}
+                    </span>
                   </div>
                 </Checkbox>
               </div>
@@ -557,43 +585,50 @@ export default function ProductForm({
       </div>
 
       {/* Additional Images */}
-      <div className="p-6 bg-gradient-to-br from-emerald-50/80 to-teal-50/80 rounded-2xl border border-emerald-100/50">
-        <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
+      <div className="p-3 sm:p-4 lg:p-6 bg-gradient-to-br from-emerald-50/80 to-teal-50/80 rounded-lg sm:rounded-xl lg:rounded-2xl border border-emerald-100/50">
+        <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-gray-800 mb-2 sm:mb-3 lg:mb-4 flex items-center gap-2">
           <div className="w-2 h-2 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-full"></div>
           Additional Images
         </h3>
 
         {/* Add Image Input */}
-        <div className="flex gap-2 mb-4">
+        <div className="flex flex-col sm:flex-row gap-2 mb-3 sm:mb-4">
           <Input
-            placeholder="https://example.com/image.jpg or www.example.com/image.jpg"
+            placeholder="https://example.com/image.jpg"
             value={imageInput}
             onChange={(e) => setImageInput(e.target.value)}
             onKeyPress={(e) => e.key === "Enter" && addImage()}
             className="flex-1 bg-white/80 backdrop-blur-sm"
+            classNames={{
+              input: "text-sm sm:text-base",
+              inputWrapper: "min-h-[44px] sm:min-h-[40px]",
+            }}
+            size="sm"
           />
           <Button
             onClick={addImage}
             startContent={<Plus className="w-4 h-4" />}
-            className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
+            className="w-full sm:w-auto bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 touch-manipulation min-h-[44px] sm:min-h-[40px]"
+            size="sm"
           >
-            Add
+            <span className="hidden sm:inline">Add Image</span>
+            <span className="sm:hidden">Add</span>
           </Button>
         </div>
 
         {/* Image Gallery */}
         {images.length > 0 && (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 sm:gap-3 lg:gap-4">
             {images.map((imageUrl, index) => (
               <div key={index} className="relative group">
-                <div className="relative w-full h-32 border-2 border-emerald-200 rounded-xl overflow-hidden bg-white/80 backdrop-blur-sm shadow-lg group-hover:shadow-xl transition-all duration-300">
+                <div className="relative w-full h-20 sm:h-24 lg:h-32 border-2 border-emerald-200 rounded-lg sm:rounded-xl overflow-hidden bg-white/80 backdrop-blur-sm shadow-lg group-hover:shadow-xl transition-all duration-300">
                   <SafeImage
                     priority={true}
                     src={imageUrl}
                     alt={`Product image ${index + 1}`}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 768px) 50vw, 25vw"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                     onError={() => {
                       console.log("Failed to load product image:", imageUrl);
                       removeImage(index);
@@ -606,9 +641,9 @@ export default function ProductForm({
                       variant="solid"
                       size="sm"
                       isIconOnly
-                      className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 shadow-lg"
+                      className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 shadow-lg min-w-8 h-8"
                     >
-                      <X className="w-4 h-4" />
+                      <X className="w-3 h-3 sm:w-4 sm:h-4" />
                     </Button>
                   </div>
                 </div>
@@ -619,12 +654,12 @@ export default function ProductForm({
       </div>
 
       {/* Description */}
-      <div className="p-6 bg-gradient-to-br from-cyan-50/80 to-blue-50/80 rounded-2xl border border-cyan-100/50">
-        <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
+      <div className="p-3 sm:p-4 lg:p-6 bg-gradient-to-br from-cyan-50/80 to-blue-50/80 rounded-lg sm:rounded-xl lg:rounded-2xl border border-cyan-100/50">
+        <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-gray-800 mb-2 sm:mb-3 lg:mb-4 flex items-center gap-2">
           <div className="w-2 h-2 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full"></div>
           Product Description
         </h3>
-        <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4">
+        <div className="bg-white/80 backdrop-blur-sm rounded-lg sm:rounded-xl p-2 sm:p-3 lg:p-4">
           <TinyMceTextEditor
             label="Description"
             initialValue={formData.description}
@@ -636,11 +671,12 @@ export default function ProductForm({
       </div>
 
       {/* Submit Actions */}
-      <div className="flex justify-end space-x-4 pt-6 border-t border-gray-200/50">
+      <div className="flex flex-col sm:flex-row justify-end space-y-2 sm:space-y-0 sm:space-x-3 lg:space-x-4 pt-3 sm:pt-4 lg:pt-6 border-t border-gray-200/50">
         <Button
           onClick={handleCancel}
           variant="bordered"
-          className="border-gray-300 hover:border-blue-500 hover:text-blue-600 transition-all duration-300"
+          className="w-full sm:w-auto border-gray-300 hover:border-blue-500 hover:text-blue-600 transition-all duration-300 touch-manipulation min-h-[44px] sm:min-h-[40px]"
+          size="sm"
         >
           Cancel
         </Button>
@@ -649,7 +685,8 @@ export default function ProductForm({
           color="primary"
           isLoading={isLoading}
           startContent={!isLoading && <Save className="w-4 h-4" />}
-          className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 shadow-lg hover:shadow-xl transition-all duration-300"
+          className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 shadow-lg hover:shadow-xl transition-all duration-300 touch-manipulation min-h-[44px] sm:min-h-[40px]"
+          size="sm"
         >
           {isLoading
             ? mode === "add"

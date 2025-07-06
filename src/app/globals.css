@@ -190,3 +190,434 @@
 .animate-bounce-subtle {
   animation: bounce-subtle 2s infinite;
 }
+
+/* Enhanced Mobile Touch Interactions */
+@media (max-width: 768px) {
+  /* Improve touch targets */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Better tap highlights */
+  * {
+    -webkit-tap-highlight-color: rgba(59, 130, 246, 0.1);
+  }
+
+  /* Reduce motion for mobile users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-pulse,
+    .animate-float,
+    .animate-bounce,
+    .animate-fade-in-up,
+    .animate-gradient-x {
+      animation: none !important;
+    }
+  }
+
+  /* Better focus indicators for mobile */
+  .focus-visible\:ring-2:focus-visible {
+    ring-width: 3px;
+  }
+
+  /* Improve mobile scrolling */
+  .overflow-x-auto {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .overflow-x-auto::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Enhanced mobile table styling */
+  .mobile-table-container {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  /* Better mobile card interactions */
+  .mobile-card:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+
+  /* Improved mobile buttons */
+  .mobile-button {
+    padding: 12px 16px;
+    font-size: 16px; /* Prevents zoom on iOS */
+    border-radius: 8px;
+    min-height: 44px;
+  }
+
+  /* Better mobile form controls */
+  .mobile-input input {
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 12px 16px;
+    min-height: 44px;
+  }
+
+  /* Enhanced mobile modal */
+  .mobile-modal {
+    margin: 8px;
+    max-height: calc(100vh - 16px);
+    border-radius: 16px;
+  }
+
+  /* Better mobile chips */
+  .mobile-chip {
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 6px;
+  }
+
+  /* Improved mobile pagination */
+  .mobile-pagination {
+    gap: 4px;
+  }
+
+  .mobile-pagination .pagination-item {
+    min-width: 36px;
+    min-height: 36px;
+    font-size: 14px;
+  }
+
+  /* Product card optimizations */
+  .product-category-card {
+    min-height: 200px;
+    touch-action: manipulation;
+  }
+
+  .product-category-card:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+
+  /* Better stats card layout */
+  .stats-card-mobile {
+    min-height: 120px;
+    padding: 12px;
+  }
+
+  .stats-card-mobile .stat-value {
+    font-size: 1.5rem;
+  }
+
+  .stats-card-mobile .stat-label {
+    font-size: 0.75rem;
+  }
+
+  /* Quick actions mobile optimization */
+  .quick-actions-mobile {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .quick-action-card {
+    min-height: 72px;
+    padding: 12px;
+  }
+
+  /* Better progress bar visibility */
+  .progress-bar-mobile {
+    height: 6px;
+    border-radius: 3px;
+  }
+
+  /* Enhanced category badge */
+  .category-badge-mobile {
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+
+  /* Better icon sizing */
+  .category-icon-mobile {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Touch-friendly action buttons */
+  .action-button-mobile {
+    min-width: 32px;
+    min-height: 32px;
+    padding: 8px;
+  }
+
+  /* Enhanced loading states */
+  .skeleton-mobile {
+    border-radius: 12px;
+    min-height: 180px;
+  }
+
+  /* Better text hierarchy */
+  .category-title-mobile {
+    font-size: 1rem;
+    line-height: 1.25;
+  }
+
+  .category-description-mobile {
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+
+  /* Improved focus states */
+  .focus-mobile:focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+  }
+}
+
+/* Enhanced animations for mobile performance */
+@media (max-width: 768px) and (prefers-reduced-motion: no-preference) {
+  .animate-mobile-scale:hover {
+    transform: scale(1.02);
+    transition: transform 0.2s ease;
+  }
+
+  .animate-mobile-fade {
+    animation: fade-in 0.4s ease-out;
+  }
+
+  .animate-mobile-slide {
+    animation: slide-up 0.3s ease-out;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Safe area handling for mobile devices */
+@supports (padding: max(0px)) {
+  .mobile-safe-area {
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+    padding-bottom: max(16px, env(safe-area-inset-bottom));
+  }
+}
+
+/* Enhanced dark mode support for mobile */
+@media (prefers-color-scheme: dark) and (max-width: 768px) {
+  .dark-mode-mobile {
+    background-color: #0f172a;
+    color: #e2e8f0;
+  }
+
+  .dark-mode-mobile .card-dark {
+    background-color: #1e293b;
+    border-color: #334155;
+  }
+
+  .dark-mode-mobile .text-primary-dark {
+    color: #60a5fa;
+  }
+}
+
+/* Mobile-specific touch and interaction utilities */
+.touch-manipulation {
+  touch-action: manipulation;
+}
+
+.touch-pan-x {
+  touch-action: pan-x;
+}
+
+.touch-pan-y {
+  touch-action: pan-y;
+}
+
+/* Mobile-first responsive typography */
+@media (max-width: 640px) {
+  .responsive-text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  .responsive-text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .responsive-text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .responsive-text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .responsive-text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+/* Mobile-optimized form controls */
+@media (max-width: 640px) {
+  .mobile-form-control {
+    min-height: 44px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  .mobile-checkbox {
+    min-width: 20px;
+    min-height: 20px;
+  }
+
+  .mobile-button {
+    min-height: 44px;
+    padding: 12px 16px;
+    font-size: 16px;
+  }
+}
+
+/* Mobile-friendly table styles */
+@media (max-width: 768px) {
+  .mobile-table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mobile-table-scroll::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .mobile-table-scroll::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+
+  .mobile-table-scroll::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 2px;
+  }
+}
+
+/* Mobile-optimized modal and overlay */
+@media (max-width: 640px) {
+  .mobile-modal {
+    margin: 0;
+    min-height: 100vh;
+    border-radius: 0;
+  }
+
+  .mobile-modal-content {
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+  }
+}
+
+/* Mobile-friendly grid adjustments */
+@media (max-width: 640px) {
+  .mobile-grid-1 {
+    grid-template-columns: 1fr;
+  }
+
+  .mobile-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mobile-gap-2 {
+    gap: 0.5rem;
+  }
+
+  .mobile-gap-3 {
+    gap: 0.75rem;
+  }
+}
+
+/* Mobile-specific padding and margins */
+@media (max-width: 640px) {
+  .mobile-p-2 {
+    padding: 0.5rem;
+  }
+
+  .mobile-p-3 {
+    padding: 0.75rem;
+  }
+
+  .mobile-px-3 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .mobile-py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .mobile-m-2 {
+    margin: 0.5rem;
+  }
+
+  .mobile-mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Mobile-optimized animations */
+@media (max-width: 640px) {
+  .mobile-animate-fast {
+    animation-duration: 0.2s;
+  }
+
+  .mobile-transition-fast {
+    transition-duration: 0.2s;
+  }
+}
+
+/* Mobile-friendly sticky elements */
+@media (max-width: 640px) {
+  .mobile-sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+  }
+
+  .mobile-sticky-footer {
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+  }
+}
+
+/* Mobile-optimized focus states */
+@media (max-width: 640px) {
+  .mobile-focus-ring:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+  }
+
+  .mobile-focus-ring:focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+  }
+}
+
+/* Mobile-specific hover and active states */
+@media (max-width: 640px) {
+  .mobile-hover-bg:active {
+    background-color: #f1f5f9;
+  }
+
+  .mobile-hover-scale:active {
+    transform: scale(0.98);
+  }
+}

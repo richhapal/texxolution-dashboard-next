@@ -517,7 +517,9 @@ export default function CustomerListPage() {
                   <span className="text-white text-lg sm:text-2xl">💡</span>
                 </div>
                 <div className="min-w-0 flex-1">
-                  <h3 className="text-lg sm:text-2xl font-bold text-gray-900">Quick Tips</h3>
+                  <h3 className="text-lg sm:text-2xl font-bold text-gray-900">
+                    Quick Tips
+                  </h3>
                   <p className="text-sm sm:text-base text-gray-600 hidden sm:block">
                     Get the most out of your customer management tools
                   </p>
@@ -563,7 +565,9 @@ export default function CustomerListPage() {
               <div className="bg-white/80 rounded-xl sm:rounded-2xl p-3 sm:p-4 hover:shadow-lg transition-all duration-300 hover:bg-white/90">
                 <div className="flex items-center mb-2">
                   <span className="text-xl sm:text-2xl mr-2">📈</span>
-                  <span className="font-semibold text-gray-900 text-sm sm:text-base">Analytics</span>
+                  <span className="font-semibold text-gray-900 text-sm sm:text-base">
+                    Analytics
+                  </span>
                 </div>
                 <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                   View registration trends and user activity patterns
