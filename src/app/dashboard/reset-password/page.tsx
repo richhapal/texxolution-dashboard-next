@@ -94,8 +94,6 @@ function ResetPasswordContent() {
           type: userType,
         }).unwrap();
 
-        console.log("response", response);
-
         if (response.valid) {
           setStep("reset");
         } else {
@@ -105,15 +103,11 @@ function ResetPasswordContent() {
           );
         }
       } catch (error: any) {
-        console.log('setStep("error")', error);
         setStep("error");
-
-        // Handle different error response structures
-        const errorMessage =
+        setErrorMessage(
           error?.data?.message ||
-          error?.message ||
-          "Failed to verify reset token. Please try again.";
-        setErrorMessage(errorMessage);
+            "Failed to verify reset token. Please try again."
+        );
       }
     };
 
@@ -251,6 +245,7 @@ function ResetPasswordContent() {
 
         <Card className="backdrop-blur-sm bg-white/90 border-0 shadow-2xl">
           <CardBody className="p-6 sm:p-8">
+            {/* Verifying Step */}
             {/* Verifying Step */}
             {step === "verifying" && (
               <div className="text-center py-6 sm:py-8">
