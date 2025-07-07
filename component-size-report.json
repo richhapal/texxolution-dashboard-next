@@ -1,0 +1,1913 @@
+{
+  "timestamp": "2025-07-07T15:03:17.639Z",
+  "summary": {
+    "totalComponents": 88,
+    "totalSize": 718.3500000000001,
+    "totalLines": 18336,
+    "averageSize": 8.163068181818183
+  },
+  "largestBySize": [
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/image-upload/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/image-upload",
+      "size": 59.78,
+      "lines": 1116,
+      "imports": 7
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/orderList/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/orderList",
+      "size": 42.1,
+      "lines": 994,
+      "imports": 6
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/svgIcons/logoIcon.tsx",
+      "name": "logoIcon.tsx",
+      "dir": "/src/_lib/svgIcons",
+      "size": 36.22,
+      "lines": 282,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/ImageGallery.tsx",
+      "name": "ImageGallery.tsx",
+      "dir": "/src/_components/imageUpload",
+      "size": 32.99,
+      "lines": 859,
+      "imports": 3
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/productList/[category]/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/productList/[category]",
+      "size": 32.61,
+      "lines": 746,
+      "imports": 9
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/customer-list/page_backup.tsx",
+      "name": "page_backup.tsx",
+      "dir": "/src/app/customer-list",
+      "size": 31.38,
+      "lines": 592,
+      "imports": 5
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/customer-list/page_fixed.tsx",
+      "name": "page_fixed.tsx",
+      "dir": "/src/app/customer-list",
+      "size": 30.21,
+      "lines": 583,
+      "imports": 5
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/customer-list/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/customer-list",
+      "size": 30.13,
+      "lines": 579,
+      "imports": 5
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/permissions/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/permissions",
+      "size": 29.49,
+      "lines": 726,
+      "imports": 3
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/ProductForm.tsx",
+      "name": "ProductForm.tsx",
+      "dir": "/src/_components/genericComponents",
+      "size": 24.22,
+      "lines": 703,
+      "imports": 5
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/productList/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/productList",
+      "size": 23.34,
+      "lines": 540,
+      "imports": 6
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/customerList/AdminUsersTable.tsx",
+      "name": "AdminUsersTable.tsx",
+      "dir": "/src/_components/customerList",
+      "size": 22.86,
+      "lines": 618,
+      "imports": 3
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/reset-password/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/reset-password",
+      "size": 19.84,
+      "lines": 551,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/dashboard/reset-password/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/dashboard/reset-password",
+      "size": 19.67,
+      "lines": 546,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/customerList/NormalUsersTable.tsx",
+      "name": "NormalUsersTable.tsx",
+      "dir": "/src/_components/customerList",
+      "size": 19.27,
+      "lines": 531,
+      "imports": 3
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/jobForm.tsx",
+      "name": "jobForm.tsx",
+      "dir": "/src/_components/genericComponents",
+      "size": 19,
+      "lines": 534,
+      "imports": 5
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/productList/edit/[id]/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/productList/edit/[id]",
+      "size": 13.52,
+      "lines": 303,
+      "imports": 5
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/ProductViewModal.tsx",
+      "name": "ProductViewModal.tsx",
+      "dir": "/src/_components/genericComponents",
+      "size": 13.11,
+      "lines": 399,
+      "imports": 3
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/forgot-password/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/forgot-password",
+      "size": 11.8,
+      "lines": 300,
+      "imports": 2
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/signin/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/signin",
+      "size": 11.11,
+      "lines": 292,
+      "imports": 5
+    }
+  ],
+  "largestByLines": [
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/image-upload/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/image-upload",
+      "size": 59.78,
+      "lines": 1116,
+      "imports": 7
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/orderList/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/orderList",
+      "size": 42.1,
+      "lines": 994,
+      "imports": 6
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/ImageGallery.tsx",
+      "name": "ImageGallery.tsx",
+      "dir": "/src/_components/imageUpload",
+      "size": 32.99,
+      "lines": 859,
+      "imports": 3
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/productList/[category]/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/productList/[category]",
+      "size": 32.61,
+      "lines": 746,
+      "imports": 9
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/permissions/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/permissions",
+      "size": 29.49,
+      "lines": 726,
+      "imports": 3
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/ProductForm.tsx",
+      "name": "ProductForm.tsx",
+      "dir": "/src/_components/genericComponents",
+      "size": 24.22,
+      "lines": 703,
+      "imports": 5
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/customerList/AdminUsersTable.tsx",
+      "name": "AdminUsersTable.tsx",
+      "dir": "/src/_components/customerList",
+      "size": 22.86,
+      "lines": 618,
+      "imports": 3
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/customer-list/page_backup.tsx",
+      "name": "page_backup.tsx",
+      "dir": "/src/app/customer-list",
+      "size": 31.38,
+      "lines": 592,
+      "imports": 5
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/customer-list/page_fixed.tsx",
+      "name": "page_fixed.tsx",
+      "dir": "/src/app/customer-list",
+      "size": 30.21,
+      "lines": 583,
+      "imports": 5
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/customer-list/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/customer-list",
+      "size": 30.13,
+      "lines": 579,
+      "imports": 5
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/reset-password/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/reset-password",
+      "size": 19.84,
+      "lines": 551,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/dashboard/reset-password/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/dashboard/reset-password",
+      "size": 19.67,
+      "lines": 546,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/productList/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/productList",
+      "size": 23.34,
+      "lines": 540,
+      "imports": 6
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/jobForm.tsx",
+      "name": "jobForm.tsx",
+      "dir": "/src/_components/genericComponents",
+      "size": 19,
+      "lines": 534,
+      "imports": 5
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/customerList/NormalUsersTable.tsx",
+      "name": "NormalUsersTable.tsx",
+      "dir": "/src/_components/customerList",
+      "size": 19.27,
+      "lines": 531,
+      "imports": 3
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/ProductViewModal.tsx",
+      "name": "ProductViewModal.tsx",
+      "dir": "/src/_components/genericComponents",
+      "size": 13.11,
+      "lines": 399,
+      "imports": 3
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/productList/edit/[id]/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/productList/edit/[id]",
+      "size": 13.52,
+      "lines": 303,
+      "imports": 5
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/rtkQuery/purchaseRTKQuery.ts",
+      "name": "purchaseRTKQuery.ts",
+      "dir": "/src/_lib/rtkQuery",
+      "size": 6.94,
+      "lines": 302,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/forgot-password/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/forgot-password",
+      "size": 11.8,
+      "lines": 300,
+      "imports": 2
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/signin/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/signin",
+      "size": 11.11,
+      "lines": 292,
+      "imports": 5
+    }
+  ],
+  "mostImports": [
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/productList/[category]/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/productList/[category]",
+      "size": 32.61,
+      "lines": 746,
+      "imports": 9
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/image-upload/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/image-upload",
+      "size": 59.78,
+      "lines": 1116,
+      "imports": 7
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/orderList/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/orderList",
+      "size": 42.1,
+      "lines": 994,
+      "imports": 6
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/productList/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/productList",
+      "size": 23.34,
+      "lines": 540,
+      "imports": 6
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/ProductForm.tsx",
+      "name": "ProductForm.tsx",
+      "dir": "/src/_components/genericComponents",
+      "size": 24.22,
+      "lines": 703,
+      "imports": 5
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/jobForm.tsx",
+      "name": "jobForm.tsx",
+      "dir": "/src/_components/genericComponents",
+      "size": 19,
+      "lines": 534,
+      "imports": 5
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/store/rootReducer.ts",
+      "name": "rootReducer.ts",
+      "dir": "/src/_lib/store",
+      "size": 0.95,
+      "lines": 24,
+      "imports": 5
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/store/store.ts",
+      "name": "store.ts",
+      "dir": "/src/_lib/store",
+      "size": 1.55,
+      "lines": 42,
+      "imports": 5
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/customer-list/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/customer-list",
+      "size": 30.13,
+      "lines": 579,
+      "imports": 5
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/customer-list/page_backup.tsx",
+      "name": "page_backup.tsx",
+      "dir": "/src/app/customer-list",
+      "size": 31.38,
+      "lines": 592,
+      "imports": 5
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/customer-list/page_fixed.tsx",
+      "name": "page_fixed.tsx",
+      "dir": "/src/app/customer-list",
+      "size": 30.21,
+      "lines": 583,
+      "imports": 5
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app",
+      "size": 5.3,
+      "lines": 143,
+      "imports": 5
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/productList/edit/[id]/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/productList/edit/[id]",
+      "size": 13.52,
+      "lines": 303,
+      "imports": 5
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/signin/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/signin",
+      "size": 11.11,
+      "lines": 292,
+      "imports": 5
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/orderList/AnalyticsCards.tsx",
+      "name": "AnalyticsCards.tsx",
+      "dir": "/src/_components/orderList",
+      "size": 3.89,
+      "lines": 134,
+      "imports": 4
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/layout.tsx",
+      "name": "layout.tsx",
+      "dir": "/src/app",
+      "size": 1.52,
+      "lines": 60,
+      "imports": 4
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/signup/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/signup",
+      "size": 9.98,
+      "lines": 262,
+      "imports": 4
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/customerList/AdminUsersTable.tsx",
+      "name": "AdminUsersTable.tsx",
+      "dir": "/src/_components/customerList",
+      "size": 22.86,
+      "lines": 618,
+      "imports": 3
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/customerList/NormalUsersTable.tsx",
+      "name": "NormalUsersTable.tsx",
+      "dir": "/src/_components/customerList",
+      "size": 19.27,
+      "lines": 531,
+      "imports": 3
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/ProductViewModal.tsx",
+      "name": "ProductViewModal.tsx",
+      "dir": "/src/_components/genericComponents",
+      "size": 13.11,
+      "lines": 399,
+      "imports": 3
+    }
+  ],
+  "categories": {
+    "src": {
+      "totalSize": 718.3500000000001,
+      "count": 88,
+      "files": [
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/categoryList/categoryList.tsx",
+          "name": "categoryList.tsx",
+          "dir": "/src/_components/categoryList",
+          "size": 6.08,
+          "lines": 227,
+          "imports": 2
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/customerList/AdminUsersTable.tsx",
+          "name": "AdminUsersTable.tsx",
+          "dir": "/src/_components/customerList",
+          "size": 22.86,
+          "lines": 618,
+          "imports": 3
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/customerList/NormalUsersTable.tsx",
+          "name": "NormalUsersTable.tsx",
+          "dir": "/src/_components/customerList",
+          "size": 19.27,
+          "lines": 531,
+          "imports": 3
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/dashboard/DashboardCard.tsx",
+          "name": "DashboardCard.tsx",
+          "dir": "/src/_components/dashboard",
+          "size": 5.23,
+          "lines": 157,
+          "imports": 2
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/footer/footer.tsx",
+          "name": "footer.tsx",
+          "dir": "/src/_components/footer",
+          "size": 1.52,
+          "lines": 44,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/Button.tsx",
+          "name": "Button.tsx",
+          "dir": "/src/_components/genericComponents",
+          "size": 0.08,
+          "lines": 6,
+          "imports": 0
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/PermissionDenied.tsx",
+          "name": "PermissionDenied.tsx",
+          "dir": "/src/_components/genericComponents",
+          "size": 2.3,
+          "lines": 68,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/ProductForm.tsx",
+          "name": "ProductForm.tsx",
+          "dir": "/src/_components/genericComponents",
+          "size": 24.22,
+          "lines": 703,
+          "imports": 5
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/ProductViewModal.tsx",
+          "name": "ProductViewModal.tsx",
+          "dir": "/src/_components/genericComponents",
+          "size": 13.11,
+          "lines": 399,
+          "imports": 3
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/SafeImage.tsx",
+          "name": "SafeImage.tsx",
+          "dir": "/src/_components/genericComponents",
+          "size": 3.28,
+          "lines": 129,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/SkeletonCard.tsx",
+          "name": "SkeletonCard.tsx",
+          "dir": "/src/_components/genericComponents",
+          "size": 1.82,
+          "lines": 63,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/ace-editor.tsx",
+          "name": "ace-editor.tsx",
+          "dir": "/src/_components/genericComponents",
+          "size": 1.74,
+          "lines": 69,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/header.tsx",
+          "name": "header.tsx",
+          "dir": "/src/_components/genericComponents",
+          "size": 0.21,
+          "lines": 16,
+          "imports": 0
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/jobForm.tsx",
+          "name": "jobForm.tsx",
+          "dir": "/src/_components/genericComponents",
+          "size": 19,
+          "lines": 534,
+          "imports": 5
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/noContentFound.tsx",
+          "name": "noContentFound.tsx",
+          "dir": "/src/_components/genericComponents",
+          "size": 0.87,
+          "lines": 28,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/tinyMceEditor.tsx",
+          "name": "tinyMceEditor.tsx",
+          "dir": "/src/_components/genericComponents",
+          "size": 2.11,
+          "lines": 78,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/header/header.tsx",
+          "name": "header.tsx",
+          "dir": "/src/_components/header",
+          "size": 7.35,
+          "lines": 193,
+          "imports": 3
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/DropzoneArea.tsx",
+          "name": "DropzoneArea.tsx",
+          "dir": "/src/_components/imageUpload",
+          "size": 4.56,
+          "lines": 130,
+          "imports": 2
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/EmptyState.tsx",
+          "name": "EmptyState.tsx",
+          "dir": "/src/_components/imageUpload",
+          "size": 2.67,
+          "lines": 74,
+          "imports": 2
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/ImageCard.tsx",
+          "name": "ImageCard.tsx",
+          "dir": "/src/_components/imageUpload",
+          "size": 8.48,
+          "lines": 280,
+          "imports": 2
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/ImageGallery.tsx",
+          "name": "ImageGallery.tsx",
+          "dir": "/src/_components/imageUpload",
+          "size": 32.99,
+          "lines": 859,
+          "imports": 3
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/ImageGrid.tsx",
+          "name": "ImageGrid.tsx",
+          "dir": "/src/_components/imageUpload",
+          "size": 6.22,
+          "lines": 178,
+          "imports": 3
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/ImagePreviewModal.tsx",
+          "name": "ImagePreviewModal.tsx",
+          "dir": "/src/_components/imageUpload",
+          "size": 3.6,
+          "lines": 128,
+          "imports": 2
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/UploadModeToggle.tsx",
+          "name": "UploadModeToggle.tsx",
+          "dir": "/src/_components/imageUpload",
+          "size": 3.9,
+          "lines": 110,
+          "imports": 2
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/index.ts",
+          "name": "index.ts",
+          "dir": "/src/_components/imageUpload",
+          "size": 0.55,
+          "lines": 23,
+          "imports": 0
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/types.ts",
+          "name": "types.ts",
+          "dir": "/src/_components/imageUpload",
+          "size": 1.11,
+          "lines": 52,
+          "imports": 0
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/utils.ts",
+          "name": "utils.ts",
+          "dir": "/src/_components/imageUpload",
+          "size": 6.55,
+          "lines": 265,
+          "imports": 0
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/listPage/Landing.tsx",
+          "name": "Landing.tsx",
+          "dir": "/src/_components/listPage",
+          "size": 4.53,
+          "lines": 171,
+          "imports": 3
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/listPage/Table.tsx",
+          "name": "Table.tsx",
+          "dir": "/src/_components/listPage",
+          "size": 3.42,
+          "lines": 135,
+          "imports": 3
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/orderList/AnalyticsCards.tsx",
+          "name": "AnalyticsCards.tsx",
+          "dir": "/src/_components/orderList",
+          "size": 3.89,
+          "lines": 134,
+          "imports": 4
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/orderList/StatusBreakdown.tsx",
+          "name": "StatusBreakdown.tsx",
+          "dir": "/src/_components/orderList",
+          "size": 2.85,
+          "lines": 100,
+          "imports": 3
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/productList/CategoryHeader.tsx",
+          "name": "CategoryHeader.tsx",
+          "dir": "/src/_components/productList",
+          "size": 2.48,
+          "lines": 62,
+          "imports": 2
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/productList/QuickActions.tsx",
+          "name": "QuickActions.tsx",
+          "dir": "/src/_components/productList",
+          "size": 4.2,
+          "lines": 119,
+          "imports": 2
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/hooks/usePaginationLimit.ts",
+          "name": "usePaginationLimit.ts",
+          "dir": "/src/_lib/hooks",
+          "size": 1.22,
+          "lines": 43,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/rtkQuery/authRTKQuery.ts",
+          "name": "authRTKQuery.ts",
+          "dir": "/src/_lib/rtkQuery",
+          "size": 4.51,
+          "lines": 197,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/rtkQuery/customerRTKQuery.ts",
+          "name": "customerRTKQuery.ts",
+          "dir": "/src/_lib/rtkQuery",
+          "size": 3.5,
+          "lines": 155,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/rtkQuery/listRtkQuery.ts",
+          "name": "listRtkQuery.ts",
+          "dir": "/src/_lib/rtkQuery",
+          "size": 4.58,
+          "lines": 158,
+          "imports": 3
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/rtkQuery/permissionsRTKQuery.ts",
+          "name": "permissionsRTKQuery.ts",
+          "dir": "/src/_lib/rtkQuery",
+          "size": 2.96,
+          "lines": 116,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/rtkQuery/productDashboardRTKQuery.ts",
+          "name": "productDashboardRTKQuery.ts",
+          "dir": "/src/_lib/rtkQuery",
+          "size": 5.93,
+          "lines": 256,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/rtkQuery/purchaseRTKQuery.ts",
+          "name": "purchaseRTKQuery.ts",
+          "dir": "/src/_lib/rtkQuery",
+          "size": 6.94,
+          "lines": 302,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/rtkQuery/uploadRTKQuery.ts",
+          "name": "uploadRTKQuery.ts",
+          "dir": "/src/_lib/rtkQuery",
+          "size": 5.05,
+          "lines": 211,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/store/listSlice.ts",
+          "name": "listSlice.ts",
+          "dir": "/src/_lib/store",
+          "size": 0.39,
+          "lines": 19,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/store/rootReducer.ts",
+          "name": "rootReducer.ts",
+          "dir": "/src/_lib/store",
+          "size": 0.95,
+          "lines": 24,
+          "imports": 5
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/store/store.ts",
+          "name": "store.ts",
+          "dir": "/src/_lib/store",
+          "size": 1.55,
+          "lines": 42,
+          "imports": 5
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/store/userSlice.ts",
+          "name": "userSlice.ts",
+          "dir": "/src/_lib/store",
+          "size": 1.5,
+          "lines": 69,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/svgIcons/keyIcon.tsx",
+          "name": "keyIcon.tsx",
+          "dir": "/src/_lib/svgIcons",
+          "size": 0.63,
+          "lines": 21,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/svgIcons/logoIcon.tsx",
+          "name": "logoIcon.tsx",
+          "dir": "/src/_lib/svgIcons",
+          "size": 36.22,
+          "lines": 282,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/svgIcons/menuIcon.tsx",
+          "name": "menuIcon.tsx",
+          "dir": "/src/_lib/svgIcons",
+          "size": 1.43,
+          "lines": 27,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/svgIcons/orderList.tsx",
+          "name": "orderList.tsx",
+          "dir": "/src/_lib/svgIcons",
+          "size": 1.53,
+          "lines": 27,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/svgIcons/setting.tsx",
+          "name": "setting.tsx",
+          "dir": "/src/_lib/svgIcons",
+          "size": 4.22,
+          "lines": 27,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/svgIcons/user.tsx",
+          "name": "user.tsx",
+          "dir": "/src/_lib/svgIcons",
+          "size": 1.94,
+          "lines": 27,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/utils/encryption.ts",
+          "name": "encryption.ts",
+          "dir": "/src/_lib/utils",
+          "size": 3.49,
+          "lines": 125,
+          "imports": 0
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/utils/errorUtils.example.ts",
+          "name": "errorUtils.example.ts",
+          "dir": "/src/_lib/utils",
+          "size": 1.44,
+          "lines": 52,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/utils/errorUtils.ts",
+          "name": "errorUtils.ts",
+          "dir": "/src/_lib/utils",
+          "size": 1.9,
+          "lines": 71,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/utils/roleUtils.ts",
+          "name": "roleUtils.ts",
+          "dir": "/src/_lib/utils",
+          "size": 1.32,
+          "lines": 55,
+          "imports": 0
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/utils/utils.ts",
+          "name": "utils.ts",
+          "dir": "/src/_lib/utils",
+          "size": 4.58,
+          "lines": 139,
+          "imports": 0
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/add/layout.tsx",
+          "name": "layout.tsx",
+          "dir": "/src/app/add",
+          "size": 0.43,
+          "lines": 18,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/add/page.tsx",
+          "name": "page.tsx",
+          "dir": "/src/app/add",
+          "size": 1.13,
+          "lines": 25,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/authWrapper.tsx",
+          "name": "authWrapper.tsx",
+          "dir": "/src/app",
+          "size": 3.99,
+          "lines": 139,
+          "imports": 3
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/category-list/page.tsx",
+          "name": "page.tsx",
+          "dir": "/src/app/category-list",
+          "size": 0.18,
+          "lines": 12,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/customer-list/page.tsx",
+          "name": "page.tsx",
+          "dir": "/src/app/customer-list",
+          "size": 30.13,
+          "lines": 579,
+          "imports": 5
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/customer-list/page_backup.tsx",
+          "name": "page_backup.tsx",
+          "dir": "/src/app/customer-list",
+          "size": 31.38,
+          "lines": 592,
+          "imports": 5
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/customer-list/page_fixed.tsx",
+          "name": "page_fixed.tsx",
+          "dir": "/src/app/customer-list",
+          "size": 30.21,
+          "lines": 583,
+          "imports": 5
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/dashboard/reset-password/page.tsx",
+          "name": "page.tsx",
+          "dir": "/src/app/dashboard/reset-password",
+          "size": 19.67,
+          "lines": 546,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/edit/[category]/[slug]/layout.tsx",
+          "name": "layout.tsx",
+          "dir": "/src/app/edit/[category]/[slug]",
+          "size": 0.43,
+          "lines": 18,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/edit/[category]/[slug]/page.tsx",
+          "name": "page.tsx",
+          "dir": "/src/app/edit/[category]/[slug]",
+          "size": 0.43,
+          "lines": 23,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/forgot-password/page.tsx",
+          "name": "page.tsx",
+          "dir": "/src/app/forgot-password",
+          "size": 11.8,
+          "lines": 300,
+          "imports": 2
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/image-upload/page.tsx",
+          "name": "page.tsx",
+          "dir": "/src/app/image-upload",
+          "size": 59.78,
+          "lines": 1116,
+          "imports": 7
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/job-list/page.tsx",
+          "name": "page.tsx",
+          "dir": "/src/app/job-list",
+          "size": 0.37,
+          "lines": 19,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/layout.tsx",
+          "name": "layout.tsx",
+          "dir": "/src/app",
+          "size": 1.52,
+          "lines": 60,
+          "imports": 4
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/not-found.tsx",
+          "name": "not-found.tsx",
+          "dir": "/src/app",
+          "size": 1.88,
+          "lines": 46,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/orderList/page.tsx",
+          "name": "page.tsx",
+          "dir": "/src/app/orderList",
+          "size": 42.1,
+          "lines": 994,
+          "imports": 6
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/page.tsx",
+          "name": "page.tsx",
+          "dir": "/src/app",
+          "size": 5.3,
+          "lines": 143,
+          "imports": 5
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/permissions/page.tsx",
+          "name": "page.tsx",
+          "dir": "/src/app/permissions",
+          "size": 29.49,
+          "lines": 726,
+          "imports": 3
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/productList/[category]/page.tsx",
+          "name": "page.tsx",
+          "dir": "/src/app/productList/[category]",
+          "size": 32.61,
+          "lines": 746,
+          "imports": 9
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/productList/add/layout.tsx",
+          "name": "layout.tsx",
+          "dir": "/src/app/productList/add",
+          "size": 0.34,
+          "lines": 19,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/productList/add/page.tsx",
+          "name": "page.tsx",
+          "dir": "/src/app/productList/add",
+          "size": 3.08,
+          "lines": 65,
+          "imports": 3
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/productList/edit/[id]/page.tsx",
+          "name": "page.tsx",
+          "dir": "/src/app/productList/edit/[id]",
+          "size": 13.52,
+          "lines": 303,
+          "imports": 5
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/productList/edit/layout.tsx",
+          "name": "layout.tsx",
+          "dir": "/src/app/productList/edit",
+          "size": 0.34,
+          "lines": 19,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/productList/page.tsx",
+          "name": "page.tsx",
+          "dir": "/src/app/productList",
+          "size": 23.34,
+          "lines": 540,
+          "imports": 6
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/reduxProvider.tsx",
+          "name": "reduxProvider.tsx",
+          "dir": "/src/app",
+          "size": 0.26,
+          "lines": 10,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/reset-password/page.tsx",
+          "name": "page.tsx",
+          "dir": "/src/app/reset-password",
+          "size": 19.84,
+          "lines": 551,
+          "imports": 1
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/reset-password/test-guide.ts",
+          "name": "test-guide.ts",
+          "dir": "/src/app/reset-password",
+          "size": 5.33,
+          "lines": 191,
+          "imports": 0
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/rootWrapper.tsx",
+          "name": "rootWrapper.tsx",
+          "dir": "/src/app",
+          "size": 0.44,
+          "lines": 18,
+          "imports": 2
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/signin/page.tsx",
+          "name": "page.tsx",
+          "dir": "/src/app/signin",
+          "size": 11.11,
+          "lines": 292,
+          "imports": 5
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/signin/page_backup.tsx",
+          "name": "page_backup.tsx",
+          "dir": "/src/app/signin",
+          "size": 4.96,
+          "lines": 176,
+          "imports": 3
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/signup/page.tsx",
+          "name": "page.tsx",
+          "dir": "/src/app/signup",
+          "size": 9.98,
+          "lines": 262,
+          "imports": 4
+        },
+        {
+          "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/dataType/getJobData.tsx",
+          "name": "getJobData.tsx",
+          "dir": "/src/dataType",
+          "size": 2.15,
+          "lines": 77,
+          "imports": 0
+        }
+      ]
+    }
+  },
+  "allComponents": [
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/categoryList/categoryList.tsx",
+      "name": "categoryList.tsx",
+      "dir": "/src/_components/categoryList",
+      "size": 6.08,
+      "lines": 227,
+      "imports": 2
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/customerList/AdminUsersTable.tsx",
+      "name": "AdminUsersTable.tsx",
+      "dir": "/src/_components/customerList",
+      "size": 22.86,
+      "lines": 618,
+      "imports": 3
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/customerList/NormalUsersTable.tsx",
+      "name": "NormalUsersTable.tsx",
+      "dir": "/src/_components/customerList",
+      "size": 19.27,
+      "lines": 531,
+      "imports": 3
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/dashboard/DashboardCard.tsx",
+      "name": "DashboardCard.tsx",
+      "dir": "/src/_components/dashboard",
+      "size": 5.23,
+      "lines": 157,
+      "imports": 2
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/footer/footer.tsx",
+      "name": "footer.tsx",
+      "dir": "/src/_components/footer",
+      "size": 1.52,
+      "lines": 44,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/Button.tsx",
+      "name": "Button.tsx",
+      "dir": "/src/_components/genericComponents",
+      "size": 0.08,
+      "lines": 6,
+      "imports": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/PermissionDenied.tsx",
+      "name": "PermissionDenied.tsx",
+      "dir": "/src/_components/genericComponents",
+      "size": 2.3,
+      "lines": 68,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/ProductForm.tsx",
+      "name": "ProductForm.tsx",
+      "dir": "/src/_components/genericComponents",
+      "size": 24.22,
+      "lines": 703,
+      "imports": 5
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/ProductViewModal.tsx",
+      "name": "ProductViewModal.tsx",
+      "dir": "/src/_components/genericComponents",
+      "size": 13.11,
+      "lines": 399,
+      "imports": 3
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/SafeImage.tsx",
+      "name": "SafeImage.tsx",
+      "dir": "/src/_components/genericComponents",
+      "size": 3.28,
+      "lines": 129,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/SkeletonCard.tsx",
+      "name": "SkeletonCard.tsx",
+      "dir": "/src/_components/genericComponents",
+      "size": 1.82,
+      "lines": 63,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/ace-editor.tsx",
+      "name": "ace-editor.tsx",
+      "dir": "/src/_components/genericComponents",
+      "size": 1.74,
+      "lines": 69,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/header.tsx",
+      "name": "header.tsx",
+      "dir": "/src/_components/genericComponents",
+      "size": 0.21,
+      "lines": 16,
+      "imports": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/jobForm.tsx",
+      "name": "jobForm.tsx",
+      "dir": "/src/_components/genericComponents",
+      "size": 19,
+      "lines": 534,
+      "imports": 5
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/noContentFound.tsx",
+      "name": "noContentFound.tsx",
+      "dir": "/src/_components/genericComponents",
+      "size": 0.87,
+      "lines": 28,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/tinyMceEditor.tsx",
+      "name": "tinyMceEditor.tsx",
+      "dir": "/src/_components/genericComponents",
+      "size": 2.11,
+      "lines": 78,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/header/header.tsx",
+      "name": "header.tsx",
+      "dir": "/src/_components/header",
+      "size": 7.35,
+      "lines": 193,
+      "imports": 3
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/DropzoneArea.tsx",
+      "name": "DropzoneArea.tsx",
+      "dir": "/src/_components/imageUpload",
+      "size": 4.56,
+      "lines": 130,
+      "imports": 2
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/EmptyState.tsx",
+      "name": "EmptyState.tsx",
+      "dir": "/src/_components/imageUpload",
+      "size": 2.67,
+      "lines": 74,
+      "imports": 2
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/ImageCard.tsx",
+      "name": "ImageCard.tsx",
+      "dir": "/src/_components/imageUpload",
+      "size": 8.48,
+      "lines": 280,
+      "imports": 2
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/ImageGallery.tsx",
+      "name": "ImageGallery.tsx",
+      "dir": "/src/_components/imageUpload",
+      "size": 32.99,
+      "lines": 859,
+      "imports": 3
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/ImageGrid.tsx",
+      "name": "ImageGrid.tsx",
+      "dir": "/src/_components/imageUpload",
+      "size": 6.22,
+      "lines": 178,
+      "imports": 3
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/ImagePreviewModal.tsx",
+      "name": "ImagePreviewModal.tsx",
+      "dir": "/src/_components/imageUpload",
+      "size": 3.6,
+      "lines": 128,
+      "imports": 2
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/UploadModeToggle.tsx",
+      "name": "UploadModeToggle.tsx",
+      "dir": "/src/_components/imageUpload",
+      "size": 3.9,
+      "lines": 110,
+      "imports": 2
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/index.ts",
+      "name": "index.ts",
+      "dir": "/src/_components/imageUpload",
+      "size": 0.55,
+      "lines": 23,
+      "imports": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/types.ts",
+      "name": "types.ts",
+      "dir": "/src/_components/imageUpload",
+      "size": 1.11,
+      "lines": 52,
+      "imports": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/utils.ts",
+      "name": "utils.ts",
+      "dir": "/src/_components/imageUpload",
+      "size": 6.55,
+      "lines": 265,
+      "imports": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/listPage/Landing.tsx",
+      "name": "Landing.tsx",
+      "dir": "/src/_components/listPage",
+      "size": 4.53,
+      "lines": 171,
+      "imports": 3
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/listPage/Table.tsx",
+      "name": "Table.tsx",
+      "dir": "/src/_components/listPage",
+      "size": 3.42,
+      "lines": 135,
+      "imports": 3
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/orderList/AnalyticsCards.tsx",
+      "name": "AnalyticsCards.tsx",
+      "dir": "/src/_components/orderList",
+      "size": 3.89,
+      "lines": 134,
+      "imports": 4
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/orderList/StatusBreakdown.tsx",
+      "name": "StatusBreakdown.tsx",
+      "dir": "/src/_components/orderList",
+      "size": 2.85,
+      "lines": 100,
+      "imports": 3
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/productList/CategoryHeader.tsx",
+      "name": "CategoryHeader.tsx",
+      "dir": "/src/_components/productList",
+      "size": 2.48,
+      "lines": 62,
+      "imports": 2
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/productList/QuickActions.tsx",
+      "name": "QuickActions.tsx",
+      "dir": "/src/_components/productList",
+      "size": 4.2,
+      "lines": 119,
+      "imports": 2
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/hooks/usePaginationLimit.ts",
+      "name": "usePaginationLimit.ts",
+      "dir": "/src/_lib/hooks",
+      "size": 1.22,
+      "lines": 43,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/rtkQuery/authRTKQuery.ts",
+      "name": "authRTKQuery.ts",
+      "dir": "/src/_lib/rtkQuery",
+      "size": 4.51,
+      "lines": 197,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/rtkQuery/customerRTKQuery.ts",
+      "name": "customerRTKQuery.ts",
+      "dir": "/src/_lib/rtkQuery",
+      "size": 3.5,
+      "lines": 155,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/rtkQuery/listRtkQuery.ts",
+      "name": "listRtkQuery.ts",
+      "dir": "/src/_lib/rtkQuery",
+      "size": 4.58,
+      "lines": 158,
+      "imports": 3
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/rtkQuery/permissionsRTKQuery.ts",
+      "name": "permissionsRTKQuery.ts",
+      "dir": "/src/_lib/rtkQuery",
+      "size": 2.96,
+      "lines": 116,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/rtkQuery/productDashboardRTKQuery.ts",
+      "name": "productDashboardRTKQuery.ts",
+      "dir": "/src/_lib/rtkQuery",
+      "size": 5.93,
+      "lines": 256,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/rtkQuery/purchaseRTKQuery.ts",
+      "name": "purchaseRTKQuery.ts",
+      "dir": "/src/_lib/rtkQuery",
+      "size": 6.94,
+      "lines": 302,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/rtkQuery/uploadRTKQuery.ts",
+      "name": "uploadRTKQuery.ts",
+      "dir": "/src/_lib/rtkQuery",
+      "size": 5.05,
+      "lines": 211,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/store/listSlice.ts",
+      "name": "listSlice.ts",
+      "dir": "/src/_lib/store",
+      "size": 0.39,
+      "lines": 19,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/store/rootReducer.ts",
+      "name": "rootReducer.ts",
+      "dir": "/src/_lib/store",
+      "size": 0.95,
+      "lines": 24,
+      "imports": 5
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/store/store.ts",
+      "name": "store.ts",
+      "dir": "/src/_lib/store",
+      "size": 1.55,
+      "lines": 42,
+      "imports": 5
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/store/userSlice.ts",
+      "name": "userSlice.ts",
+      "dir": "/src/_lib/store",
+      "size": 1.5,
+      "lines": 69,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/svgIcons/keyIcon.tsx",
+      "name": "keyIcon.tsx",
+      "dir": "/src/_lib/svgIcons",
+      "size": 0.63,
+      "lines": 21,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/svgIcons/logoIcon.tsx",
+      "name": "logoIcon.tsx",
+      "dir": "/src/_lib/svgIcons",
+      "size": 36.22,
+      "lines": 282,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/svgIcons/menuIcon.tsx",
+      "name": "menuIcon.tsx",
+      "dir": "/src/_lib/svgIcons",
+      "size": 1.43,
+      "lines": 27,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/svgIcons/orderList.tsx",
+      "name": "orderList.tsx",
+      "dir": "/src/_lib/svgIcons",
+      "size": 1.53,
+      "lines": 27,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/svgIcons/setting.tsx",
+      "name": "setting.tsx",
+      "dir": "/src/_lib/svgIcons",
+      "size": 4.22,
+      "lines": 27,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/svgIcons/user.tsx",
+      "name": "user.tsx",
+      "dir": "/src/_lib/svgIcons",
+      "size": 1.94,
+      "lines": 27,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/utils/encryption.ts",
+      "name": "encryption.ts",
+      "dir": "/src/_lib/utils",
+      "size": 3.49,
+      "lines": 125,
+      "imports": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/utils/errorUtils.example.ts",
+      "name": "errorUtils.example.ts",
+      "dir": "/src/_lib/utils",
+      "size": 1.44,
+      "lines": 52,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/utils/errorUtils.ts",
+      "name": "errorUtils.ts",
+      "dir": "/src/_lib/utils",
+      "size": 1.9,
+      "lines": 71,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/utils/roleUtils.ts",
+      "name": "roleUtils.ts",
+      "dir": "/src/_lib/utils",
+      "size": 1.32,
+      "lines": 55,
+      "imports": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/utils/utils.ts",
+      "name": "utils.ts",
+      "dir": "/src/_lib/utils",
+      "size": 4.58,
+      "lines": 139,
+      "imports": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/add/layout.tsx",
+      "name": "layout.tsx",
+      "dir": "/src/app/add",
+      "size": 0.43,
+      "lines": 18,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/add/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/add",
+      "size": 1.13,
+      "lines": 25,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/authWrapper.tsx",
+      "name": "authWrapper.tsx",
+      "dir": "/src/app",
+      "size": 3.99,
+      "lines": 139,
+      "imports": 3
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/category-list/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/category-list",
+      "size": 0.18,
+      "lines": 12,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/customer-list/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/customer-list",
+      "size": 30.13,
+      "lines": 579,
+      "imports": 5
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/customer-list/page_backup.tsx",
+      "name": "page_backup.tsx",
+      "dir": "/src/app/customer-list",
+      "size": 31.38,
+      "lines": 592,
+      "imports": 5
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/customer-list/page_fixed.tsx",
+      "name": "page_fixed.tsx",
+      "dir": "/src/app/customer-list",
+      "size": 30.21,
+      "lines": 583,
+      "imports": 5
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/dashboard/reset-password/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/dashboard/reset-password",
+      "size": 19.67,
+      "lines": 546,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/edit/[category]/[slug]/layout.tsx",
+      "name": "layout.tsx",
+      "dir": "/src/app/edit/[category]/[slug]",
+      "size": 0.43,
+      "lines": 18,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/edit/[category]/[slug]/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/edit/[category]/[slug]",
+      "size": 0.43,
+      "lines": 23,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/forgot-password/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/forgot-password",
+      "size": 11.8,
+      "lines": 300,
+      "imports": 2
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/image-upload/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/image-upload",
+      "size": 59.78,
+      "lines": 1116,
+      "imports": 7
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/job-list/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/job-list",
+      "size": 0.37,
+      "lines": 19,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/layout.tsx",
+      "name": "layout.tsx",
+      "dir": "/src/app",
+      "size": 1.52,
+      "lines": 60,
+      "imports": 4
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/not-found.tsx",
+      "name": "not-found.tsx",
+      "dir": "/src/app",
+      "size": 1.88,
+      "lines": 46,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/orderList/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/orderList",
+      "size": 42.1,
+      "lines": 994,
+      "imports": 6
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app",
+      "size": 5.3,
+      "lines": 143,
+      "imports": 5
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/permissions/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/permissions",
+      "size": 29.49,
+      "lines": 726,
+      "imports": 3
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/productList/[category]/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/productList/[category]",
+      "size": 32.61,
+      "lines": 746,
+      "imports": 9
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/productList/add/layout.tsx",
+      "name": "layout.tsx",
+      "dir": "/src/app/productList/add",
+      "size": 0.34,
+      "lines": 19,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/productList/add/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/productList/add",
+      "size": 3.08,
+      "lines": 65,
+      "imports": 3
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/productList/edit/[id]/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/productList/edit/[id]",
+      "size": 13.52,
+      "lines": 303,
+      "imports": 5
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/productList/edit/layout.tsx",
+      "name": "layout.tsx",
+      "dir": "/src/app/productList/edit",
+      "size": 0.34,
+      "lines": 19,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/productList/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/productList",
+      "size": 23.34,
+      "lines": 540,
+      "imports": 6
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/reduxProvider.tsx",
+      "name": "reduxProvider.tsx",
+      "dir": "/src/app",
+      "size": 0.26,
+      "lines": 10,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/reset-password/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/reset-password",
+      "size": 19.84,
+      "lines": 551,
+      "imports": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/reset-password/test-guide.ts",
+      "name": "test-guide.ts",
+      "dir": "/src/app/reset-password",
+      "size": 5.33,
+      "lines": 191,
+      "imports": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/rootWrapper.tsx",
+      "name": "rootWrapper.tsx",
+      "dir": "/src/app",
+      "size": 0.44,
+      "lines": 18,
+      "imports": 2
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/signin/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/signin",
+      "size": 11.11,
+      "lines": 292,
+      "imports": 5
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/signin/page_backup.tsx",
+      "name": "page_backup.tsx",
+      "dir": "/src/app/signin",
+      "size": 4.96,
+      "lines": 176,
+      "imports": 3
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/signup/page.tsx",
+      "name": "page.tsx",
+      "dir": "/src/app/signup",
+      "size": 9.98,
+      "lines": 262,
+      "imports": 4
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/dataType/getJobData.tsx",
+      "name": "getJobData.tsx",
+      "dir": "/src/dataType",
+      "size": 2.15,
+      "lines": 77,
+      "imports": 0
+    }
+  ]
+}

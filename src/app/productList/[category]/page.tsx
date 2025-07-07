@@ -1,24 +1,23 @@
 "use client";
 
 import React, { useState, useMemo, useEffect } from "react";
+import dynamic from "next/dynamic";
+// Optimized imports - use specific component imports instead of barrel imports
+import { Button } from "@heroui/button";
+import { Card, CardBody, CardHeader } from "@heroui/card";
+import { Input } from "@heroui/input";
+import { Select, SelectItem } from "@heroui/select";
+import { Badge } from "@heroui/badge";
+import { Chip } from "@heroui/chip";
+import { Skeleton } from "@heroui/skeleton";
+import { Pagination } from "@heroui/pagination";
 import {
-  Card,
-  CardBody,
-  CardHeader,
-  Button,
-  Input,
-  Select,
-  SelectItem,
-  Badge,
-  Chip,
-  Skeleton,
-  Pagination,
   Modal,
   ModalContent,
   ModalHeader,
   ModalBody,
   ModalFooter,
-} from "@heroui/react";
+} from "@heroui/modal";
 import { useRouter, useParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -40,11 +39,19 @@ import {
   useDeleteProductMutation,
   Product,
 } from "@/_lib/rtkQuery/productDashboardRTKQuery";
-import ProductViewModal from "@/_components/genericComponents/ProductViewModal";
 import SafeImage from "@/_components/genericComponents/SafeImage";
 import PermissionDenied from "@/_components/genericComponents/PermissionDenied";
 import { productCategoryMapping } from "@/_lib/utils/utils";
 import { is401Error, handleAPIError } from "@/_lib/utils/errorUtils";
+
+// Dynamic imports for heavy components
+const ProductViewModal = dynamic(
+  () => import("@/_components/genericComponents/ProductViewModal"),
+  {
+    loading: () => null, // Modal loading state can be null since it's overlay
+    ssr: false,
+  }
+);
 
 export default function CategoryDetailPage() {
   const router = useRouter();

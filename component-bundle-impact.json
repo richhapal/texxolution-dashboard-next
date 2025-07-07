@@ -1,0 +1,1754 @@
+{
+  "timestamp": "2025-07-07T15:03:17.683Z",
+  "summary": {
+    "totalComponents": 67,
+    "componentsWithExternalDeps": 60,
+    "heavyLibraryUsers": 19
+  },
+  "heavyComponents": [
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/productList/[category]/page.tsx",
+      "name": "page.tsx",
+      "relativePath": "src/app/productList/[category]/page.tsx",
+      "dependencies": {
+        "external": [
+          "react",
+          "@heroui/button",
+          "@heroui/input",
+          "@heroui/badge",
+          "@heroui/skeleton",
+          "next/navigation",
+          "next/image"
+        ],
+        "internal": [],
+        "absolute": [
+          "@/_components/genericComponents/SafeImage",
+          "@/_lib/utils/utils"
+        ],
+        "heroui": [
+          "@heroui/button",
+          "@heroui/input",
+          "@heroui/badge",
+          "@heroui/skeleton"
+        ],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "react"
+        ],
+        "nextjs": [
+          "next/navigation",
+          "next/image"
+        ],
+        "others": []
+      },
+      "totalExternalDeps": 7,
+      "heavyLibraries": 4
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/jobForm.tsx",
+      "name": "jobForm.tsx",
+      "relativePath": "src/_components/genericComponents/jobForm.tsx",
+      "dependencies": {
+        "external": [
+          "react",
+          "@hookform/resolvers/zod",
+          "lucide-react",
+          "react-toastify"
+        ],
+        "internal": [],
+        "absolute": [
+          "@/dataType/getJobData"
+        ],
+        "heroui": [],
+        "lucide": [
+          "lucide-react"
+        ],
+        "framerMotion": [],
+        "react": [
+          "react",
+          "lucide-react"
+        ],
+        "nextjs": [],
+        "others": [
+          "@hookform/resolvers/zod"
+        ]
+      },
+      "totalExternalDeps": 4,
+      "heavyLibraries": 1
+    }
+  ],
+  "libraryUsage": {
+    "heroUI": [],
+    "lucide": [],
+    "framerMotion": []
+  },
+  "allComponents": [
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/categoryList/categoryList.tsx",
+      "name": "categoryList.tsx",
+      "relativePath": "src/_components/categoryList/categoryList.tsx",
+      "dependencies": {
+        "external": [
+          "react",
+          "lucide-react"
+        ],
+        "internal": [],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [
+          "lucide-react"
+        ],
+        "framerMotion": [],
+        "react": [
+          "react",
+          "lucide-react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 2,
+      "heavyLibraries": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/customerList/AdminUsersTable.tsx",
+      "name": "AdminUsersTable.tsx",
+      "relativePath": "src/_components/customerList/AdminUsersTable.tsx",
+      "dependencies": {
+        "external": [
+          "react",
+          "react-toastify"
+        ],
+        "internal": [],
+        "absolute": [
+          "@/_lib/utils/utils"
+        ],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 2,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/customerList/NormalUsersTable.tsx",
+      "name": "NormalUsersTable.tsx",
+      "relativePath": "src/_components/customerList/NormalUsersTable.tsx",
+      "dependencies": {
+        "external": [
+          "react",
+          "react-toastify"
+        ],
+        "internal": [],
+        "absolute": [
+          "@/_lib/utils/utils"
+        ],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 2,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/dashboard/DashboardCard.tsx",
+      "name": "DashboardCard.tsx",
+      "relativePath": "src/_components/dashboard/DashboardCard.tsx",
+      "dependencies": {
+        "external": [
+          "react",
+          "lucide-react"
+        ],
+        "internal": [],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [
+          "lucide-react"
+        ],
+        "framerMotion": [],
+        "react": [
+          "react",
+          "lucide-react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 2,
+      "heavyLibraries": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/footer/footer.tsx",
+      "name": "footer.tsx",
+      "relativePath": "src/_components/footer/footer.tsx",
+      "dependencies": {
+        "external": [
+          "next/link"
+        ],
+        "internal": [],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [],
+        "nextjs": [
+          "next/link"
+        ],
+        "others": []
+      },
+      "totalExternalDeps": 1,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/Button.tsx",
+      "name": "Button.tsx",
+      "relativePath": "src/_components/genericComponents/Button.tsx",
+      "dependencies": {
+        "external": [],
+        "internal": [],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 0,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/PermissionDenied.tsx",
+      "name": "PermissionDenied.tsx",
+      "relativePath": "src/_components/genericComponents/PermissionDenied.tsx",
+      "dependencies": {
+        "external": [
+          "react"
+        ],
+        "internal": [],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 1,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/ProductForm.tsx",
+      "name": "ProductForm.tsx",
+      "relativePath": "src/_components/genericComponents/ProductForm.tsx",
+      "dependencies": {
+        "external": [
+          "react",
+          "next/navigation",
+          "lucide-react"
+        ],
+        "internal": [],
+        "absolute": [
+          "@/_components/genericComponents/SafeImage",
+          "@/_lib/utils/utils"
+        ],
+        "heroui": [],
+        "lucide": [
+          "lucide-react"
+        ],
+        "framerMotion": [],
+        "react": [
+          "react",
+          "lucide-react"
+        ],
+        "nextjs": [
+          "next/navigation"
+        ],
+        "others": []
+      },
+      "totalExternalDeps": 3,
+      "heavyLibraries": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/ProductViewModal.tsx",
+      "name": "ProductViewModal.tsx",
+      "relativePath": "src/_components/genericComponents/ProductViewModal.tsx",
+      "dependencies": {
+        "external": [
+          "react",
+          "next/navigation"
+        ],
+        "internal": [],
+        "absolute": [
+          "@/_components/genericComponents/SafeImage"
+        ],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "react"
+        ],
+        "nextjs": [
+          "next/navigation"
+        ],
+        "others": []
+      },
+      "totalExternalDeps": 2,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/SafeImage.tsx",
+      "name": "SafeImage.tsx",
+      "relativePath": "src/_components/genericComponents/SafeImage.tsx",
+      "dependencies": {
+        "external": [
+          "react"
+        ],
+        "internal": [],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 1,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/SkeletonCard.tsx",
+      "name": "SkeletonCard.tsx",
+      "relativePath": "src/_components/genericComponents/SkeletonCard.tsx",
+      "dependencies": {
+        "external": [
+          "react"
+        ],
+        "internal": [],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 1,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/ace-editor.tsx",
+      "name": "ace-editor.tsx",
+      "relativePath": "src/_components/genericComponents/ace-editor.tsx",
+      "dependencies": {
+        "external": [
+          "react"
+        ],
+        "internal": [],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 1,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/header.tsx",
+      "name": "header.tsx",
+      "relativePath": "src/_components/genericComponents/header.tsx",
+      "dependencies": {
+        "external": [],
+        "internal": [],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 0,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/jobForm.tsx",
+      "name": "jobForm.tsx",
+      "relativePath": "src/_components/genericComponents/jobForm.tsx",
+      "dependencies": {
+        "external": [
+          "react",
+          "@hookform/resolvers/zod",
+          "lucide-react",
+          "react-toastify"
+        ],
+        "internal": [],
+        "absolute": [
+          "@/dataType/getJobData"
+        ],
+        "heroui": [],
+        "lucide": [
+          "lucide-react"
+        ],
+        "framerMotion": [],
+        "react": [
+          "react",
+          "lucide-react"
+        ],
+        "nextjs": [],
+        "others": [
+          "@hookform/resolvers/zod"
+        ]
+      },
+      "totalExternalDeps": 4,
+      "heavyLibraries": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/noContentFound.tsx",
+      "name": "noContentFound.tsx",
+      "relativePath": "src/_components/genericComponents/noContentFound.tsx",
+      "dependencies": {
+        "external": [
+          "lucide-react"
+        ],
+        "internal": [],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [
+          "lucide-react"
+        ],
+        "framerMotion": [],
+        "react": [
+          "lucide-react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 1,
+      "heavyLibraries": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/tinyMceEditor.tsx",
+      "name": "tinyMceEditor.tsx",
+      "relativePath": "src/_components/genericComponents/tinyMceEditor.tsx",
+      "dependencies": {
+        "external": [
+          "react"
+        ],
+        "internal": [],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 1,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/header/header.tsx",
+      "name": "header.tsx",
+      "relativePath": "src/_components/header/header.tsx",
+      "dependencies": {
+        "external": [
+          "next/link",
+          "next/navigation"
+        ],
+        "internal": [],
+        "absolute": [
+          "@/_lib/store/store"
+        ],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [],
+        "nextjs": [
+          "next/link",
+          "next/navigation"
+        ],
+        "others": []
+      },
+      "totalExternalDeps": 2,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/DropzoneArea.tsx",
+      "name": "DropzoneArea.tsx",
+      "relativePath": "src/_components/imageUpload/DropzoneArea.tsx",
+      "dependencies": {
+        "external": [
+          "react",
+          "lucide-react"
+        ],
+        "internal": [],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [
+          "lucide-react"
+        ],
+        "framerMotion": [],
+        "react": [
+          "react",
+          "lucide-react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 2,
+      "heavyLibraries": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/EmptyState.tsx",
+      "name": "EmptyState.tsx",
+      "relativePath": "src/_components/imageUpload/EmptyState.tsx",
+      "dependencies": {
+        "external": [
+          "react",
+          "lucide-react"
+        ],
+        "internal": [],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [
+          "lucide-react"
+        ],
+        "framerMotion": [],
+        "react": [
+          "react",
+          "lucide-react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 2,
+      "heavyLibraries": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/ImageCard.tsx",
+      "name": "ImageCard.tsx",
+      "relativePath": "src/_components/imageUpload/ImageCard.tsx",
+      "dependencies": {
+        "external": [
+          "react"
+        ],
+        "internal": [
+          "./types"
+        ],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 1,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/ImageGallery.tsx",
+      "name": "ImageGallery.tsx",
+      "relativePath": "src/_components/imageUpload/ImageGallery.tsx",
+      "dependencies": {
+        "external": [
+          "react"
+        ],
+        "internal": [
+          "./utils"
+        ],
+        "absolute": [
+          "@/_lib/utils/roleUtils"
+        ],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 1,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/ImageGrid.tsx",
+      "name": "ImageGrid.tsx",
+      "relativePath": "src/_components/imageUpload/ImageGrid.tsx",
+      "dependencies": {
+        "external": [
+          "react",
+          "lucide-react"
+        ],
+        "internal": [
+          "./ImageCard"
+        ],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [
+          "lucide-react"
+        ],
+        "framerMotion": [],
+        "react": [
+          "react",
+          "lucide-react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 2,
+      "heavyLibraries": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/ImagePreviewModal.tsx",
+      "name": "ImagePreviewModal.tsx",
+      "relativePath": "src/_components/imageUpload/ImagePreviewModal.tsx",
+      "dependencies": {
+        "external": [
+          "react",
+          "lucide-react"
+        ],
+        "internal": [],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [
+          "lucide-react"
+        ],
+        "framerMotion": [],
+        "react": [
+          "react",
+          "lucide-react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 2,
+      "heavyLibraries": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/UploadModeToggle.tsx",
+      "name": "UploadModeToggle.tsx",
+      "relativePath": "src/_components/imageUpload/UploadModeToggle.tsx",
+      "dependencies": {
+        "external": [
+          "react"
+        ],
+        "internal": [
+          "./types"
+        ],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 1,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/listPage/Landing.tsx",
+      "name": "Landing.tsx",
+      "relativePath": "src/_components/listPage/Landing.tsx",
+      "dependencies": {
+        "external": [
+          "react"
+        ],
+        "internal": [
+          "../genericComponents/header",
+          "./Table"
+        ],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 1,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/listPage/Table.tsx",
+      "name": "Table.tsx",
+      "relativePath": "src/_components/listPage/Table.tsx",
+      "dependencies": {
+        "external": [
+          "react",
+          "@heroicons/react/24/outline"
+        ],
+        "internal": [],
+        "absolute": [
+          "@/_lib/rtkQuery/listRtkQuery"
+        ],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "react",
+          "@heroicons/react/24/outline"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 2,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/orderList/AnalyticsCards.tsx",
+      "name": "AnalyticsCards.tsx",
+      "relativePath": "src/_components/orderList/AnalyticsCards.tsx",
+      "dependencies": {
+        "external": [
+          "react",
+          "@heroicons/react/24/outline"
+        ],
+        "internal": [],
+        "absolute": [
+          "@/_lib/rtkQuery/purchaseRTKQuery",
+          "@/_components/genericComponents/PermissionDenied"
+        ],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "react",
+          "@heroicons/react/24/outline"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 2,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/orderList/StatusBreakdown.tsx",
+      "name": "StatusBreakdown.tsx",
+      "relativePath": "src/_components/orderList/StatusBreakdown.tsx",
+      "dependencies": {
+        "external": [
+          "react"
+        ],
+        "internal": [],
+        "absolute": [
+          "@/_lib/rtkQuery/purchaseRTKQuery",
+          "@/_components/genericComponents/PermissionDenied"
+        ],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 1,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/productList/CategoryHeader.tsx",
+      "name": "CategoryHeader.tsx",
+      "relativePath": "src/_components/productList/CategoryHeader.tsx",
+      "dependencies": {
+        "external": [
+          "react",
+          "next/link"
+        ],
+        "internal": [],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "react"
+        ],
+        "nextjs": [
+          "next/link"
+        ],
+        "others": []
+      },
+      "totalExternalDeps": 2,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/productList/QuickActions.tsx",
+      "name": "QuickActions.tsx",
+      "relativePath": "src/_components/productList/QuickActions.tsx",
+      "dependencies": {
+        "external": [
+          "react",
+          "next/navigation"
+        ],
+        "internal": [],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "react"
+        ],
+        "nextjs": [
+          "next/navigation"
+        ],
+        "others": []
+      },
+      "totalExternalDeps": 2,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/svgIcons/keyIcon.tsx",
+      "name": "keyIcon.tsx",
+      "relativePath": "src/_lib/svgIcons/keyIcon.tsx",
+      "dependencies": {
+        "external": [
+          "react"
+        ],
+        "internal": [],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 1,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/svgIcons/logoIcon.tsx",
+      "name": "logoIcon.tsx",
+      "relativePath": "src/_lib/svgIcons/logoIcon.tsx",
+      "dependencies": {
+        "external": [
+          "react"
+        ],
+        "internal": [],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 1,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/svgIcons/menuIcon.tsx",
+      "name": "menuIcon.tsx",
+      "relativePath": "src/_lib/svgIcons/menuIcon.tsx",
+      "dependencies": {
+        "external": [
+          "react"
+        ],
+        "internal": [],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 1,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/svgIcons/orderList.tsx",
+      "name": "orderList.tsx",
+      "relativePath": "src/_lib/svgIcons/orderList.tsx",
+      "dependencies": {
+        "external": [
+          "react"
+        ],
+        "internal": [],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 1,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/svgIcons/setting.tsx",
+      "name": "setting.tsx",
+      "relativePath": "src/_lib/svgIcons/setting.tsx",
+      "dependencies": {
+        "external": [
+          "react"
+        ],
+        "internal": [],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 1,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_lib/svgIcons/user.tsx",
+      "name": "user.tsx",
+      "relativePath": "src/_lib/svgIcons/user.tsx",
+      "dependencies": {
+        "external": [
+          "react"
+        ],
+        "internal": [],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 1,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/add/layout.tsx",
+      "name": "layout.tsx",
+      "relativePath": "src/app/add/layout.tsx",
+      "dependencies": {
+        "external": [
+          "next/script"
+        ],
+        "internal": [],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [],
+        "nextjs": [
+          "next/script"
+        ],
+        "others": []
+      },
+      "totalExternalDeps": 1,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/add/page.tsx",
+      "name": "page.tsx",
+      "relativePath": "src/app/add/page.tsx",
+      "dependencies": {
+        "external": [],
+        "internal": [],
+        "absolute": [
+          "@/_components/genericComponents/jobForm"
+        ],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 0,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/authWrapper.tsx",
+      "name": "authWrapper.tsx",
+      "relativePath": "src/app/authWrapper.tsx",
+      "dependencies": {
+        "external": [
+          "react"
+        ],
+        "internal": [],
+        "absolute": [
+          "@/_lib/store/store",
+          "@/_lib/store/userSlice"
+        ],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 1,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/category-list/page.tsx",
+      "name": "page.tsx",
+      "relativePath": "src/app/category-list/page.tsx",
+      "dependencies": {
+        "external": [],
+        "internal": [],
+        "absolute": [
+          "@/_components/categoryList/categoryList"
+        ],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 0,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/customer-list/page.tsx",
+      "name": "page.tsx",
+      "relativePath": "src/app/customer-list/page.tsx",
+      "dependencies": {
+        "external": [
+          "react"
+        ],
+        "internal": [],
+        "absolute": [
+          "@/_lib/store/store",
+          "@/_components/genericComponents/PermissionDenied",
+          "@/_components/customerList/NormalUsersTable",
+          "@/_lib/hooks/usePaginationLimit"
+        ],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 1,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/customer-list/page_backup.tsx",
+      "name": "page_backup.tsx",
+      "relativePath": "src/app/customer-list/page_backup.tsx",
+      "dependencies": {
+        "external": [
+          "react"
+        ],
+        "internal": [],
+        "absolute": [
+          "@/_lib/store/store",
+          "@/_components/genericComponents/PermissionDenied",
+          "@/_components/customerList/NormalUsersTable",
+          "@/_lib/hooks/usePaginationLimit"
+        ],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 1,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/customer-list/page_fixed.tsx",
+      "name": "page_fixed.tsx",
+      "relativePath": "src/app/customer-list/page_fixed.tsx",
+      "dependencies": {
+        "external": [
+          "react"
+        ],
+        "internal": [],
+        "absolute": [
+          "@/_lib/store/store",
+          "@/_components/genericComponents/PermissionDenied",
+          "@/_components/customerList/NormalUsersTable",
+          "@/_lib/hooks/usePaginationLimit"
+        ],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 1,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/dashboard/reset-password/page.tsx",
+      "name": "page.tsx",
+      "relativePath": "src/app/dashboard/reset-password/page.tsx",
+      "dependencies": {
+        "external": [
+          "react"
+        ],
+        "internal": [],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 1,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/edit/[category]/[slug]/layout.tsx",
+      "name": "layout.tsx",
+      "relativePath": "src/app/edit/[category]/[slug]/layout.tsx",
+      "dependencies": {
+        "external": [
+          "next/script"
+        ],
+        "internal": [],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [],
+        "nextjs": [
+          "next/script"
+        ],
+        "others": []
+      },
+      "totalExternalDeps": 1,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/edit/[category]/[slug]/page.tsx",
+      "name": "page.tsx",
+      "relativePath": "src/app/edit/[category]/[slug]/page.tsx",
+      "dependencies": {
+        "external": [],
+        "internal": [],
+        "absolute": [
+          "@/_components/genericComponents/jobForm"
+        ],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 0,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/forgot-password/page.tsx",
+      "name": "page.tsx",
+      "relativePath": "src/app/forgot-password/page.tsx",
+      "dependencies": {
+        "external": [
+          "react",
+          "lucide-react"
+        ],
+        "internal": [],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [
+          "lucide-react"
+        ],
+        "framerMotion": [],
+        "react": [
+          "react",
+          "lucide-react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 2,
+      "heavyLibraries": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/image-upload/page.tsx",
+      "name": "page.tsx",
+      "relativePath": "src/app/image-upload/page.tsx",
+      "dependencies": {
+        "external": [
+          "react",
+          "lucide-react"
+        ],
+        "internal": [],
+        "absolute": [
+          "@/_components/imageUpload/UploadModeToggle",
+          "@/_components/imageUpload/ImageGrid",
+          "@/_components/imageUpload/ImagePreviewModal",
+          "@/_components/imageUpload/types",
+          "@/_lib/store/store"
+        ],
+        "heroui": [],
+        "lucide": [
+          "lucide-react"
+        ],
+        "framerMotion": [],
+        "react": [
+          "react",
+          "lucide-react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 2,
+      "heavyLibraries": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/job-list/page.tsx",
+      "name": "page.tsx",
+      "relativePath": "src/app/job-list/page.tsx",
+      "dependencies": {
+        "external": [],
+        "internal": [],
+        "absolute": [
+          "@/_components/listPage/Landing"
+        ],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 0,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/layout.tsx",
+      "name": "layout.tsx",
+      "relativePath": "src/app/layout.tsx",
+      "dependencies": {
+        "external": [
+          "next",
+          "react-toastify"
+        ],
+        "internal": [
+          "./rootWrapper"
+        ],
+        "absolute": [
+          "@/_components/footer/footer"
+        ],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [],
+        "nextjs": [],
+        "others": [
+          "next"
+        ]
+      },
+      "totalExternalDeps": 2,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/not-found.tsx",
+      "name": "not-found.tsx",
+      "relativePath": "src/app/not-found.tsx",
+      "dependencies": {
+        "external": [
+          "next/link"
+        ],
+        "internal": [],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [],
+        "nextjs": [
+          "next/link"
+        ],
+        "others": []
+      },
+      "totalExternalDeps": 1,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/orderList/page.tsx",
+      "name": "page.tsx",
+      "relativePath": "src/app/orderList/page.tsx",
+      "dependencies": {
+        "external": [
+          "react",
+          "lucide-react"
+        ],
+        "internal": [],
+        "absolute": [
+          "@/_lib/store/store",
+          "@/_components/genericComponents/SafeImage",
+          "@/_components/orderList/AnalyticsCards",
+          "@/_lib/utils/utils"
+        ],
+        "heroui": [],
+        "lucide": [
+          "lucide-react"
+        ],
+        "framerMotion": [],
+        "react": [
+          "react",
+          "lucide-react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 2,
+      "heavyLibraries": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/page.tsx",
+      "name": "page.tsx",
+      "relativePath": "src/app/page.tsx",
+      "dependencies": {
+        "external": [
+          "react",
+          "lucide-react"
+        ],
+        "internal": [],
+        "absolute": [
+          "@/_lib/svgIcons/orderList",
+          "@/_lib/svgIcons/setting",
+          "@/_components/dashboard/DashboardCard"
+        ],
+        "heroui": [],
+        "lucide": [
+          "lucide-react"
+        ],
+        "framerMotion": [],
+        "react": [
+          "react",
+          "lucide-react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 2,
+      "heavyLibraries": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/permissions/page.tsx",
+      "name": "page.tsx",
+      "relativePath": "src/app/permissions/page.tsx",
+      "dependencies": {
+        "external": [
+          "react",
+          "next/navigation"
+        ],
+        "internal": [],
+        "absolute": [
+          "@/_lib/store/store"
+        ],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "react"
+        ],
+        "nextjs": [
+          "next/navigation"
+        ],
+        "others": []
+      },
+      "totalExternalDeps": 2,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/productList/[category]/page.tsx",
+      "name": "page.tsx",
+      "relativePath": "src/app/productList/[category]/page.tsx",
+      "dependencies": {
+        "external": [
+          "react",
+          "@heroui/button",
+          "@heroui/input",
+          "@heroui/badge",
+          "@heroui/skeleton",
+          "next/navigation",
+          "next/image"
+        ],
+        "internal": [],
+        "absolute": [
+          "@/_components/genericComponents/SafeImage",
+          "@/_lib/utils/utils"
+        ],
+        "heroui": [
+          "@heroui/button",
+          "@heroui/input",
+          "@heroui/badge",
+          "@heroui/skeleton"
+        ],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "react"
+        ],
+        "nextjs": [
+          "next/navigation",
+          "next/image"
+        ],
+        "others": []
+      },
+      "totalExternalDeps": 7,
+      "heavyLibraries": 4
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/productList/add/layout.tsx",
+      "name": "layout.tsx",
+      "relativePath": "src/app/productList/add/layout.tsx",
+      "dependencies": {
+        "external": [
+          "next/script"
+        ],
+        "internal": [],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [],
+        "nextjs": [
+          "next/script"
+        ],
+        "others": []
+      },
+      "totalExternalDeps": 1,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/productList/add/page.tsx",
+      "name": "page.tsx",
+      "relativePath": "src/app/productList/add/page.tsx",
+      "dependencies": {
+        "external": [
+          "react",
+          "next/navigation",
+          "lucide-react"
+        ],
+        "internal": [],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [
+          "lucide-react"
+        ],
+        "framerMotion": [],
+        "react": [
+          "react",
+          "lucide-react"
+        ],
+        "nextjs": [
+          "next/navigation"
+        ],
+        "others": []
+      },
+      "totalExternalDeps": 3,
+      "heavyLibraries": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/productList/edit/[id]/page.tsx",
+      "name": "page.tsx",
+      "relativePath": "src/app/productList/edit/[id]/page.tsx",
+      "dependencies": {
+        "external": [
+          "react",
+          "next/navigation",
+          "react-toastify"
+        ],
+        "internal": [],
+        "absolute": [
+          "@/_lib/rtkQuery/productDashboardRTKQuery",
+          "@/_components/genericComponents/PermissionDenied"
+        ],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "react"
+        ],
+        "nextjs": [
+          "next/navigation"
+        ],
+        "others": []
+      },
+      "totalExternalDeps": 3,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/productList/edit/layout.tsx",
+      "name": "layout.tsx",
+      "relativePath": "src/app/productList/edit/layout.tsx",
+      "dependencies": {
+        "external": [
+          "next/script"
+        ],
+        "internal": [],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [],
+        "nextjs": [
+          "next/script"
+        ],
+        "others": []
+      },
+      "totalExternalDeps": 1,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/productList/page.tsx",
+      "name": "page.tsx",
+      "relativePath": "src/app/productList/page.tsx",
+      "dependencies": {
+        "external": [
+          "react",
+          "next/navigation",
+          "react-toastify"
+        ],
+        "internal": [],
+        "absolute": [
+          "@/_lib/rtkQuery/productDashboardRTKQuery",
+          "@/_lib/utils/errorUtils",
+          "@/_components/productList/CategoryHeader"
+        ],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "react"
+        ],
+        "nextjs": [
+          "next/navigation"
+        ],
+        "others": []
+      },
+      "totalExternalDeps": 3,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/reduxProvider.tsx",
+      "name": "reduxProvider.tsx",
+      "relativePath": "src/app/reduxProvider.tsx",
+      "dependencies": {
+        "external": [
+          "react-redux"
+        ],
+        "internal": [],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 1,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/reset-password/page.tsx",
+      "name": "page.tsx",
+      "relativePath": "src/app/reset-password/page.tsx",
+      "dependencies": {
+        "external": [
+          "react"
+        ],
+        "internal": [],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 1,
+      "heavyLibraries": 0
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/rootWrapper.tsx",
+      "name": "rootWrapper.tsx",
+      "relativePath": "src/app/rootWrapper.tsx",
+      "dependencies": {
+        "external": [
+          "@heroui/react",
+          "react-toastify"
+        ],
+        "internal": [],
+        "absolute": [],
+        "heroui": [
+          "@heroui/react"
+        ],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "@heroui/react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 2,
+      "heavyLibraries": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/signin/page.tsx",
+      "name": "page.tsx",
+      "relativePath": "src/app/signin/page.tsx",
+      "dependencies": {
+        "external": [
+          "@heroui/react",
+          "next/link"
+        ],
+        "internal": [],
+        "absolute": [
+          "@/_lib/rtkQuery/authRTKQuery",
+          "@/_lib/store/userSlice",
+          "@/_lib/utils/encryption"
+        ],
+        "heroui": [
+          "@heroui/react"
+        ],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "@heroui/react"
+        ],
+        "nextjs": [
+          "next/link"
+        ],
+        "others": []
+      },
+      "totalExternalDeps": 2,
+      "heavyLibraries": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/signin/page_backup.tsx",
+      "name": "page_backup.tsx",
+      "relativePath": "src/app/signin/page_backup.tsx",
+      "dependencies": {
+        "external": [
+          "@heroui/react"
+        ],
+        "internal": [],
+        "absolute": [
+          "@/_lib/rtkQuery/authRTKQuery",
+          "@/_lib/store/userSlice"
+        ],
+        "heroui": [
+          "@heroui/react"
+        ],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [
+          "@heroui/react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 1,
+      "heavyLibraries": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/signup/page.tsx",
+      "name": "page.tsx",
+      "relativePath": "src/app/signup/page.tsx",
+      "dependencies": {
+        "external": [
+          "react",
+          "lucide-react"
+        ],
+        "internal": [],
+        "absolute": [
+          "@/_lib/rtkQuery/authRTKQuery",
+          "@/_lib/store/userSlice"
+        ],
+        "heroui": [],
+        "lucide": [
+          "lucide-react"
+        ],
+        "framerMotion": [],
+        "react": [
+          "react",
+          "lucide-react"
+        ],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 2,
+      "heavyLibraries": 1
+    },
+    {
+      "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/dataType/getJobData.tsx",
+      "name": "getJobData.tsx",
+      "relativePath": "src/dataType/getJobData.tsx",
+      "dependencies": {
+        "external": [],
+        "internal": [],
+        "absolute": [],
+        "heroui": [],
+        "lucide": [],
+        "framerMotion": [],
+        "react": [],
+        "nextjs": [],
+        "others": []
+      },
+      "totalExternalDeps": 0,
+      "heavyLibraries": 0
+    }
+  ]
+}

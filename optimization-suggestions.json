@@ -1,0 +1,427 @@
+[
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/categoryList/categoryList.tsx",
+    "name": "categoryList.tsx",
+    "relativePath": "src/_components/categoryList/categoryList.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/customerList/AdminUsersTable.tsx",
+    "name": "AdminUsersTable.tsx",
+    "relativePath": "src/_components/customerList/AdminUsersTable.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*",
+      "Possible unused import: MagnifyingGlassIcon"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/customerList/NormalUsersTable.tsx",
+    "name": "NormalUsersTable.tsx",
+    "relativePath": "src/_components/customerList/NormalUsersTable.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*",
+      "Possible unused import: MagnifyingGlassIcon"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/dashboard/DashboardCard.tsx",
+    "name": "DashboardCard.tsx",
+    "relativePath": "src/_components/dashboard/DashboardCard.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*",
+      "Possible unused import: Sparkles"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/PermissionDenied.tsx",
+    "name": "PermissionDenied.tsx",
+    "relativePath": "src/_components/genericComponents/PermissionDenied.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/ProductForm.tsx",
+    "name": "ProductForm.tsx",
+    "relativePath": "src/_components/genericComponents/ProductForm.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*",
+      "Possible unused import: Card",
+      "Possible unused import: CardBody",
+      "Possible unused import: CardHeader",
+      "Possible unused import: Divider",
+      "Possible unused import: ArrowLeft",
+      "Possible unused import: type Product",
+      "Possible unused import: type AddProductRequest",
+      "Possible unused import: type EditProductRequest",
+      "Possible unused import: productCategoryMapping"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/ProductViewModal.tsx",
+    "name": "ProductViewModal.tsx",
+    "relativePath": "src/_components/genericComponents/ProductViewModal.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*",
+      "Possible unused import: Card",
+      "Possible unused import: CardBody",
+      "Possible unused import: X"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/SkeletonCard.tsx",
+    "name": "SkeletonCard.tsx",
+    "relativePath": "src/_components/genericComponents/SkeletonCard.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/genericComponents/jobForm.tsx",
+    "name": "jobForm.tsx",
+    "relativePath": "src/_components/genericComponents/jobForm.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*",
+      "Possible unused import: useForm",
+      "Possible unused import: UseFormReturn",
+      "Possible unused import: Bounce"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/header/header.tsx",
+    "name": "header.tsx",
+    "relativePath": "src/_components/header/header.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*",
+      "Possible unused import: User"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/DropzoneArea.tsx",
+    "name": "DropzoneArea.tsx",
+    "relativePath": "src/_components/imageUpload/DropzoneArea.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/EmptyState.tsx",
+    "name": "EmptyState.tsx",
+    "relativePath": "src/_components/imageUpload/EmptyState.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/ImageCard.tsx",
+    "name": "ImageCard.tsx",
+    "relativePath": "src/_components/imageUpload/ImageCard.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*",
+      "Possible unused import: UploadedImage"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/ImageGallery.tsx",
+    "name": "ImageGallery.tsx",
+    "relativePath": "src/_components/imageUpload/ImageGallery.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/ImageGrid.tsx",
+    "name": "ImageGrid.tsx",
+    "relativePath": "src/_components/imageUpload/ImageGrid.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*",
+      "Possible unused import: UploadedImage"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/ImagePreviewModal.tsx",
+    "name": "ImagePreviewModal.tsx",
+    "relativePath": "src/_components/imageUpload/ImagePreviewModal.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*",
+      "Possible unused import: UploadedImage"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/imageUpload/UploadModeToggle.tsx",
+    "name": "UploadModeToggle.tsx",
+    "relativePath": "src/_components/imageUpload/UploadModeToggle.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*",
+      "Possible unused import: UploadPath"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/listPage/Landing.tsx",
+    "name": "Landing.tsx",
+    "relativePath": "src/_components/listPage/Landing.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*",
+      "Possible unused import: Key"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/listPage/Table.tsx",
+    "name": "Table.tsx",
+    "relativePath": "src/_components/listPage/Table.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*",
+      "Possible unused import: ListData",
+      "Possible unused import: ListDataType"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/orderList/AnalyticsCards.tsx",
+    "name": "AnalyticsCards.tsx",
+    "relativePath": "src/_components/orderList/AnalyticsCards.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/orderList/StatusBreakdown.tsx",
+    "name": "StatusBreakdown.tsx",
+    "relativePath": "src/_components/orderList/StatusBreakdown.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/productList/CategoryHeader.tsx",
+    "name": "CategoryHeader.tsx",
+    "relativePath": "src/_components/productList/CategoryHeader.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/_components/productList/QuickActions.tsx",
+    "name": "QuickActions.tsx",
+    "relativePath": "src/_components/productList/QuickActions.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/add/layout.tsx",
+    "name": "layout.tsx",
+    "relativePath": "src/app/add/layout.tsx",
+    "suggestions": [
+      "Possible unused import: ReactNode"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/customer-list/page.tsx",
+    "name": "page.tsx",
+    "relativePath": "src/app/customer-list/page.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*",
+      "Consider moving inline styles to CSS classes or styled components",
+      "Possible unused import: Card",
+      "Possible unused import: CardBody"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/customer-list/page_backup.tsx",
+    "name": "page_backup.tsx",
+    "relativePath": "src/app/customer-list/page_backup.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*",
+      "Consider moving inline styles to CSS classes or styled components",
+      "Possible unused import: Card",
+      "Possible unused import: CardBody"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/customer-list/page_fixed.tsx",
+    "name": "page_fixed.tsx",
+    "relativePath": "src/app/customer-list/page_fixed.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*",
+      "Consider moving inline styles to CSS classes or styled components",
+      "Possible unused import: Card",
+      "Possible unused import: CardBody"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/dashboard/reset-password/page.tsx",
+    "name": "page.tsx",
+    "relativePath": "src/app/dashboard/reset-password/page.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*",
+      "Possible unused import: CardHeader"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/edit/[category]/[slug]/layout.tsx",
+    "name": "layout.tsx",
+    "relativePath": "src/app/edit/[category]/[slug]/layout.tsx",
+    "suggestions": [
+      "Possible unused import: ReactNode"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/forgot-password/page.tsx",
+    "name": "page.tsx",
+    "relativePath": "src/app/forgot-password/page.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*",
+      "Possible unused import: CardHeader",
+      "Possible unused import: Spinner"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/image-upload/page.tsx",
+    "name": "page.tsx",
+    "relativePath": "src/app/image-upload/page.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*",
+      "Consider moving inline styles to CSS classes or styled components",
+      "Possible unused import: Badge"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/orderList/page.tsx",
+    "name": "page.tsx",
+    "relativePath": "src/app/orderList/page.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*",
+      "Consider moving inline styles to CSS classes or styled components",
+      "Possible unused import: MagnifyingGlassIcon",
+      "Possible unused import: useGetPurchaseByIdQuery"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/permissions/page.tsx",
+    "name": "page.tsx",
+    "relativePath": "src/app/permissions/page.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*",
+      "Possible unused import: Card",
+      "Possible unused import: CardBody",
+      "Possible unused import: CardHeader",
+      "Possible unused import: Divider",
+      "Possible unused import: Badge",
+      "Possible unused import: PermissionWithCategory"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/productList/[category]/page.tsx",
+    "name": "page.tsx",
+    "relativePath": "src/app/productList/[category]/page.tsx",
+    "suggestions": [
+      "Possible unused import: Card",
+      "Possible unused import: CardBody",
+      "Possible unused import: CardHeader",
+      "Possible unused import: Skeleton",
+      "Possible unused import: Filter",
+      "Possible unused import: Star",
+      "Possible unused import: productCategoryMapping"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/productList/add/layout.tsx",
+    "name": "layout.tsx",
+    "relativePath": "src/app/productList/add/layout.tsx",
+    "suggestions": [
+      "Possible unused import: ReactNode"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/productList/add/page.tsx",
+    "name": "page.tsx",
+    "relativePath": "src/app/productList/add/page.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/productList/edit/[id]/page.tsx",
+    "name": "page.tsx",
+    "relativePath": "src/app/productList/edit/[id]/page.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*",
+      "Possible unused import: Card",
+      "Possible unused import: CardBody",
+      "Possible unused import: CardHeader",
+      "Possible unused import: toast"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/productList/edit/layout.tsx",
+    "name": "layout.tsx",
+    "relativePath": "src/app/productList/edit/layout.tsx",
+    "suggestions": [
+      "Possible unused import: ReactNode"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/productList/page.tsx",
+    "name": "page.tsx",
+    "relativePath": "src/app/productList/page.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*",
+      "Possible unused import: toast",
+      "Possible unused import: Wrench",
+      "Possible unused import: Paintbrush"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/reduxProvider.tsx",
+    "name": "reduxProvider.tsx",
+    "relativePath": "src/app/reduxProvider.tsx",
+    "suggestions": [
+      "Possible unused import: store"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/reset-password/page.tsx",
+    "name": "page.tsx",
+    "relativePath": "src/app/reset-password/page.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*",
+      "Possible unused import: CardHeader"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/rootWrapper.tsx",
+    "name": "rootWrapper.tsx",
+    "relativePath": "src/app/rootWrapper.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/signin/page.tsx",
+    "name": "page.tsx",
+    "relativePath": "src/app/signin/page.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*",
+      "Possible unused import: Alert"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/signin/page_backup.tsx",
+    "name": "page_backup.tsx",
+    "relativePath": "src/app/signin/page_backup.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*"
+    ]
+  },
+  {
+    "path": "/Users/richpal/Desktop/richhapal_project/texxolution-dashboard-next/src/app/signup/page.tsx",
+    "name": "page.tsx",
+    "relativePath": "src/app/signup/page.tsx",
+    "suggestions": [
+      "Replace barrel imports with specific component imports from @heroui/*",
+      "Possible unused import: Alert"
+    ]
+  }
+]

@@ -20,6 +20,34 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Bundle Size Analysis
+
+This project includes comprehensive bundle size analysis tools to help monitor and optimize application performance.
+
+### Quick Start
+
+```bash
+# Analyze bundle sizes
+npm run analyze
+
+# Analyze and open client bundle report
+npm run analyze:client
+
+# Analyze and open server bundle report
+npm run analyze:server
+
+# Analyze and open both reports
+npm run analyze:both
+```
+
+### Generated Reports
+
+- `.next/analyze/client.html` - Client-side bundle analysis
+- `.next/analyze/nodejs.html` - Node.js runtime analysis
+- `.next/analyze/edge.html` - Edge runtime analysis
+
+For detailed documentation, see [BUNDLE_ANALYSIS.md](./BUNDLE_ANALYSIS.md).
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
