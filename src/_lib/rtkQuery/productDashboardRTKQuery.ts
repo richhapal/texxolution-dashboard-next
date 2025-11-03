@@ -72,9 +72,14 @@ export interface ProductDashboardResponse {
 }
 
 // Types for Product List
+
 export interface ProductPrice {
   size: string;
-  price: number;
+  price?: number;
+  basePrice: number;
+  finalPrice: number;
+  gstAmount: number;
+  gstPercentage: number;
 }
 
 export interface Product {

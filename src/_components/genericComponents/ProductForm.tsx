@@ -28,6 +28,9 @@ import {
 import { productCategoryMapping } from "@/_lib/utils/utils";
 import TinyMceTextEditor from "@/_components/genericComponents/tinyMceEditor";
 
+// Valid GST rates
+const VALID_GST_RATES = [0, 5, 12, 18, 28];
+
 // Available sizes
 const AVAILABLE_SIZES = ["XS", "S", "M", "L", "XL", "XXL", "XXXL", "Free"];
 
@@ -79,7 +82,7 @@ const formatUrl = (url: string) => {
 
 interface PriceItem {
   size: string;
-  price: string;
+  basePrice: string;
 }
 
 interface ProductFormProps {
@@ -116,6 +119,7 @@ export default function ProductForm({
   const [selectedColors, setSelectedColors] = useState<string[]>([]);
   const [images, setImages] = useState<string[]>([]);
   const [prices, setPrices] = useState<PriceItem[]>([]);
+  const [gstPercentage, setGstPercentage] = useState<number>(18); // Global GST percentage
   const [imageInput, setImageInput] = useState("");
   const [thumbnailPreview, setThumbnailPreview] = useState("");
 
@@ -150,13 +154,21 @@ export default function ProductForm({
       // Convert prices to the right format
       const priceItems = product.price.map((p) => ({
         size: p.size,
-        price: p.price.toString(),
+        basePrice: p?.basePrice?.toString() || p?.price?.toString() || "0",
       }));
       setPrices(priceItems);
+
+      // Set global GST percentage from the first price item (assuming all have the same GST)
+      if (
+        product.price.length > 0 &&
+        product.price[0].gstPercentage !== undefined
+      ) {
+        setGstPercentage(product.price[0].gstPercentage);
+      }
     } else if (mode === "add") {
       // Set defaults for add mode
       setSelectedSizes(["Free"]);
-      setPrices([{ size: "Free", price: "" }]);
+      setPrices([{ size: "Free", basePrice: "" }]);
     }
   }, [mode, product]);
 
@@ -213,15 +225,15 @@ export default function ProductForm({
     // Update prices array to match selected sizes
     const newPrices = sizes.map((size) => {
       const existingPrice = prices.find((p) => p.size === size);
-      return existingPrice || { size, price: "" };
+      return existingPrice || { size, basePrice: "" };
     });
     setPrices(newPrices);
   };
 
-  // Handle price changes
-  const handlePriceChange = (size: string, price: string) => {
+  // Handle base price changes
+  const handleBasePriceChange = (size: string, basePrice: string) => {
     setPrices((prev) =>
-      prev.map((p) => (p.size === size ? { ...p, price } : p))
+      prev.map((p) => (p.size === size ? { ...p, basePrice } : p))
     );
   };
 
@@ -266,10 +278,11 @@ export default function ProductForm({
 
     // Validate prices
     const invalidPrices = prices.filter(
-      (p) => !p.price || isNaN(Number(p.price)) || Number(p.price) <= 0
+      (p) =>
+        !p.basePrice || isNaN(Number(p.basePrice)) || Number(p.basePrice) <= 0
     );
     if (invalidPrices.length > 0) {
-      newErrors.prices = "All selected sizes must have valid prices";
+      newErrors.prices = "All selected sizes must have valid base prices";
     }
 
     setErrors(newErrors);
@@ -287,7 +300,12 @@ export default function ProductForm({
         size: selectedSizes,
         thumbnail: formatUrl(formData.thumbnail.trim()),
         images: images,
-        price: prices.map((p) => ({ size: p.size, price: p.price })),
+        price: prices.map((p) => ({
+          size: p.size,
+          price: p.basePrice,
+          basePrice: p.basePrice,
+          gstPercentage: gstPercentage, // Use global GST percentage
+        })),
         color: selectedColors,
         description: formData.description.trim() || undefined,
       };
@@ -464,6 +482,35 @@ export default function ProductForm({
           Sizes & Pricing
         </h3>
 
+        {/* Global GST Percentage */}
+        <div className="mb-4 sm:mb-6">
+          <Select
+            label="GST Percentage (Applied to All Sizes)"
+            placeholder="Select GST rate"
+            selectedKeys={[gstPercentage.toString()]}
+            onSelectionChange={(keys) => {
+              const gstRate = Number(Array.from(keys)[0]);
+              setGstPercentage(gstRate);
+            }}
+            className="bg-white/80 backdrop-blur-sm max-w-xs"
+            classNames={{
+              trigger: "min-h-[44px] sm:min-h-[40px]",
+              label: "text-sm sm:text-base font-medium",
+              value: "text-sm sm:text-base",
+            }}
+            size="sm"
+            startContent={
+              <div className="pointer-events-none flex items-center">
+                <span className="text-default-400 text-small">%</span>
+              </div>
+            }
+          >
+            {VALID_GST_RATES.map((rate) => (
+              <SelectItem key={rate.toString()}>{rate}% GST</SelectItem>
+            ))}
+          </Select>
+        </div>
+
         {/* Size Selection */}
         <div className="mb-3 sm:mb-4 lg:mb-6">
           <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-2 sm:mb-3">
@@ -503,37 +550,83 @@ export default function ProductForm({
         {selectedSizes.length > 0 && (
           <div>
             <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-2 sm:mb-3">
-              Prices for Selected Sizes *
+              Pricing for Selected Sizes *
             </label>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 lg:gap-4">
+            <div className="grid grid-cols-1 gap-4">
               {prices.map((priceItem) => (
                 <div
                   key={priceItem.size}
-                  className="bg-white/80 backdrop-blur-sm rounded-lg p-2 sm:p-3 hover:shadow-md transition-all duration-300"
+                  className="bg-white/80 backdrop-blur-sm rounded-lg p-3 sm:p-4 hover:shadow-md transition-all duration-300 border border-orange-200/50"
                 >
-                  <Input
-                    label={`${priceItem.size} Price`}
-                    placeholder="0.00"
-                    value={priceItem.price}
-                    onChange={(e) =>
-                      handlePriceChange(priceItem.size, e.target.value)
-                    }
-                    startContent={
-                      <div className="pointer-events-none flex items-center">
-                        <span className="text-default-400 text-small">₹</span>
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-3 h-3 bg-gradient-to-r from-orange-500 to-amber-600 rounded-full"></div>
+                    <h4 className="font-semibold text-gray-800 text-sm sm:text-base">
+                      Size: {priceItem.size}
+                    </h4>
+                  </div>
+
+                  {/* Base Price Input */}
+                  <div className="mb-3">
+                    <Input
+                      label="Base Price (Excl. GST)"
+                      placeholder="0.00"
+                      value={priceItem.basePrice}
+                      onChange={(e) =>
+                        handleBasePriceChange(priceItem.size, e.target.value)
+                      }
+                      startContent={
+                        <div className="pointer-events-none flex items-center">
+                          <span className="text-default-400 text-small">₹</span>
+                        </div>
+                      }
+                      type="number"
+                      step="0.01"
+                      min="0"
+                      className="bg-transparent"
+                      classNames={{
+                        input: "text-sm sm:text-base",
+                        label: "text-xs sm:text-sm",
+                        inputWrapper: "min-h-[44px] sm:min-h-[40px]",
+                      }}
+                      size="sm"
+                    />
+                  </div>
+
+                  {/* Price Calculation Display */}
+                  {priceItem.basePrice &&
+                    !isNaN(Number(priceItem.basePrice)) &&
+                    Number(priceItem.basePrice) > 0 && (
+                      <div className="mt-3 p-2 bg-gradient-to-r from-orange-50 to-amber-50 rounded-lg border border-orange-200/30">
+                        <div className="text-xs text-gray-600 space-y-1">
+                          <div className="flex justify-between">
+                            <span>Base Price:</span>
+                            <span>
+                              ₹{Number(priceItem.basePrice).toFixed(2)}
+                            </span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span>GST ({gstPercentage}%):</span>
+                            <span>
+                              ₹
+                              {(
+                                (Number(priceItem.basePrice) * gstPercentage) /
+                                100
+                              ).toFixed(2)}
+                            </span>
+                          </div>
+                          <div className="flex justify-between font-semibold text-gray-800 border-t border-orange-200/50 pt-1">
+                            <span>Total Price:</span>
+                            <span>
+                              ₹
+                              {(
+                                Number(priceItem.basePrice) *
+                                (1 + gstPercentage / 100)
+                              ).toFixed(2)}
+                            </span>
+                          </div>
+                        </div>
                       </div>
-                    }
-                    type="number"
-                    step="0.01"
-                    min="0"
-                    className="bg-transparent"
-                    classNames={{
-                      input: "text-sm sm:text-base",
-                      label: "text-xs sm:text-sm",
-                      inputWrapper: "min-h-[44px] sm:min-h-[40px]",
-                    }}
-                    size="sm"
-                  />
+                    )}
                 </div>
               ))}
             </div>

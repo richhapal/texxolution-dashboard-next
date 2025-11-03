@@ -552,7 +552,10 @@ export default function CategoryDetailPage() {
                   <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
                     <div className="flex items-baseline gap-1">
                       <span className="text-base sm:text-lg lg:text-xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
-                        ₹{product.price[0]?.price || 0}
+                        ₹
+                        {product.price[0]?.basePrice ||
+                          product.price[0]?.price ||
+                          0}
                       </span>
                       {product.price[0]?.size && (
                         <span className="text-xs sm:text-sm text-gray-500">

@@ -196,7 +196,7 @@ const ProductViewModal: React.FC<ProductViewModalProps> = ({
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
                     <IndianRupee className="w-5 h-5" />
-                    Pricing
+                    Pricing (Exc. GST)
                   </h3>
                   <div className="space-y-2">
                     {product.price.map((priceItem, index) => (
@@ -208,7 +208,7 @@ const ProductViewModal: React.FC<ProductViewModalProps> = ({
                           Size: {priceItem.size}
                         </span>
                         <span className="text-xl font-bold text-green-600">
-                          ₹{priceItem.price}
+                          ₹{priceItem?.price || priceItem?.basePrice}
                         </span>
                       </div>
                     ))}
